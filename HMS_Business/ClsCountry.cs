@@ -12,13 +12,18 @@ namespace HMS_Business
         public int CountryID { get; set; }
         public string CountryName { get; set; }
 
+        public ClsCountry()
+        {
+            CountryID = -1;
+            CountryName = string.Empty;
+        }
         public ClsCountry(int countryID, string countryName)
         {
             CountryID = countryID;
             CountryName = countryName;
         }
 
-        public ClsCountry GetCountryInfoByID(int id)
+        public static ClsCountry GetCountryInfoByID(int id)
         {
             string CountryName = "";
             if (HMS_DataAccess.ClsCountryData.GetCountryInfoByID(id, ref CountryName))
@@ -30,12 +35,12 @@ namespace HMS_Business
                 return null;
             }
         }
-        public ClsCountry GetCountryInfoByName(string Name)
+        public static ClsCountry GetCountryInfoByName(string Name)
         {
             int CountryID =-1;
             if (HMS_DataAccess.ClsCountryData.GetCountryInfoByName(Name, ref CountryID))
             {
-                return new ClsCountry(CountryID, CountryName);
+                return new ClsCountry(CountryID, Name);
             }
             else
             {
