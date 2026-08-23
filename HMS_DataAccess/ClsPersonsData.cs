@@ -14,7 +14,7 @@ namespace HMS_DataAccess
     public class ClsPersonsData
     {
         public static bool GetPersonInfoByID(int personID, ref string Fname, ref string Lname, ref DateTime DateOfBirth,
-            ref string Phone, ref string Email, ref string NatNumber, ref string imagePath, ref int CountryID, ref bool IsActive)
+           ref byte Gendor , ref string Phone, ref string Email, ref string NatNumber, ref string imagePath, ref int CountryID, ref bool IsActive)
         {
 
             bool Isfound = false;
@@ -37,6 +37,7 @@ namespace HMS_DataAccess
                                 Fname = dr["FirstName"].ToString();
                                 Lname = dr["LastName"].ToString();
                                 DateOfBirth = Convert.ToDateTime(dr["DateOfBirth"]);
+                                Gendor = Convert.ToByte(dr["Gendor"]);
                                 Phone = dr["Phone"].ToString();
                                 imagePath = dr["imagePath"] == DBNull.Value ? string.Empty : dr["imagePath"].ToString();
                                 Email = dr["Email"] == DBNull.Value ? string.Empty : dr["Email"].ToString();
@@ -62,8 +63,8 @@ namespace HMS_DataAccess
 
         }
 
-        public static bool GetPersonInfoByNatNumber(string NutNumber, ref int PersonID, ref DateTime DateOfBirth,
-            ref string Phone, ref string Email, ref string NatNumber, ref string imagePath, ref int CountryID, ref bool IsActive)
+        public static bool GetPersonInfoByNatNumber(string NatNumber,ref string Fname,ref string Lname, ref int PersonID, ref DateTime DateOfBirth,
+            ref byte Gendor,ref string Phone, ref string Email, ref string imagePath, ref int CountryID, ref bool IsActive)
         {
 
             bool Isfound = false;
@@ -75,7 +76,7 @@ namespace HMS_DataAccess
                     using (SqlCommand cmd = new SqlCommand("SP_FindPersonByName", conn))
                     {
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@NatNumber", NutNumber);
+                        cmd.Parameters.AddWithValue("@NatNumber", NatNumber);
                         conn.Open();
 
                         using (SqlDataReader dr = cmd.ExecuteReader())
@@ -84,11 +85,13 @@ namespace HMS_DataAccess
                             {
                                 Isfound = true;
                                 PersonID = Convert.ToInt16(dr["PersonID"]);
+                                Fname = dr["FirstName"].ToString();
+                                Lname = dr["LastName"].ToString();
                                 DateOfBirth = Convert.ToDateTime(dr["DateOfBirth"]);
+                                Gendor = Convert.ToByte(dr["Gendor"]);
                                 Phone = dr["Phone"].ToString();
                                 imagePath = dr["imagePath"] == DBNull.Value ? string.Empty : dr["imagePath"].ToString();
                                 Email = dr["Email"] == DBNull.Value ? string.Empty : dr["Email"].ToString();
-                                NatNumber = dr["NatNumber"].ToString();
                                 CountryID = Convert.ToInt32(dr["CountryID"]);
                                 IsActive = Convert.ToBoolean(dr["IsActive"]);
                             }
@@ -110,7 +113,7 @@ namespace HMS_DataAccess
 
         }
 
-        public static int? AddNewPerson(string Fname, string Lname, DateTime dateOfbirth, string phone, int CountryID, string NatNumber, string Email = null, string EmagePath = null)
+        public static int? AddNewPerson(string Fname, string Lname, DateTime dateOfbirth, string phone, int CountryID, string NatNumber,byte Gendor, string Email = null, string EmagePath = null)
         {
             int? PersonID = null;
 
@@ -128,6 +131,7 @@ namespace HMS_DataAccess
                         cmd.Parameters.AddWithValue("@Phone", phone);
                         cmd.Parameters.AddWithValue("@CountryID", CountryID);
                         cmd.Parameters.AddWithValue("@NatNumber", NatNumber);
+                        cmd.Parameters.AddWithValue("@Gendor", Gendor);
                         if (string.IsNullOrEmpty(Email))
                             cmd.Parameters.AddWithValue("@Email", DBNull.Value);
                         else
@@ -180,7 +184,7 @@ namespace HMS_DataAccess
 
         }
 
-        public static bool UpdatePerson(int PersonID, string Fname, string Lname, DateTime DateOfBirth, string Phone, string Email, int CountryID, string NatNumber, string ImagePAth)
+        public static bool UpdatePerson(int PersonID, string Fname, string Lname, DateTime DateOfBirth,byte Gendor,string Phone, string Email, int CountryID, string NatNumber, string ImagePAth)
         {
             bool IsUpdated = false;
 
@@ -198,6 +202,7 @@ namespace HMS_DataAccess
                         cmd.Parameters.AddWithValue("@Phone", Phone);
                         cmd.Parameters.AddWithValue("@CountryID", CountryID);
                         cmd.Parameters.AddWithValue("@NatNumber", NatNumber);
+                        cmd.Parameters.AddWithValue("@Gendor", Gendor);
                         if (string.IsNullOrEmpty(Email))
                             cmd.Parameters.AddWithValue("@Email", DBNull.Value);
                         else
