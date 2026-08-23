@@ -9,7 +9,7 @@ namespace HMS_Business
 {
     public class ClsCountry
     {
-        public int CountryID { get; set; }
+        public int? CountryID { get; set; }
         public string CountryName { get; set; }
 
         public ClsCountry()
