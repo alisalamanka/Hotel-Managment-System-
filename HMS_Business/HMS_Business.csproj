@@ -41,8 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include=".cs" />
+    <Compile Include="ClsPerson.cs" />
+    <Compile Include="ClsCountry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HMS_DataAccess\HMS_DataAccess.csproj">
+      <Project>{8a91dda4-b4d0-49c7-94f2-5de4d6f63ec1}</Project>
+      <Name>HMS_DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

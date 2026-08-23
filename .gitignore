@@ -2,3 +2,13 @@
 *[Oo]bj/
 **/.vs/
 .vs/
+# NuGet Packages
+**/packages/*
+*.nupkg
+
+# Visual Studio temporary files & build outputs
+.vs/
+**/bin/
+**/obj/
+*.user
+*.suo
