@@ -58,11 +58,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FindPerson.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FindPerson.Designer.cs">
+      <DependentUpon>FindPerson.cs</DependentUpon>
     </Compile>
     <Compile Include="People\Controls\UCpersonCard.cs">
       <SubType>UserControl</SubType>
@@ -78,6 +78,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FindPerson.resx">
+      <DependentUpon>FindPerson.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="People\Controls\UCpersonCard.resx">
       <DependentUpon>UCpersonCard.cs</DependentUpon>
     </EmbeddedResource>

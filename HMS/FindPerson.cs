@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HMS
 {
-    public partial class Form1 : Form
+    public partial class FrmFindPerson : Form
     {
-        public Form1()
+        public FrmFindPerson()
         {
             InitializeComponent();
         }
