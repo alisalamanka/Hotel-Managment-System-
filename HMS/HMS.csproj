@@ -58,10 +58,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FindPerson.cs">
+    <Compile Include="People\FindPerson.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FindPerson.Designer.cs">
+    <Compile Include="People\FindPerson.Designer.cs">
       <DependentUpon>FindPerson.cs</DependentUpon>
     </Compile>
     <Compile Include="People\Controls\UCpersonCard.cs">
@@ -76,9 +76,15 @@
     <Compile Include="People\Controls\UCpersonCardWithFilter.Designer.cs">
       <DependentUpon>UCpersonCardWithFilter.cs</DependentUpon>
     </Compile>
+    <Compile Include="People\FrmPersonDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\FrmPersonDetails.Designer.cs">
+      <DependentUpon>FrmPersonDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FindPerson.resx">
+    <EmbeddedResource Include="People\FindPerson.resx">
       <DependentUpon>FindPerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="People\Controls\UCpersonCard.resx">
@@ -86,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="People\Controls\UCpersonCardWithFilter.resx">
       <DependentUpon>UCpersonCardWithFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\FrmPersonDetails.resx">
+      <DependentUpon>FrmPersonDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -344,6 +353,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Country.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

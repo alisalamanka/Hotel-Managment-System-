@@ -51,7 +51,7 @@ namespace HMS.People.Controls
         }
 
         private int? PersonID = null;
-        
+
         public int? SelectedPersonID
         {
             get { return uCpersonCard1.PersonID; }
@@ -76,7 +76,7 @@ namespace HMS.People.Controls
                     break;
             }
 
-            if(FilterEnabled&& OnPersonSelected != null)
+            if (FilterEnabled && OnPersonSelected != null)
             {
                 RaiseOnPersonSelected(uCpersonCard1.PersonID.Value);
             }
