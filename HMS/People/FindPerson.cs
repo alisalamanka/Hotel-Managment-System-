@@ -20,15 +20,15 @@ namespace HMS
             InitializeComponent();
         }
 
-        //private void btnClose_Click(object sender, EventArgs e)
-        //{
-        //    OnPersonSelected.Invoke(this, uCpersonCardWithFilter2.SelectedPersonID);
-        //}
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            OnPersonSelected.Invoke(this, uCpersonCardWithFilter2.SelectedPersonID);
+        }
 
-        //private void BNclose_Click(object sender, EventArgs e)
-        //{
-        //    OnPersonSelected.Invoke(this, uCpersonCardWithFilter1.SelectedPersonID);
+        private void BNclose_Click(object sender, EventArgs e)
+        {
+            OnPersonSelected.Invoke(this, uCpersonCardWithFilter1.SelectedPersonID);
 
-        //}
+        }
     }
 }
