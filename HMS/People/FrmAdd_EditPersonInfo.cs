@@ -38,7 +38,7 @@ namespace HMS.People
         }
         public enum EnMode
         {
-            AddNew=1,Update=2
+            AddNew=0,Update=1
         }
 
         private EnMode _Mode;
@@ -76,6 +76,7 @@ namespace HMS.People
             }
             if (_CurrentPerson!=null)
             {
+                lblPersonID.Text = _CurrentPerson.Id.ToString();
                 TBfname.Text = _CurrentPerson.FirstName;
                 tbLname.Text= _CurrentPerson.LastName;
                 tbPhone.Text= _CurrentPerson.Phone;
@@ -113,7 +114,7 @@ namespace HMS.People
 
         private bool _HandlePersonImage()
         {
-            string imagesFolder = ConfigurationManager.AppSettings["PersonsImages"]?.ToString();
+            string imagesFolder = ConfigurationManager.AppSettings["PersonsImages"];
 
             if (!_EnsureDirectoryExists(imagesFolder))
                 return false;
@@ -233,7 +234,7 @@ namespace HMS.People
 
         private void rbMale_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbMale.Checked&& pbPersonImage.Image != null)
+            if (rbMale.Checked&& pbPersonImage.ImageLocation != null)
             {
                pbPersonImage.Image = Resources.man;
             }
@@ -242,7 +243,7 @@ namespace HMS.People
 
         private void rbFemale_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbFemale.Checked && pbPersonImage.Image != null)
+            if (rbFemale.Checked && pbPersonImage.ImageLocation != null)
             {
                 pbPersonImage.Image = Resources.woman;
             }
@@ -302,14 +303,14 @@ namespace HMS.People
 
         private void llblEditPersonImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            OFDImages.Filter = "Image Files|*.jbg;*.jpeg;*.png;*.bmp;*.gif";
+            OFDImages.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
             OFDImages.FilterIndex = 1;
             OFDImages.RestoreDirectory = true;
 
             if (OFDImages.ShowDialog() == DialogResult.OK)
             {
                 string FileName = OFDImages.FileName;
-                pbPersonImage.Load(FileName);
+                pbPersonImage.ImageLocation = FileName;
                 llblRemoveImage.Visible = true;
             }
         }
@@ -347,9 +348,12 @@ namespace HMS.People
             _ReadPersonData();
             if (_CurrentPerson.Save())
             {
+                _PersonID = _CurrentPerson.Id;
                 lblPersonID.Text = _CurrentPerson.Id.ToString();
                 lblAddEditPerson.Text = "Update Person Info";
-                _Mode = EnMode.Update;
+                if (_Mode==EnMode.AddNew)
+                    _Mode = EnMode.Update;
+
                 ClsUtil.ShowSuccessMessage("Person Info Saved Successfully!");
                 if (Databack != null)
                 {

@@ -70,7 +70,7 @@ namespace HMS_DataAccess
             bool Isfound = false;
             try
             {
-                string ConnString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
                 using (SqlConnection conn = new SqlConnection(ConnString))
                 {
                     using (SqlCommand cmd = new SqlCommand("SP_FindPersonByName", conn))
@@ -221,8 +221,9 @@ namespace HMS_DataAccess
             }
             catch (Exception ex)
             {
-                RowsAffected = 0;
+                
                 ClsUtil.ClsLogger.LogError($"Failed to Update  person with ID = {PersonID}", ex);
+                return false;
             }
             return RowsAffected>0;
         }
