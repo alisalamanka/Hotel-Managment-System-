@@ -287,10 +287,10 @@
             this.cbContries.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbContries.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbContries.ForeColor = System.Drawing.Color.Black;
-            this.cbContries.ItemHeight = 30;
+            this.cbContries.ItemHeight = 27;
             this.cbContries.Location = new System.Drawing.Point(581, 200);
             this.cbContries.Name = "cbContries";
-            this.cbContries.Size = new System.Drawing.Size(229, 36);
+            this.cbContries.Size = new System.Drawing.Size(229, 33);
             this.cbContries.TabIndex = 24;
             // 
             // tbPhone
@@ -314,6 +314,7 @@
             this.tbPhone.SelectedText = "";
             this.tbPhone.Size = new System.Drawing.Size(238, 33);
             this.tbPhone.TabIndex = 23;
+            this.tbPhone.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateEmptyTextBox);
             // 
             // dtpDateOfBirth
             // 
@@ -455,6 +456,7 @@
             this.TBfname.SelectedText = "";
             this.TBfname.Size = new System.Drawing.Size(201, 33);
             this.TBfname.TabIndex = 14;
+            this.TBfname.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateEmptyTextBox);
             // 
             // guna2HtmlLabel8
             // 

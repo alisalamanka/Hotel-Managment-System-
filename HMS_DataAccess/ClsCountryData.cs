@@ -17,7 +17,7 @@ namespace HMS_DataAccess
             bool Isfound = false;
             try
             {
-                string ConnString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
                 using (SqlConnection conn = new SqlConnection(ConnString))
                 {
                     using (SqlCommand cmd = new SqlCommand("SP_GetCountryInfoByID", conn))
@@ -53,7 +53,7 @@ namespace HMS_DataAccess
             bool Isfound = false;
             try
             {
-                string ConnString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
                 using (SqlConnection conn = new SqlConnection(ConnString))
                 {
                     using (SqlCommand cmd = new SqlCommand("SP_GetCountryInfoByName", conn))
@@ -89,7 +89,7 @@ namespace HMS_DataAccess
             DataTable dt = new DataTable();
             try
             {
-                string ConnString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
                 using (SqlConnection conn = new SqlConnection(ConnString))
                 {
                     using (SqlCommand cmd = new SqlCommand("SP_GetAllCountries", conn))

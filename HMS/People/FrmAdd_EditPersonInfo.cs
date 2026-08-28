@@ -9,7 +9,7 @@ using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Configuration;
+using Guna.UI2.WinForms;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HMS.Properties;
@@ -81,7 +81,15 @@ namespace HMS.People
                 tbPhone.Text= _CurrentPerson.Phone;
                 tbEmail.Text= _CurrentPerson.Email;
                 tbNationalNumber.Text = _CurrentPerson.NationalNumber;
-                dtpDateOfBirth.Value=_CurrentPerson.DateOfBirth;
+                if (_CurrentPerson.DateOfBirth >= dtpDateOfBirth.MinDate &&
+                    _CurrentPerson.DateOfBirth <= dtpDateOfBirth.MaxDate)
+                {
+                    dtpDateOfBirth.Value = _CurrentPerson.DateOfBirth;
+                }
+                else
+                {
+                    dtpDateOfBirth.Value = dtpDateOfBirth.MaxDate;
+                }
                 cbContries.SelectedIndex = cbContries.FindString(_CurrentPerson.CountryInfo.CountryName);
                 if (_CurrentPerson.Gendor==1)
                 {
@@ -196,7 +204,7 @@ namespace HMS.People
 
         public void ValidateEmptyTextBox(object sender, CancelEventArgs e)
         {
-            TextBox tb = (TextBox)sender ;
+            Guna2TextBox tb = (Guna2TextBox)sender ;
             InputsEP.SetError(tb, string.IsNullOrWhiteSpace(tb.Text) ? "This field is required." : "");
         }
 
@@ -212,8 +220,9 @@ namespace HMS.People
 
         private void FrmAdd_EditPersonInfo_Load(object sender, EventArgs e)
         {
-            dtpDateOfBirth.MaxDate = DateTime.Now.AddYears(-18);
             dtpDateOfBirth.MinDate = DateTime.Now.AddYears(-100);
+            dtpDateOfBirth.MaxDate = DateTime.Now.AddYears(-18);
+            dtpDateOfBirth.Value = dtpDateOfBirth.MaxDate;
             _FillCountries();
             if (_Mode == EnMode.AddNew)
                 _setAddNewMode();
@@ -323,11 +332,7 @@ namespace HMS.People
                 _CurrentPerson.Gendor = (byte)EnGender.Female;
             }
             _CurrentPerson.Phone = tbPhone.Text;
-            if (pbPersonImage.Image!=null)
-            {
-                _CurrentPerson.ImagePath = pbPersonImage.ImageLocation;
-
-            }
+            _CurrentPerson.ImagePath = pbPersonImage.ImageLocation;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -350,6 +355,10 @@ namespace HMS.People
                 {
                     Databack(this, _CurrentPerson.Id);
                 }
+            }
+            else
+            {
+                ClsUtil.ShowErrorMessage("An Error Occoured while Saving Person Info.");
             }
 
         }

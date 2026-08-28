@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HMS.People;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace HMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmFindPerson());
+            Application.Run(new FrmAdd_EditPersonInfo(1));
         }
     }
 }
