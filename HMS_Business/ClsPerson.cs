@@ -42,6 +42,7 @@ namespace HMS_Business
             Phone = string.Empty;
             Email = string.Empty;
             NationalNumber = string.Empty;
+            Gendor = 0;
             ImagePath = string.Empty;
             IsActive = false;
             Mode = EnMode.AddNew;

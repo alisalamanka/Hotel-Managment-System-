@@ -83,6 +83,12 @@
     <Compile Include="People\FrmAdd_EditPersonInfo.Designer.cs">
       <DependentUpon>FrmAdd_EditPersonInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="People\FrmManagePersons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\FrmManagePersons.Designer.cs">
+      <DependentUpon>FrmManagePersons.cs</DependentUpon>
+    </Compile>
     <Compile Include="People\FrmPersonDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="People\FrmAdd_EditPersonInfo.resx">
       <DependentUpon>FrmAdd_EditPersonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\FrmManagePersons.resx">
+      <DependentUpon>FrmManagePersons.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="People\FrmPersonDetails.resx">
       <DependentUpon>FrmPersonDetails.cs</DependentUpon>
@@ -378,6 +387,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\signature.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ManagePersons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PersonInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-Person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-Person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddPerson.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deletePerson32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-Person32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addPerson32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PersonInfo32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

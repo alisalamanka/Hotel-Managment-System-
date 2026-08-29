@@ -100,11 +100,10 @@ namespace HMS.People.Controls
 
         }
 
-
-
-
-
-
-
+        private void llblEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmAdd_EditPersonInfo frm = new FrmAdd_EditPersonInfo(_Person.Id.Value);
+            frm.ShowDialog();
+        }
     }
 }
