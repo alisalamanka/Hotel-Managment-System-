@@ -12,9 +12,16 @@ namespace HMS.People
 {
     public partial class FrmPersonDetails : Form
     {
-        public FrmPersonDetails()
+        public FrmPersonDetails(int?PerosnID)
         {
             InitializeComponent();
+            LoadPersonDetails(PerosnID.Value);
+        }
+
+        public FrmPersonDetails(string NatNumber)
+        {
+            InitializeComponent();
+            LoadPersonDetails(NatNumber);
         }
 
         public void LoadPersonDetails(int PersoID)

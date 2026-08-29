@@ -34,7 +34,7 @@ namespace HMS.People
 
         public enum EnGender
         {
-            Mail=1,Female=2
+            Mail=0,Female=1
         }
         public enum EnMode
         {
@@ -92,7 +92,7 @@ namespace HMS.People
                     dtpDateOfBirth.Value = dtpDateOfBirth.MaxDate;
                 }
                 cbContries.SelectedIndex = cbContries.FindString(_CurrentPerson.CountryInfo.CountryName);
-                if (_CurrentPerson.Gendor==1)
+                if (_CurrentPerson.Gendor==(byte)EnGender.Mail)
                 {
                     rbMale.Checked = true;
                 }
@@ -234,7 +234,7 @@ namespace HMS.People
 
         private void rbMale_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbMale.Checked&& pbPersonImage.ImageLocation != null)
+            if (rbMale.Checked&& pbPersonImage.ImageLocation == null)
             {
                pbPersonImage.Image = Resources.man;
             }
@@ -243,7 +243,7 @@ namespace HMS.People
 
         private void rbFemale_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbFemale.Checked && pbPersonImage.ImageLocation != null)
+            if (rbFemale.Checked && pbPersonImage.ImageLocation == null)
             {
                 pbPersonImage.Image = Resources.woman;
             }
