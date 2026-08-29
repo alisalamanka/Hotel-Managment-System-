@@ -26,8 +26,7 @@ namespace HMS.People
             _dtPersonsList = ClsPerson.GetAllPersons();
             _PersonsTable = _dtPersonsList.DefaultView.ToTable(false, "PersonID", "NationalNo", "FirstName", "LastName", "DateOfBirth",
            "CountryName", "Phone", "Email","IsActive");
-
-            dgvListPeople.DataSource = _dtPersonsList;
+            dgvListPeople.DataSource = _PersonsTable;
             LBLnumberofreccords.Text = _PersonsTable.Rows.Count.ToString();
         }
 

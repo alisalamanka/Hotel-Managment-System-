@@ -71,6 +71,7 @@ namespace HMS_DataAccess
             try
             {
                 string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
+
                 using (SqlConnection conn = new SqlConnection(ConnString))
                 {
                     using (SqlCommand cmd = new SqlCommand("SP_FindPersonByName", conn))
