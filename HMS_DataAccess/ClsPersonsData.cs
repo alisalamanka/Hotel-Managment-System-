@@ -41,7 +41,6 @@ namespace HMS_DataAccess
                                 Phone = dr["Phone"].ToString();
                                 imagePath = dr["imagePath"] == DBNull.Value ? string.Empty : dr["imagePath"].ToString();
                                 Email = dr["Email"] == DBNull.Value ? string.Empty : dr["Email"].ToString();
-                                NatNumber = dr["NationalNo"].ToString();
                                 CountryID = Convert.ToInt32(dr["CountryID"]);
                                 IsActive = Convert.ToBoolean(dr["IsActive"]);
                             }
@@ -70,7 +69,6 @@ namespace HMS_DataAccess
             bool Isfound = false;
             try
             {
-                string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
                 using (SqlConnection conn = new SqlConnection(ConnString))
                 {
                     using (SqlCommand cmd = new SqlCommand("SP_FindPersonByName", conn))
@@ -119,7 +117,6 @@ namespace HMS_DataAccess
 
             try
             {
-                string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
                 using (SqlConnection conn = new SqlConnection(ConnString))
                 {
                     using (SqlCommand cmd = new SqlCommand("SP_AddNewPerson", conn))
@@ -161,7 +158,6 @@ namespace HMS_DataAccess
             bool IsDeleted = false;
             try
             {
-                string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
                 using (SqlConnection conn = new SqlConnection(ConnString))
                 {
                     using (SqlCommand cmd = new SqlCommand("SP_DeletePerson", conn))
@@ -186,17 +182,13 @@ namespace HMS_DataAccess
 
         public static bool UpdatePerson(int PersonID, string Fname, string Lname, DateTime DateOfBirth,byte Gendor,string Phone, string Email, int CountryID, string NatNumber, string ImagePAth)
         {
-            int RowsAffected = 0;
 
             try
             {
-                string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
                 using (SqlConnection conn = new SqlConnection(ConnString))
                 {
                     using (SqlCommand cmd = new SqlCommand("SP_UpdatePersonInfo", conn))
                     {
-                        cmd.CommandType =CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@PersonID", PersonID);
                         cmd.Parameters.AddWithValue("@FirstName", Fname);
                         cmd.Parameters.AddWithValue("@LastName", Lname);
                         cmd.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
@@ -214,23 +206,19 @@ namespace HMS_DataAccess
                             cmd.Parameters.AddWithValue("@imagePath", ImagePAth);
 
                         conn.Open();
-                        RowsAffected = cmd.ExecuteNonQuery();
                     }
 
                 }
             }
             catch (Exception ex)
             {
-                
                 ClsUtil.ClsLogger.LogError($"Failed to Update  person with ID = {PersonID}", ex);
                 return false;
             }
-            return RowsAffected>0;
         }
 
         public static DataTable GetAllPersons()
         {
-            string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
             DataTable dt = new DataTable();
             try
             {
@@ -259,7 +247,6 @@ namespace HMS_DataAccess
 
         public static bool PersonExistsByID(int ID)
         {
-            string Cnn = ConfigurationManager.AppSettings["ConnectionString"];
             bool exists = false;
             try
             {
@@ -288,7 +275,6 @@ namespace HMS_DataAccess
 
         public static bool PersonExistsByNatNumber(string NatNumber)
         {
-            string Cnn = ConfigurationManager.AppSettings["ConnectionString"];
             bool exists = false;
             try
             {
