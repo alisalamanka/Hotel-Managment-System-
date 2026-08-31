@@ -14,7 +14,7 @@ namespace HMS_DataAccess
     public class ClsPersonsData
     {
         public static bool GetPersonInfoByID(int personID, ref string Fname, ref string Lname, ref DateTime DateOfBirth,
-           ref byte Gendor , ref string Phone, ref string Email, ref string NatNumber, ref string imagePath, ref int CountryID, ref bool IsActive)
+           ref byte Gendor, ref string Phone, ref string Email, ref string NatNumber, ref string imagePath, ref int CountryID, ref bool IsActive)
         {
 
             bool Isfound = false;
@@ -62,14 +62,13 @@ namespace HMS_DataAccess
 
         }
 
-        public static bool GetPersonInfoByNatNumber(string NatNumber,ref string Fname,ref string Lname, ref int PersonID, ref DateTime DateOfBirth,
-            ref byte Gendor,ref string Phone, ref string Email, ref string imagePath, ref int CountryID, ref bool IsActive)
+        public static bool GetPersonInfoByNatNumber(string NatNumber, ref string Fname, ref string Lname, ref int PersonID, ref DateTime DateOfBirth,
+            ref byte Gendor, ref string Phone, ref string Email, ref string imagePath, ref int CountryID, ref bool IsActive)
         {
             string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
             bool Isfound = false;
             try
             {
-
                 using (SqlConnection conn = new SqlConnection(ConnString))
                 {
                     using (SqlCommand cmd = new SqlCommand("SP_FindPersonByName", conn))
@@ -112,7 +111,7 @@ namespace HMS_DataAccess
 
         }
 
-        public static int? AddNewPerson(string Fname, string Lname, DateTime dateOfbirth, string phone, int CountryID, string NatNumber,byte Gendor, string Email = null, string EmagePath = null)
+        public static int? AddNewPerson(string Fname, string Lname, DateTime dateOfbirth, string phone, int CountryID, string NatNumber, byte Gendor, string Email = null, string EmagePath = null)
         {
             int? PersonID = null;
 
@@ -183,50 +182,60 @@ namespace HMS_DataAccess
 
         }
 
-        public static bool UpdatePerson(int PersonID, string Fname, string Lname, DateTime DateOfBirth,byte Gendor,string Phone, string Email, int CountryID, string NatNumber, string ImagePAth)
+        public static bool UpdatePerson(int PersonID, string Fname, string Lname, DateTime DateOfBirth, byte Gendor, string Phone, string Email, int CountryID, string NatNumber, string ImagePAth)
         {
-            string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(ConnString))
+
+                string ConnString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+
+                try
                 {
-                    using (SqlCommand cmd = new SqlCommand("SP_UpdatePersonInfo", conn))
+
+                    using (SqlConnection conn = new SqlConnection(ConnString))
                     {
-                        cmd.Parameters.AddWithValue("@FirstName", Fname);
-                        cmd.Parameters.AddWithValue("@LastName", Lname);
-                        cmd.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
-                        cmd.Parameters.AddWithValue("@Phone", Phone);
-                        cmd.Parameters.AddWithValue("@CountryID", CountryID);
-                        cmd.Parameters.AddWithValue("@NatNumber", NatNumber);
-                        cmd.Parameters.AddWithValue("@Gendor", Gendor);
-                        if (string.IsNullOrEmpty(Email))
-                            cmd.Parameters.AddWithValue("@Email", DBNull.Value);
-                        else
-                            cmd.Parameters.AddWithValue("@Email", Email);
-                        if (string.IsNullOrEmpty(ImagePAth))
-                            cmd.Parameters.AddWithValue("@imagePath", DBNull.Value);
-                        else
-                            cmd.Parameters.AddWithValue("@imagePath", ImagePAth);
+                        using (SqlCommand cmd = new SqlCommand("SP_UpdatePersonInfo", conn))
+                        {
+                            cmd.Parameters.AddWithValue("@FirstName", Fname);
+                            cmd.Parameters.AddWithValue("@LastName", Lname);
+                            cmd.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
+                            cmd.Parameters.AddWithValue("@Phone", Phone);
+                            cmd.Parameters.AddWithValue("@CountryID", CountryID);
+                            cmd.Parameters.AddWithValue("@NatNumber", NatNumber);
+                            cmd.Parameters.AddWithValue("@Gendor", Gendor);
+                            if (string.IsNullOrEmpty(Email))
+                                cmd.Parameters.AddWithValue("@Email", DBNull.Value);
+                            else
+                                cmd.Parameters.AddWithValue("@Email", Email);
+                            if (string.IsNullOrEmpty(ImagePAth))
+                                cmd.Parameters.AddWithValue("@imagePath", DBNull.Value);
+                            else
+                                cmd.Parameters.AddWithValue("@imagePath", ImagePAth);
 
-                        conn.Open();
-                        return cmd.ExecuteNonQuery() > 0;
+                            conn.Open();
+                            return cmd.ExecuteNonQuery() > 0;
+                        }
+
                     }
-
                 }
-            }
-            catch (Exception ex)
-            {
-                ClsUtil.ClsLogger.LogError($"Failed to Update  person with ID = {PersonID}", ex);
-                return false;
-            }
-        }
+                catch (Exception ex)
+                {
+                    ClsUtil.ClsLogger.LogError($"Failed to Update  person with ID = {PersonID}", ex);
+                    return false;
+                }
+
+
+
+             }
+            
 
         public static DataTable GetAllPersons()
         {
+            string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
+
+
             DataTable dt = new DataTable();
             try
             {
-                string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
                 using (SqlConnection conn = new SqlConnection(ConnString))
                 {
                     using (SqlCommand cmd = new SqlCommand("SP_GetAllPersons", conn))
@@ -252,6 +261,7 @@ namespace HMS_DataAccess
 
         public static bool PersonExistsByID(int ID)
         {
+
             bool exists = false;
             try
             {
@@ -281,6 +291,7 @@ namespace HMS_DataAccess
 
         public static bool PersonExistsByNatNumber(string NatNumber)
         {
+
             bool exists = false;
             try
             {
