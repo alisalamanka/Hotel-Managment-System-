@@ -226,7 +226,7 @@
             this.CbIsActive.ItemHeight = 30;
             this.CbIsActive.Items.AddRange(new object[] {
             "Yes",
-            "No ",
+            "No",
             "All"});
             this.CbIsActive.Location = new System.Drawing.Point(496, 343);
             this.CbIsActive.Name = "CbIsActive";

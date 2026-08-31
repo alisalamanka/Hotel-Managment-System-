@@ -230,14 +230,14 @@ namespace HMS.People
 
         private void CbIsActive_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string FilterColum= "IsActive";
-            switch(CbIsActive.Text.ToLower())
+            
+            switch(CbIsActive.Text.Trim().ToLower())
             {
                 case "yes":
-                    _PersonsTable.DefaultView.RowFilter = string.Format("[{0}] = true", FilterColum);
+                    _PersonsTable.DefaultView.RowFilter = string.Format("[IsActive] = 1");
                     break;
                 case "no":
-                    _PersonsTable.DefaultView.RowFilter = string.Format("[{0}] = false", FilterColum);
+                    _PersonsTable.DefaultView.RowFilter = string.Format("[IsActive] = 0");
                     break;
                 default:
                     _PersonsTable.DefaultView.RowFilter = "";
