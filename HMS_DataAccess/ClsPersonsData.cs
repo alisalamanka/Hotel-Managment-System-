@@ -69,6 +69,8 @@ namespace HMS_DataAccess
             bool Isfound = false;
             try
             {
+                string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
+
                 using (SqlConnection conn = new SqlConnection(ConnString))
                 {
                     using (SqlCommand cmd = new SqlCommand("SP_FindPersonByName", conn))
@@ -117,6 +119,7 @@ namespace HMS_DataAccess
 
             try
             {
+                string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
                 using (SqlConnection conn = new SqlConnection(ConnString))
                 {
                     using (SqlCommand cmd = new SqlCommand("SP_AddNewPerson", conn))
@@ -158,6 +161,8 @@ namespace HMS_DataAccess
             bool IsDeleted = false;
             try
             {
+                string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
+
                 using (SqlConnection conn = new SqlConnection(ConnString))
                 {
                     using (SqlCommand cmd = new SqlCommand("SP_DeletePerson", conn))
@@ -185,6 +190,8 @@ namespace HMS_DataAccess
 
             try
             {
+                string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
+
                 using (SqlConnection conn = new SqlConnection(ConnString))
                 {
                     using (SqlCommand cmd = new SqlCommand("SP_UpdatePersonInfo", conn))
@@ -206,6 +213,7 @@ namespace HMS_DataAccess
                             cmd.Parameters.AddWithValue("@imagePath", ImagePAth);
 
                         conn.Open();
+                        return cmd.ExecuteNonQuery() > 0;
                     }
 
                 }
@@ -219,6 +227,8 @@ namespace HMS_DataAccess
 
         public static DataTable GetAllPersons()
         {
+            string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
+
             DataTable dt = new DataTable();
             try
             {
@@ -247,6 +257,8 @@ namespace HMS_DataAccess
 
         public static bool PersonExistsByID(int ID)
         {
+            string Cnn = ConfigurationManager.AppSettings["ConnectionString"];
+
             bool exists = false;
             try
             {
@@ -275,6 +287,8 @@ namespace HMS_DataAccess
 
         public static bool PersonExistsByNatNumber(string NatNumber)
         {
+            string Cnn = ConfigurationManager.AppSettings["ConnectionString"];
+
             bool exists = false;
             try
             {
