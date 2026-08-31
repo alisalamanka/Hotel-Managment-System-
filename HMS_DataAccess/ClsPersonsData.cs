@@ -69,7 +69,7 @@ namespace HMS_DataAccess
             bool Isfound = false;
             try
             {
-
+                string ConnString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
                 using (SqlConnection conn = new SqlConnection(ConnString))
                 {
                     using (SqlCommand cmd = new SqlCommand("SP_FindPersonByName", conn))
@@ -185,9 +185,18 @@ namespace HMS_DataAccess
 
         public static bool UpdatePerson(int PersonID, string Fname, string Lname, DateTime DateOfBirth,byte Gendor,string Phone, string Email, int CountryID, string NatNumber, string ImagePAth)
         {
-            string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
+<<<<<<<<< Temporary merge branch 1
+            bool IsUpdated = false;
+
             try
             {
+                string ConnString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+=========
+            int RowsAffected = 0;
+
+            try
+            {
+                
                 using (SqlConnection conn = new SqlConnection(ConnString))
                 {
                     using (SqlCommand cmd = new SqlCommand("SP_UpdatePersonInfo", conn))
@@ -223,10 +232,12 @@ namespace HMS_DataAccess
 
         public static DataTable GetAllPersons()
         {
+            string ConnString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+         
             DataTable dt = new DataTable();
             try
             {
-                string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
                 using (SqlConnection conn = new SqlConnection(ConnString))
                 {
                     using (SqlCommand cmd = new SqlCommand("SP_GetAllPersons", conn))
@@ -252,6 +263,7 @@ namespace HMS_DataAccess
 
         public static bool PersonExistsByID(int ID)
         {
+
             bool exists = false;
             try
             {
@@ -281,6 +293,7 @@ namespace HMS_DataAccess
 
         public static bool PersonExistsByNatNumber(string NatNumber)
         {
+
             bool exists = false;
             try
             {
