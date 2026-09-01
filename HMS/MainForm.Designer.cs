@@ -1,6 +1,10 @@
 ﻿namespace HMS
 {
+<<<<<<< HEAD
     partial class Main_Form
+=======
+    partial class MainForm
+>>>>>>> ad0760b675148ad288b370fe246d777289ae768b
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +32,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             this.components = new System.ComponentModel.Container();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.lblUserEmail = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -54,10 +59,15 @@
             this.CMSadministration.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserPicture)).BeginInit();
+=======
+            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+>>>>>>> ad0760b675148ad288b370fe246d777289ae768b
             this.SuspendLayout();
             // 
             // guna2CustomGradientPanel1
             // 
+<<<<<<< HEAD
             this.guna2CustomGradientPanel1.BorderRadius = 15;
             this.guna2CustomGradientPanel1.Controls.Add(this.btnSetting);
             this.guna2CustomGradientPanel1.Controls.Add(this.btnreport);
@@ -72,12 +82,16 @@
             this.guna2CustomGradientPanel1.Controls.Add(this.lblUserEmail);
             this.guna2CustomGradientPanel1.Controls.Add(this.pbUserName);
             this.guna2CustomGradientPanel1.Controls.Add(this.pbUserPicture);
+=======
+            this.guna2CustomGradientPanel1.BorderRadius = 20;
+>>>>>>> ad0760b675148ad288b370fe246d777289ae768b
             this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(12, 12);
+<<<<<<< HEAD
             this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(10);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Padding = new System.Windows.Forms.Padding(10);
@@ -408,10 +422,32 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1767, 1010);
+=======
+            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(343, 948);
+            this.guna2CustomGradientPanel1.TabIndex = 0;
+            // 
+            // guna2CustomGradientPanel2
+            // 
+            this.guna2CustomGradientPanel2.BorderRadius = 20;
+            this.guna2CustomGradientPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(355, 12);
+            this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(1437, 948);
+            this.guna2CustomGradientPanel2.TabIndex = 1;
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.ClientSize = new System.Drawing.Size(1804, 972);
+>>>>>>> ad0760b675148ad288b370fe246d777289ae768b
             this.Controls.Add(this.guna2CustomGradientPanel2);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+<<<<<<< HEAD
             this.Name = "Main_Form";
             this.Padding = new System.Windows.Forms.Padding(12);
             this.Text = "Main_Form";
@@ -421,6 +457,11 @@
             this.CMSadministration.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserPicture)).EndInit();
+=======
+            this.Name = "MainForm";
+            this.Padding = new System.Windows.Forms.Padding(12);
+            this.Text = "MainForm";
+>>>>>>> ad0760b675148ad288b370fe246d777289ae768b
             this.ResumeLayout(false);
 
         }
@@ -428,6 +469,7 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+<<<<<<< HEAD
         private Guna.UI2.WinForms.Guna2Button btnAdministrations;
         private Guna.UI2.WinForms.Guna2Button btnServices;
         private Guna.UI2.WinForms.Guna2Button btnApplications;
@@ -447,5 +489,8 @@
         private System.Windows.Forms.ToolStripMenuItem TSMIPeople;
         private System.Windows.Forms.ToolStripMenuItem TSMIUsers;
         private System.Windows.Forms.ToolStripMenuItem TSMIemployees;
+=======
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
+>>>>>>> ad0760b675148ad288b370fe246d777289ae768b
     }
 }

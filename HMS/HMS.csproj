@@ -536,6 +536,7 @@
   <ItemGroup>
     <None Include="Resources\password1.png" />
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup>
     <None Include="Resources\setting_.png" />
   </ItemGroup>
@@ -548,5 +549,7 @@
   <ItemGroup>
     <None Include="Resources\users_.png" />
   </ItemGroup>
+=======
+>>>>>>> ad0760b675148ad288b370fe246d777289ae768b
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

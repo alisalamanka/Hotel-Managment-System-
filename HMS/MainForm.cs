@@ -10,13 +10,20 @@ using System.Windows.Forms;
 
 namespace HMS
 {
+<<<<<<< HEAD
     public partial class Main_Form : Form
     {
         public Main_Form()
+=======
+    public partial class MainForm : Form
+    {
+        public MainForm()
+>>>>>>> ad0760b675148ad288b370fe246d777289ae768b
         {
             InitializeComponent();
         }
 
+<<<<<<< HEAD
         private void guna2CustomGradientPanel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -28,6 +35,9 @@ namespace HMS
         }
 
         private void TSMIPeople_Click(object sender, EventArgs e)
+=======
+        private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
+>>>>>>> ad0760b675148ad288b370fe246d777289ae768b
         {
 
         }

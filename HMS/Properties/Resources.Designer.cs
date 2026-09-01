@@ -413,6 +413,7 @@ namespace HMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap customer {
             get {
                 object obj = ResourceManager.GetObject("customer", resourceCulture);
@@ -423,6 +424,8 @@ namespace HMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+=======
+>>>>>>> ad0760b675148ad288b370fe246d777289ae768b
         internal static System.Drawing.Bitmap customer_service {
             get {
                 object obj = ResourceManager.GetObject("customer-service", resourceCulture);
@@ -913,6 +916,7 @@ namespace HMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap request {
             get {
                 object obj = ResourceManager.GetObject("request", resourceCulture);
@@ -923,6 +927,8 @@ namespace HMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+=======
+>>>>>>> ad0760b675148ad288b370fe246d777289ae768b
         internal static System.Drawing.Bitmap reservation {
             get {
                 object obj = ResourceManager.GetObject("reservation", resourceCulture);
@@ -1133,6 +1139,7 @@ namespace HMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap users_ {
             get {
                 object obj = ResourceManager.GetObject("users_", resourceCulture);
@@ -1143,6 +1150,8 @@ namespace HMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+=======
+>>>>>>> ad0760b675148ad288b370fe246d777289ae768b
         internal static System.Drawing.Bitmap vacuum {
             get {
                 object obj = ResourceManager.GetObject("vacuum", resourceCulture);
