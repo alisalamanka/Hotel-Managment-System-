@@ -122,7 +122,7 @@
             this.btnAddNewPerson.FillColor = System.Drawing.Color.Silver;
             this.btnAddNewPerson.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddNewPerson.ForeColor = System.Drawing.Color.White;
-            this.btnAddNewPerson.Image = global::HMS.Properties.Resources.add_user;
+            this.btnAddNewPerson.Image = global::HMS.Properties.Resources.add_user1;
             this.btnAddNewPerson.Location = new System.Drawing.Point(784, 59);
             this.btnAddNewPerson.Name = "btnAddNewPerson";
             this.btnAddNewPerson.Size = new System.Drawing.Size(85, 45);
