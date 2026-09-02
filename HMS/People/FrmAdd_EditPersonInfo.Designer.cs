@@ -148,7 +148,6 @@
             // guna2CirclePictureBox9
             // 
             this.guna2CirclePictureBox9.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2CirclePictureBox9.Image = global::HMS.Properties.Resources.Country;
             this.guna2CirclePictureBox9.ImageRotate = 0F;
             this.guna2CirclePictureBox9.Location = new System.Drawing.Point(547, 202);
             this.guna2CirclePictureBox9.Name = "guna2CirclePictureBox9";
@@ -162,7 +161,6 @@
             // 
             this.guna2CirclePictureBox8.BackColor = System.Drawing.Color.WhiteSmoke;
             this.guna2CirclePictureBox8.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2CirclePictureBox8.Image = global::HMS.Properties.Resources.telephone;
             this.guna2CirclePictureBox8.ImageRotate = 0F;
             this.guna2CirclePictureBox8.Location = new System.Drawing.Point(542, 84);
             this.guna2CirclePictureBox8.Name = "guna2CirclePictureBox8";
@@ -175,7 +173,6 @@
             // guna2CirclePictureBox7
             // 
             this.guna2CirclePictureBox7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2CirclePictureBox7.Image = global::HMS.Properties.Resources.calendar;
             this.guna2CirclePictureBox7.ImageRotate = 0F;
             this.guna2CirclePictureBox7.Location = new System.Drawing.Point(542, 25);
             this.guna2CirclePictureBox7.Name = "guna2CirclePictureBox7";
@@ -188,7 +185,6 @@
             // guna2CirclePictureBox6
             // 
             this.guna2CirclePictureBox6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2CirclePictureBox6.Image = global::HMS.Properties.Resources.mail;
             this.guna2CirclePictureBox6.ImageRotate = 0F;
             this.guna2CirclePictureBox6.Location = new System.Drawing.Point(120, 194);
             this.guna2CirclePictureBox6.Name = "guna2CirclePictureBox6";
@@ -201,7 +197,6 @@
             // guna2CirclePictureBox5
             // 
             this.guna2CirclePictureBox5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2CirclePictureBox5.Image = global::HMS.Properties.Resources.Gender;
             this.guna2CirclePictureBox5.ImageRotate = 0F;
             this.guna2CirclePictureBox5.Location = new System.Drawing.Point(120, 139);
             this.guna2CirclePictureBox5.Name = "guna2CirclePictureBox5";
@@ -214,7 +209,6 @@
             // guna2CirclePictureBox4
             // 
             this.guna2CirclePictureBox4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2CirclePictureBox4.Image = global::HMS.Properties.Resources.signature;
             this.guna2CirclePictureBox4.ImageRotate = 0F;
             this.guna2CirclePictureBox4.Location = new System.Drawing.Point(120, 84);
             this.guna2CirclePictureBox4.Name = "guna2CirclePictureBox4";
@@ -227,7 +221,6 @@
             // guna2CirclePictureBox1
             // 
             this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2CirclePictureBox1.Image = global::HMS.Properties.Resources.signature;
             this.guna2CirclePictureBox1.ImageRotate = 0F;
             this.guna2CirclePictureBox1.Location = new System.Drawing.Point(120, 29);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
@@ -266,7 +259,6 @@
             // pbPersonImage
             // 
             this.pbPersonImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
-            this.pbPersonImage.Image = global::HMS.Properties.Resources.unknown;
             this.pbPersonImage.ImageRotate = 0F;
             this.pbPersonImage.Location = new System.Drawing.Point(831, 54);
             this.pbPersonImage.Name = "pbPersonImage";
@@ -367,7 +359,6 @@
             // guna2CirclePictureBox3
             // 
             this.guna2CirclePictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
-            this.guna2CirclePictureBox3.Image = global::HMS.Properties.Resources.female_worker;
             this.guna2CirclePictureBox3.ImageRotate = 0F;
             this.guna2CirclePictureBox3.Location = new System.Drawing.Point(298, 142);
             this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
@@ -380,7 +371,6 @@
             // guna2CirclePictureBox2
             // 
             this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
-            this.guna2CirclePictureBox2.Image = global::HMS.Properties.Resources.male;
             this.guna2CirclePictureBox2.ImageRotate = 0F;
             this.guna2CirclePictureBox2.Location = new System.Drawing.Point(173, 142);
             this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
@@ -678,7 +668,6 @@
             this.btnClose.FillColor = System.Drawing.Color.Silver;
             this.btnClose.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.Black;
-            this.btnClose.Image = global::HMS.Properties.Resources.close__1_;
             this.btnClose.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnClose.Location = new System.Drawing.Point(650, 389);
             this.btnClose.Name = "btnClose";
@@ -698,7 +687,6 @@
             this.btnSave.FillColor = System.Drawing.Color.Silver;
             this.btnSave.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Image = global::HMS.Properties.Resources.save;
             this.btnSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSave.Location = new System.Drawing.Point(875, 389);
             this.btnSave.Name = "btnSave";
@@ -714,7 +702,6 @@
             // guna2CirclePictureBox10
             // 
             this.guna2CirclePictureBox10.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2CirclePictureBox10.Image = global::HMS.Properties.Resources.signature;
             this.guna2CirclePictureBox10.ImageRotate = 0F;
             this.guna2CirclePictureBox10.Location = new System.Drawing.Point(547, 143);
             this.guna2CirclePictureBox10.Name = "guna2CirclePictureBox10";
