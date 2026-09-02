@@ -37,32 +37,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // guna2CustomGradientPanel2
-            // 
-            this.guna2CustomGradientPanel2.Controls.Add(this.guna2CustomGradientPanel3);
-            this.guna2CustomGradientPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2CustomGradientPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            this.guna2CustomGradientPanel2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            this.guna2CustomGradientPanel2.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            this.guna2CustomGradientPanel2.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(355, 12);
-            this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.Padding = new System.Windows.Forms.Padding(10);
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(1437, 1037);
-            this.guna2CustomGradientPanel2.TabIndex = 1;
-            // 
-            // guna2CustomGradientPanel3
-            // 
-            this.guna2CustomGradientPanel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CustomGradientPanel3.BorderRadius = 20;
-            this.guna2CustomGradientPanel3.Controls.Add(this.guna2CirclePictureBox1);
-            this.guna2CustomGradientPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2CustomGradientPanel3.ForeColor = System.Drawing.Color.Transparent;
-            this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(10, 10);
-            this.guna2CustomGradientPanel3.Name = "guna2CustomGradientPanel3";
-            this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(1417, 1017);
-            this.guna2CustomGradientPanel3.TabIndex = 0;
-            // 
             // guna2CustomGradientPanel1
             // 
             this.guna2CustomGradientPanel1.BackColor = System.Drawing.Color.Gainsboro;
@@ -77,16 +51,7 @@
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(343, 948);
             this.guna2CustomGradientPanel1.TabIndex = 0;
             // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::HMS.Properties.Resources.Logo;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(92, 26);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(141, 104);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
+            // guna2CustomGradientPanel2
             // 
             this.guna2CustomGradientPanel2.Controls.Add(this.guna2CustomGradientPanel3);
             this.guna2CustomGradientPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -148,10 +113,7 @@
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel3;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private Guna.UI2.WinForms.Guna2PictureBox PBuserImage;
+
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel3;
