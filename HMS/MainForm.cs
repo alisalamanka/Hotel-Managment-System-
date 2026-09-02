@@ -1,4 +1,5 @@
-﻿using HMS.People;
+﻿using Guna.UI2.WinForms;
+using HMS.People;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,20 @@ namespace HMS
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void btnHover(object sender, EventArgs e)
+        {
+            Guna2Button btn = (Guna2Button)sender;
+            btn.FillColor = Color.White;
+            btn.ForeColor = Color.FromArgb(24, 26, 29);
+        }
+
+        private void btnexit(object sender, EventArgs e)
+        {
+            Guna2Button btn = (Guna2Button)sender;
+            btn.FillColor = Color.FromArgb(24, 26, 29);
+            btn.ForeColor = Color.White;
         }
 
         private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
