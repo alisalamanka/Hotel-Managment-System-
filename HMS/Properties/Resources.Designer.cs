@@ -143,16 +143,6 @@ namespace HMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bed {
-            get {
-                object obj = ResourceManager.GetObject("bed", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap bed__1_ {
             get {
                 object obj = ResourceManager.GetObject("bed__1_", resourceCulture);

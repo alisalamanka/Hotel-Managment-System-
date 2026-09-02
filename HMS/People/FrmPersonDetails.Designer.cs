@@ -53,7 +53,6 @@
             this.btnClose.FillColor = System.Drawing.Color.DimGray;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.Black;
-            this.btnClose.Image = global::HMS.Properties.Resources.close__1_;
             this.btnClose.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnClose.Location = new System.Drawing.Point(771, 411);
             this.btnClose.Name = "btnClose";

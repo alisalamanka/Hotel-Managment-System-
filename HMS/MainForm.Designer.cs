@@ -81,7 +81,6 @@
             // 
             this.guna2CirclePictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2CirclePictureBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox1.Image = global::HMS.Properties.Resources.background;
             this.guna2CirclePictureBox1.ImageRotate = 0F;
             this.guna2CirclePictureBox1.Location = new System.Drawing.Point(0, 0);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
@@ -105,6 +104,7 @@
             this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(12);
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.guna2CustomGradientPanel2.ResumeLayout(false);
             this.guna2CustomGradientPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();

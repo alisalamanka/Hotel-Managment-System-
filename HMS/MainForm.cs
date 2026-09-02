@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HMS.People;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,12 @@ namespace HMS
         private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+       
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
         }
     }
 }
