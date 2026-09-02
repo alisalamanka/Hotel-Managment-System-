@@ -133,29 +133,9 @@ namespace HMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap backgrofund {
-            get {
-                object obj = ResourceManager.GetObject("backgrofund", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap background {
             get {
                 object obj = ResourceManager.GetObject("background", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bar_chart {
-            get {
-                object obj = ResourceManager.GetObject("bar_chart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -995,7 +975,7 @@ namespace HMS.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap setting__1_ {
             get {
-                object obj = ResourceManager.GetObject("setting__1_", resourceCulture);
+                object obj = ResourceManager.GetObject("setting1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
