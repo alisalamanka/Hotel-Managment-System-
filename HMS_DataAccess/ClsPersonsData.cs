@@ -25,7 +25,7 @@ namespace HMS_DataAccess
                 {
                     using (SqlCommand cmd = new SqlCommand("SP_FindPersonByID", conn))
                     {
-                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                        cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@PersonID", personID);
                         conn.Open();
 
@@ -37,6 +37,7 @@ namespace HMS_DataAccess
                                 Fname = dr["FirstName"].ToString();
                                 Lname = dr["LastName"].ToString();
                                 DateOfBirth = Convert.ToDateTime(dr["DateOfBirth"]);
+                                NatNumber = dr["NationalNo"].ToString();
                                 Gendor = Convert.ToByte(dr["Gendor"]);
                                 Phone = dr["Phone"].ToString();
                                 imagePath = dr["imagePath"] == DBNull.Value ? string.Empty : dr["imagePath"].ToString();
@@ -185,7 +186,7 @@ namespace HMS_DataAccess
         public static bool UpdatePerson(int PersonID, string Fname, string Lname, DateTime DateOfBirth, byte Gendor, string Phone, string Email, int CountryID, string NatNumber, string ImagePAth)
         {
 
-                string ConnString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
 
 
                 try
@@ -195,7 +196,9 @@ namespace HMS_DataAccess
                     {
                         using (SqlCommand cmd = new SqlCommand("SP_UpdatePersonInfo", conn))
                         {
-                            cmd.Parameters.AddWithValue("@FirstName", Fname);
+                           cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@PersonID", PersonID);
+                           cmd.Parameters.AddWithValue("@FirstName", Fname);
                             cmd.Parameters.AddWithValue("@LastName", Lname);
                             cmd.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
                             cmd.Parameters.AddWithValue("@Phone", Phone);

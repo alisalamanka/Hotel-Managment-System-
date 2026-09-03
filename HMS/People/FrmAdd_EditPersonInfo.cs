@@ -82,6 +82,11 @@ namespace HMS.People
                 tbPhone.Text= _CurrentPerson.Phone;
                 tbEmail.Text= _CurrentPerson.Email;
                 tbNationalNumber.Text = _CurrentPerson.NationalNumber;
+
+                if (string.IsNullOrEmpty(_CurrentPerson.NationalNumber))
+                {
+                    ClsUtil.ShowErrorMessage("dsfsd");
+                }
                 if (_CurrentPerson.DateOfBirth >= dtpDateOfBirth.MinDate &&
                     _CurrentPerson.DateOfBirth <= dtpDateOfBirth.MaxDate)
                 {

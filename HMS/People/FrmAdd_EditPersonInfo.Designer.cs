@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.lblAddEditPerson = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.guna2CirclePictureBox10 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.tbNationalNumber = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2CirclePictureBox9 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox8 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox7 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -73,11 +76,9 @@
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.InputsEP = new System.Windows.Forms.ErrorProvider(this.components);
-            this.guna2CirclePictureBox10 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.tbNationalNumber = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.OFDImages = new System.Windows.Forms.OpenFileDialog();
             this.guna2GroupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox7)).BeginInit();
@@ -89,7 +90,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InputsEP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox10)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAddEditPerson
@@ -145,9 +145,57 @@
             this.guna2GroupBox2.Size = new System.Drawing.Size(1024, 268);
             this.guna2GroupBox2.TabIndex = 18;
             // 
+            // guna2CirclePictureBox10
+            // 
+            this.guna2CirclePictureBox10.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2CirclePictureBox10.Image = global::HMS.Properties.Resources.signature;
+            this.guna2CirclePictureBox10.ImageRotate = 0F;
+            this.guna2CirclePictureBox10.Location = new System.Drawing.Point(547, 143);
+            this.guna2CirclePictureBox10.Name = "guna2CirclePictureBox10";
+            this.guna2CirclePictureBox10.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox10.Size = new System.Drawing.Size(32, 28);
+            this.guna2CirclePictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox10.TabIndex = 37;
+            this.guna2CirclePictureBox10.TabStop = false;
+            // 
+            // tbNationalNumber
+            // 
+            this.tbNationalNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
+            this.tbNationalNumber.BorderRadius = 15;
+            this.tbNationalNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbNationalNumber.DefaultText = "";
+            this.tbNationalNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbNationalNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbNationalNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbNationalNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbNationalNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbNationalNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNationalNumber.ForeColor = System.Drawing.Color.Black;
+            this.tbNationalNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbNationalNumber.Location = new System.Drawing.Point(581, 142);
+            this.tbNationalNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbNationalNumber.Name = "tbNationalNumber";
+            this.tbNationalNumber.PlaceholderText = "";
+            this.tbNationalNumber.SelectedText = "";
+            this.tbNationalNumber.Size = new System.Drawing.Size(235, 33);
+            this.tbNationalNumber.TabIndex = 36;
+            this.tbNationalNumber.Validating += new System.ComponentModel.CancelEventHandler(this.tbNationalNumber_Validating);
+            // 
+            // guna2HtmlLabel6
+            // 
+            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(449, 145);
+            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(87, 23);
+            this.guna2HtmlLabel6.TabIndex = 35;
+            this.guna2HtmlLabel6.Text = "N.Number::";
+            // 
             // guna2CirclePictureBox9
             // 
             this.guna2CirclePictureBox9.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2CirclePictureBox9.Image = global::HMS.Properties.Resources.Country;
             this.guna2CirclePictureBox9.ImageRotate = 0F;
             this.guna2CirclePictureBox9.Location = new System.Drawing.Point(547, 202);
             this.guna2CirclePictureBox9.Name = "guna2CirclePictureBox9";
@@ -161,6 +209,7 @@
             // 
             this.guna2CirclePictureBox8.BackColor = System.Drawing.Color.WhiteSmoke;
             this.guna2CirclePictureBox8.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2CirclePictureBox8.Image = global::HMS.Properties.Resources.telephone;
             this.guna2CirclePictureBox8.ImageRotate = 0F;
             this.guna2CirclePictureBox8.Location = new System.Drawing.Point(542, 84);
             this.guna2CirclePictureBox8.Name = "guna2CirclePictureBox8";
@@ -173,6 +222,7 @@
             // guna2CirclePictureBox7
             // 
             this.guna2CirclePictureBox7.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2CirclePictureBox7.Image = global::HMS.Properties.Resources.calendar;
             this.guna2CirclePictureBox7.ImageRotate = 0F;
             this.guna2CirclePictureBox7.Location = new System.Drawing.Point(542, 25);
             this.guna2CirclePictureBox7.Name = "guna2CirclePictureBox7";
@@ -185,6 +235,7 @@
             // guna2CirclePictureBox6
             // 
             this.guna2CirclePictureBox6.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2CirclePictureBox6.Image = global::HMS.Properties.Resources.mail;
             this.guna2CirclePictureBox6.ImageRotate = 0F;
             this.guna2CirclePictureBox6.Location = new System.Drawing.Point(120, 194);
             this.guna2CirclePictureBox6.Name = "guna2CirclePictureBox6";
@@ -197,6 +248,7 @@
             // guna2CirclePictureBox5
             // 
             this.guna2CirclePictureBox5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2CirclePictureBox5.Image = global::HMS.Properties.Resources.employees;
             this.guna2CirclePictureBox5.ImageRotate = 0F;
             this.guna2CirclePictureBox5.Location = new System.Drawing.Point(120, 139);
             this.guna2CirclePictureBox5.Name = "guna2CirclePictureBox5";
@@ -209,6 +261,7 @@
             // guna2CirclePictureBox4
             // 
             this.guna2CirclePictureBox4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2CirclePictureBox4.Image = global::HMS.Properties.Resources.signature;
             this.guna2CirclePictureBox4.ImageRotate = 0F;
             this.guna2CirclePictureBox4.Location = new System.Drawing.Point(120, 84);
             this.guna2CirclePictureBox4.Name = "guna2CirclePictureBox4";
@@ -221,6 +274,7 @@
             // guna2CirclePictureBox1
             // 
             this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2CirclePictureBox1.Image = global::HMS.Properties.Resources.signature;
             this.guna2CirclePictureBox1.ImageRotate = 0F;
             this.guna2CirclePictureBox1.Location = new System.Drawing.Point(120, 29);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
@@ -359,6 +413,7 @@
             // guna2CirclePictureBox3
             // 
             this.guna2CirclePictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
+            this.guna2CirclePictureBox3.Image = global::HMS.Properties.Resources.female_worker;
             this.guna2CirclePictureBox3.ImageRotate = 0F;
             this.guna2CirclePictureBox3.Location = new System.Drawing.Point(298, 142);
             this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
@@ -371,6 +426,7 @@
             // guna2CirclePictureBox2
             // 
             this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
+            this.guna2CirclePictureBox2.Image = global::HMS.Properties.Resources.male;
             this.guna2CirclePictureBox2.ImageRotate = 0F;
             this.guna2CirclePictureBox2.Location = new System.Drawing.Point(173, 142);
             this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
@@ -699,52 +755,6 @@
             // 
             this.InputsEP.ContainerControl = this;
             // 
-            // guna2CirclePictureBox10
-            // 
-            this.guna2CirclePictureBox10.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2CirclePictureBox10.ImageRotate = 0F;
-            this.guna2CirclePictureBox10.Location = new System.Drawing.Point(547, 143);
-            this.guna2CirclePictureBox10.Name = "guna2CirclePictureBox10";
-            this.guna2CirclePictureBox10.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox10.Size = new System.Drawing.Size(32, 28);
-            this.guna2CirclePictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox10.TabIndex = 37;
-            this.guna2CirclePictureBox10.TabStop = false;
-            // 
-            // tbNationalNumber
-            // 
-            this.tbNationalNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
-            this.tbNationalNumber.BorderRadius = 15;
-            this.tbNationalNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbNationalNumber.DefaultText = "";
-            this.tbNationalNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbNationalNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbNationalNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbNationalNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbNationalNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbNationalNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNationalNumber.ForeColor = System.Drawing.Color.Black;
-            this.tbNationalNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbNationalNumber.Location = new System.Drawing.Point(581, 142);
-            this.tbNationalNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tbNationalNumber.Name = "tbNationalNumber";
-            this.tbNationalNumber.PlaceholderText = "";
-            this.tbNationalNumber.SelectedText = "";
-            this.tbNationalNumber.Size = new System.Drawing.Size(235, 33);
-            this.tbNationalNumber.TabIndex = 36;
-            this.tbNationalNumber.Validating += new System.ComponentModel.CancelEventHandler(this.tbNationalNumber_Validating);
-            // 
-            // guna2HtmlLabel6
-            // 
-            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(449, 145);
-            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(87, 23);
-            this.guna2HtmlLabel6.TabIndex = 35;
-            this.guna2HtmlLabel6.Text = "N.Number::";
-            // 
             // OFDImages
             // 
             this.OFDImages.FileName = "openFileDialog1";
@@ -768,6 +778,7 @@
             this.Load += new System.EventHandler(this.FrmAdd_EditPersonInfo_Load);
             this.guna2GroupBox2.ResumeLayout(false);
             this.guna2GroupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox7)).EndInit();
@@ -779,7 +790,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.InputsEP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox10)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

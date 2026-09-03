@@ -63,7 +63,7 @@
             // 
             // uCpersonCard1
             // 
-            this.uCpersonCard1.BackColor = System.Drawing.Color.Gainsboro;
+            this.uCpersonCard1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.uCpersonCard1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uCpersonCard1.Location = new System.Drawing.Point(21, 87);
             this.uCpersonCard1.Margin = new System.Windows.Forms.Padding(4);
@@ -75,7 +75,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(994, 468);
             this.Controls.Add(this.uCpersonCard1);
             this.Controls.Add(this.btnClose);

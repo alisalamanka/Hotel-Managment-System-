@@ -43,5 +43,11 @@ namespace HMS
         private void MainForm_Load(object sender, EventArgs e)
         {
         }
+
+        private void TSMIpersons_Click(object sender, EventArgs e)
+        {
+            FrmManagePersons frm = new FrmManagePersons();
+            frm.ShowDialog();
+        }
     }
 }
