@@ -116,6 +116,11 @@ namespace HMS.People.Controls
 
         }
 
+        public void Clear()
+        {
+            uCpersonCard1.Clear();
+        }
+
         public void LoadPersonInfo(int PersonID)
         {
             CBfilterby.SelectedIndex = 0;
@@ -146,6 +151,12 @@ namespace HMS.People.Controls
         public void FilterFocus()
         {
             txtFilterByValue.Focus();
+        }
+
+        private void btnAddNewPerson_Click(object sender, EventArgs e)
+        {
+            FrmAdd_EditPersonInfo frm = new FrmAdd_EditPersonInfo();
+            frm.ShowDialog();
         }
     }
 }

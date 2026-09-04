@@ -169,7 +169,7 @@
             // 
             // guna2PictureBox6
             // 
-            this.guna2PictureBox6.BackColor = System.Drawing.SystemColors.Control;
+            this.guna2PictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox6.BorderRadius = 7;
             this.guna2PictureBox6.Image = global::HMS.Properties.Resources.telephone;
             this.guna2PictureBox6.ImageRotate = 0F;
@@ -182,7 +182,7 @@
             // 
             // guna2PictureBox7
             // 
-            this.guna2PictureBox7.BackColor = System.Drawing.SystemColors.Control;
+            this.guna2PictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox7.BorderRadius = 7;
             this.guna2PictureBox7.Image = global::HMS.Properties.Resources.Country;
             this.guna2PictureBox7.ImageRotate = 0F;
@@ -195,7 +195,7 @@
             // 
             // guna2PictureBox8
             // 
-            this.guna2PictureBox8.BackColor = System.Drawing.SystemColors.Control;
+            this.guna2PictureBox8.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox8.BorderRadius = 7;
             this.guna2PictureBox8.Image = global::HMS.Properties.Resources.calendar;
             this.guna2PictureBox8.ImageRotate = 0F;
@@ -208,7 +208,7 @@
             // 
             // guna2PictureBox5
             // 
-            this.guna2PictureBox5.BackColor = System.Drawing.SystemColors.Control;
+            this.guna2PictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox5.BorderRadius = 7;
             this.guna2PictureBox5.Image = global::HMS.Properties.Resources.mail;
             this.guna2PictureBox5.ImageRotate = 0F;
@@ -221,7 +221,7 @@
             // 
             // guna2PictureBox4
             // 
-            this.guna2PictureBox4.BackColor = System.Drawing.SystemColors.Control;
+            this.guna2PictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox4.BorderRadius = 7;
             this.guna2PictureBox4.Image = global::HMS.Properties.Resources.male;
             this.guna2PictureBox4.ImageRotate = 0F;
@@ -234,7 +234,7 @@
             // 
             // guna2PictureBox3
             // 
-            this.guna2PictureBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox3.BorderRadius = 10;
             this.guna2PictureBox3.Image = global::HMS.Properties.Resources.contract;
             this.guna2PictureBox3.ImageRotate = 0F;
@@ -247,7 +247,7 @@
             // 
             // guna2PictureBox2
             // 
-            this.guna2PictureBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox2.BorderRadius = 7;
             this.guna2PictureBox2.Image = global::HMS.Properties.Resources.contract;
             this.guna2PictureBox2.ImageRotate = 0F;
@@ -260,7 +260,7 @@
             // 
             // guna2PictureBox1
             // 
-            this.guna2PictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.BorderRadius = 7;
             this.guna2PictureBox1.Image = global::HMS.Properties.Resources.password;
             this.guna2PictureBox1.ImageRotate = 0F;

@@ -45,6 +45,20 @@ namespace HMS.People.Controls
             _LoadPersonImage();
         }
 
+        public void Clear()
+        {
+            lblCountry.Text = "????";
+            lblDOBirth.Text = "????";
+            lblEmail.Text = "????";
+            lblPhone.Text = "????";
+            lblFullname.Text = "????";
+            lblGendor.Text = "????";
+            lblNationalNumber.Text = "????";
+            lblFullname.Text = "????";
+            LblPersonID.Text = "????";
+            
+        }
+
         public void _LoadPersonInfo(int  personID)
         {
             _Person = ClsPerson.Find(personID);

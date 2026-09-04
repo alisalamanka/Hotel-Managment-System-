@@ -108,7 +108,9 @@ namespace HMS.People
                 if (File.Exists(_CurrentPerson.ImagePath))
                 {
                     pbPersonImage.ImageLocation=_CurrentPerson.ImagePath;
+                    
                 }
+                llblRemoveImage.Visible = !string.IsNullOrEmpty(_CurrentPerson.ImagePath) && File.Exists(_CurrentPerson.ImagePath);
             }
             else
             {
@@ -165,6 +167,8 @@ namespace HMS.People
         {
             if (!string.IsNullOrEmpty(_CurrentPerson.ImagePath) && File.Exists(_CurrentPerson.ImagePath))
             {
+                pbPersonImage.ImageLocation = "";
+
                 try
                 {
                     File.Delete(_CurrentPerson.ImagePath);
@@ -183,7 +187,7 @@ namespace HMS.People
 
             if (ClsUtil.CopyImageToFolder(ref sourceFile, targetFolder))
             {
-                pbPersonImage.ImageLocation = sourceFile;
+                pbPersonImage.ImageLocation=sourceFile;
                 return true;
             }
             else
@@ -293,7 +297,7 @@ namespace HMS.People
 
         private void llblRemoveImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            pbPersonImage.Image = null;
+            pbPersonImage.ImageLocation = "";
             if (rbMale.Checked)
             {
                 pbPersonImage.Image = Resources.man;
@@ -303,7 +307,7 @@ namespace HMS.People
                 pbPersonImage.Image = Resources.woman;
             }
             llblRemoveImage.Visible = false;
-            pbPersonImage.ImageLocation = null;
+
         }
 
         private void llblEditPersonImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -338,7 +342,11 @@ namespace HMS.People
                 _CurrentPerson.Gendor = (byte)EnGender.Female;
             }
             _CurrentPerson.Phone = tbPhone.Text;
-            _CurrentPerson.ImagePath = pbPersonImage.ImageLocation;
+            if (pbPersonImage.ImageLocation!=null)
+            {
+                _CurrentPerson.ImagePath = pbPersonImage.ImageLocation;
+
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
