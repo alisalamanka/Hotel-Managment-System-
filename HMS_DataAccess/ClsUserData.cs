@@ -36,10 +36,10 @@ namespace HMS_DataAccess
                             else
                             {
                                 return false;
-                            }
                         }
                     }
                 }
+            }
             }
             catch (Exception e)
             {
@@ -85,9 +85,9 @@ namespace HMS_DataAccess
                 return false;
             }
         }
-    
 
-        public static bool UpdateUserInfo(int PersonID,string Fname, string Lname, string NatNumber, DateTime DateOfBirth, string Phone, string Email, bool Gender, string ImagePath,
+
+        public static bool UpdateUserInfo(int PersonID,string Fname, string Lname, string NatNumber, DateTime DateOfBirth, string Phone, string Email, byte Gender, string ImagePath,
             int CountryID,   string UserName,  string Password,  bool IsActive,  int UserID,  ref Exception ErrorAccoured)
         {
             string conn = ConfigurationManager.AppSettings["ConnectionString"];
