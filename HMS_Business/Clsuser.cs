@@ -56,11 +56,12 @@ namespace HMS_Business
 
             if (!Found)
             {
-                if (error != null)
-                {
-                    ClsUtil.ClsLogger.LogError($"Failed to get User Info with ID {userID} ", error);
-                    return null;
-                }
+            if (error != null)
+            {
+                ClsUtil.ClsLogger.LogError($"Failed to get User Info with ID {userID} ", error);
+            }
+                return null;
+
             }
 
             return new Clsuser(userID, username, password, personID, isActive == 1);
@@ -77,9 +78,9 @@ namespace HMS_Business
 
             if (!UserFounded)
             {
-                if (error != null)
-                {
-                    ClsUtil.ClsLogger.LogError($"Failed to get User Info  ", error);
+            if (error != null)
+            {
+                ClsUtil.ClsLogger.LogError($"Failed to get User Info  ", error);
                 }
                 return null;
             }
@@ -106,9 +107,9 @@ namespace HMS_Business
             int? NewUserID = ClsUserData.AddNewUser(Username, password, PersonID, isActive, ref exception);
             if (NewUserID==null)
             {
-                if (exception != null)
-                {
-                    ClsUtil.ClsLogger.LogError("Failed to Add New User", exception);
+            if (exception != null)
+            {
+                ClsUtil.ClsLogger.LogError("Failed to Add New User", exception);
                 }
                 return false;
             }
@@ -143,9 +144,9 @@ namespace HMS_Business
            bool deleted= ClsUserData.DeleteUser(UserID.Value, ref exception);
             if (!deleted)
             {
-                if (exception != null)
-                {
-                    ClsUtil.ClsLogger.LogError($"Failed to Delete User with ID = {UserID.Value}", exception);
+            if (exception != null)
+            {
+                ClsUtil.ClsLogger.LogError($"Failed to Delete User with ID = {UserID.Value}", exception);
                 }
                 return false;
             }
