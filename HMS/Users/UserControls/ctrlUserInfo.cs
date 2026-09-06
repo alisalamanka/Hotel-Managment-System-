@@ -45,12 +45,7 @@ namespace HMS.Users.UserControls
                     _Reset();
                 }
             }
-            else
-            {
-                ClsUtil.ShowErrorMessage("Invalid User ID provided!");
-                return;
-            }
-
+           
         }
 
         private void _FillUserInfo()
