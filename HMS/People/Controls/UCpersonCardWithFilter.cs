@@ -105,7 +105,7 @@ namespace HMS.People.Controls
         {
             if (CBfilterby.Text=="Person ID")
             {
-                e.Handled = !char.IsControl(e.KeyChar) || !char.IsDigit(e.KeyChar);
+                e.Handled = !char.IsControl(e.KeyChar)&& !char.IsDigit(e.KeyChar);
                 return;
             }
             if (e.KeyChar==(char)13)
