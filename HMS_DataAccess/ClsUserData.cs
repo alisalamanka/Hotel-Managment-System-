@@ -36,10 +36,10 @@ namespace HMS_DataAccess
                             else
                             {
                                 return false;
+                            }
                         }
                     }
                 }
-            }
             }
             catch (Exception e)
             {
@@ -87,8 +87,8 @@ namespace HMS_DataAccess
         }
 
 
-        public static bool UpdateUserInfo(int PersonID,string Fname, string Lname, string NatNumber, DateTime DateOfBirth, string Phone, string Email, byte Gender, string ImagePath,
-            int CountryID,   string UserName,  string Password,  bool IsActive,  int UserID,  ref Exception ErrorAccoured)
+        public static bool UpdateUserInfo(int PersonID, string Fname, string Lname, string NatNumber, DateTime DateOfBirth, string Phone, string Email, byte Gender, string ImagePath,
+            int CountryID, string UserName, string Password, bool IsActive, int UserID, ref Exception ErrorAccoured)
         {
             string conn = ConfigurationManager.AppSettings["ConnectionString"];
 
@@ -159,7 +159,7 @@ namespace HMS_DataAccess
             }
         }
 
-        public static int? AddNewUser(  string UserName,  string Password, int PeronID, bool IsActive, ref Exception ErrorAccoured)
+        public static int? AddNewUser(string UserName, string Password, int PeronID, bool IsActive, ref Exception ErrorAccoured)
         {
             string conn = ConfigurationManager.AppSettings["ConnectionString"];
 
