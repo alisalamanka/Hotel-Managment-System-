@@ -108,6 +108,7 @@
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(83, 45);
             this.btnFind.TabIndex = 4;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // btnAddNewPerson
             // 

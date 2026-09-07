@@ -1,4 +1,5 @@
-﻿using HMS_Business;
+﻿using GlobalClasses;
+using HMS_Business;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -105,7 +106,7 @@ namespace HMS.People.Controls
         {
             if (CBfilterby.Text=="Person ID")
             {
-                e.Handled = !char.IsControl(e.KeyChar) || !char.IsDigit(e.KeyChar);
+                e.Handled = !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar);
                 return;
             }
             if (e.KeyChar==(char)13)
@@ -146,6 +147,16 @@ namespace HMS.People.Controls
         public void FilterFocus()
         {
             txtFilterByValue.Focus();
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            if (!this.ValidateChildren())
+            {
+                ClsUtil.ShowErrorMessage("please correct the errors before Find the person!");
+                return;
+            }
+            Find();
         }
     }
 }
