@@ -58,8 +58,7 @@
             this.CBfilterby.ItemHeight = 30;
             this.CBfilterby.Items.AddRange(new object[] {
             "Person ID",
-            "National Number",
-            ""});
+            "National Number"});
             this.CBfilterby.Location = new System.Drawing.Point(120, 68);
             this.CBfilterby.Name = "CBfilterby";
             this.CBfilterby.Size = new System.Drawing.Size(247, 36);
@@ -108,6 +107,7 @@
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(83, 45);
             this.btnFind.TabIndex = 4;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // btnAddNewPerson
             // 
