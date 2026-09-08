@@ -49,7 +49,7 @@ namespace HMS_Business
             int personID = 0;
             string username = string.Empty;
             string password = string.Empty;
-            byte isActive = 0;
+            bool isActive = false;
             Exception error = null;
 
            bool Found= ClsUserData.GetUserInfoByID(userID, ref personID, ref username, ref password, ref isActive, ref error);
@@ -64,7 +64,7 @@ namespace HMS_Business
 
             }
 
-            return new Clsuser(userID, username, password, personID, isActive == 1);
+            return new Clsuser(userID, username, password, personID, isActive == true);
         }
 
         public static Clsuser Find(string Username, string Password)

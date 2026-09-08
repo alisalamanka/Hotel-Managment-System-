@@ -31,7 +31,7 @@ namespace HMS.Users.UserControls
         public void LoadUserInfo(int? userID)
         {
             _userId = userID;
-            if (_userId.HasValue)
+            if (_userId!=null&& _userId.HasValue)
             {
                 _CurrentUser = Clsuser.Find(_userId.Value);
                 if (_CurrentUser != null)

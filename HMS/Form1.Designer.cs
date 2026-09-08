@@ -28,35 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uCpersonCardWithFilter1 = new HMS.People.Controls.UCpersonCardWithFilter();
+            this.ctrlUserInfo1 = new HMS.Users.UserControls.ctrlUserInfo();
             this.SuspendLayout();
             // 
-            // uCpersonCardWithFilter1
+            // ctrlUserInfo1
             // 
-            this.uCpersonCardWithFilter1.BackColor = System.Drawing.Color.Gainsboro;
-            this.uCpersonCardWithFilter1.FilterEnabled = true;
-            this.uCpersonCardWithFilter1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uCpersonCardWithFilter1.Location = new System.Drawing.Point(64, 43);
-            this.uCpersonCardWithFilter1.Margin = new System.Windows.Forms.Padding(4);
-            this.uCpersonCardWithFilter1.Name = "uCpersonCardWithFilter1";
-            this.uCpersonCardWithFilter1.ShowAddnewPerson = true;
-            this.uCpersonCardWithFilter1.Size = new System.Drawing.Size(952, 668);
-            this.uCpersonCardWithFilter1.TabIndex = 0;
+            this.ctrlUserInfo1.BackColor = System.Drawing.Color.Gainsboro;
+            this.ctrlUserInfo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrlUserInfo1.Location = new System.Drawing.Point(71, 38);
+            this.ctrlUserInfo1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ctrlUserInfo1.Name = "ctrlUserInfo1";
+            this.ctrlUserInfo1.Size = new System.Drawing.Size(974, 502);
+            this.ctrlUserInfo1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1131, 748);
-            this.Controls.Add(this.uCpersonCardWithFilter1);
+            this.Controls.Add(this.ctrlUserInfo1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private People.Controls.UCpersonCardWithFilter uCpersonCardWithFilter1;
+        private Users.UserControls.ctrlUserInfo ctrlUserInfo1;
     }
 }

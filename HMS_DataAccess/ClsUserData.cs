@@ -12,7 +12,7 @@ namespace HMS_DataAccess
 {
     public class ClsUserData
     {
-        public static bool GetUserInfoByID(int ID, ref int PersonID, ref string UserName, ref string Password, ref byte isActive, ref Exception ErrorAccoured)
+        public static bool GetUserInfoByID(int ID, ref int PersonID, ref string UserName, ref string Password, ref bool isActive, ref Exception ErrorAccoured)
         {
             string conn = ConfigurationManager.AppSettings["ConnectionString"];
             try
@@ -31,7 +31,7 @@ namespace HMS_DataAccess
                                 PersonID = (int)dr["PersonID"];
                                 UserName = dr["UserName"].ToString();
                                 Password = dr["Password"].ToString();
-                                isActive = (byte)dr["isActive"];
+                                isActive = (bool)dr["isActive"];
                             }
                             else
                             {
