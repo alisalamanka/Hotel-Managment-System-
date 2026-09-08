@@ -69,7 +69,6 @@ namespace HMS.People.Controls
 
             switch(FindBytext)
             {
-                
                 case "Person ID":
                     uCpersonCard1._LoadPersonInfo(int.Parse(txtFilterByValue.Text.Trim()));
                     break;
@@ -155,20 +154,25 @@ namespace HMS.People.Controls
             txtFilterByValue.Focus();
         }
 
-        private void btnAddNewPerson_Click(object sender, EventArgs e)
-        {
-            FrmAdd_EditPersonInfo frm = new FrmAdd_EditPersonInfo();
-            frm.ShowDialog();
-        }
-
         private void btnFind_Click(object sender, EventArgs e)
         {
             if (!this.ValidateChildren())
             {
-                ClsUtil.ShowErrorMessage("please correct the errors before finding a person!");
+                ClsUtil.ShowErrorMessage("please correct the errors before Find the person!");
                 return;
             }
             Find();
+        }
+
+        private void uCpersonCard1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddNewPerson_Click(object sender, EventArgs e)
+        {
+            FrmAdd_EditPersonInfo frmAdd_EditPersonInfo = new FrmAdd_EditPersonInfo();
+            frmAdd_EditPersonInfo.ShowDialog();
         }
     }
 }

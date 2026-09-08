@@ -165,6 +165,7 @@
             this.uCpersonCard1.Name = "uCpersonCard1";
             this.uCpersonCard1.Size = new System.Drawing.Size(930, 317);
             this.uCpersonCard1.TabIndex = 2;
+            this.uCpersonCard1.Load += new System.EventHandler(this.uCpersonCard1_Load);
             // 
             // UCpersonCardWithFilter
             // 
