@@ -34,21 +34,36 @@ namespace HMS.People.Controls
 
         private void FillPersonInfo()
         {
-            LblPersonID.Text = _Person.Id.ToString();
-            lblCountry.Text = _Person.CountryInfo.CountryName;
-            lblDOBirth.Text = _Person.DateOfBirth.ToShortDateString();
+           lblCountry.Text = _Person.CountryInfo.CountryName;
+            lblDOBirth.Text = _Person.DateOfBirth.ToString("dd/MM/yyyy");
             lblEmail.Text = _Person.Email;
             lblPhone.Text = _Person.Phone;
             lblFullname.Text = _Person.FullName;
             lblGendor.Text=_Person.Gendor == 0 ? "Male" : "Female";
             lblNationalNumber.Text = _Person.NationalNumber;
-            _LoadPersonImage();
+            LblPersonID.Text = _Person.Id.Value.ToString();
+           
+            
         }
 
-        public void _LoadPersonInfo(int  personID)
+        public void Clear()
+        {
+            lblCountry.Text = "????";
+            lblDOBirth.Text = "????";
+            lblEmail.Text = "????";
+            lblPhone.Text = "????";
+            lblFullname.Text = "????";
+            lblGendor.Text = "????";
+            lblNationalNumber.Text = "????";
+            lblFullname.Text = "????";
+            LblPersonID.Text = "????";
+            
+        }
+
+        public void _LoadPersonInfo(int personID)
         {
             _Person = ClsPerson.Find(personID);
-            if (_Person.Id!=null)
+            if (_Person.Id.HasValue)
             {
                 _PersonID = _Person.Id;
                 FillPersonInfo();
@@ -62,7 +77,7 @@ namespace HMS.People.Controls
         public void _LoadPersonInfo(string NatNumber)
         {
             _Person = ClsPerson.Find(NatNumber);
-            if (_Person.Id != null)
+            if (_Person.Id.HasValue)
             {
                 _PersonID = _Person.Id;
                 FillPersonInfo();
@@ -102,8 +117,11 @@ namespace HMS.People.Controls
 
         private void llblEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FrmAdd_EditPersonInfo frm = new FrmAdd_EditPersonInfo(_Person.Id.Value);
-            frm.ShowDialog();
+            if (_Person.Id.HasValue)
+            {
+                FrmAdd_EditPersonInfo frm = new FrmAdd_EditPersonInfo(_Person.Id.Value);
+                frm.ShowDialog();
+            }
         }
     }
 }

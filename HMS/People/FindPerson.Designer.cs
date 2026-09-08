@@ -31,7 +31,6 @@
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.BNclose = new Guna.UI2.WinForms.Guna2Button();
             this.uCpersonCardWithFilter3 = new HMS.People.Controls.UCpersonCardWithFilter();
-            this.uCpersonCard1 = new HMS.People.Controls.UCpersonCard();
             this.SuspendLayout();
             // 
             // guna2HtmlLabel2
@@ -57,41 +56,31 @@
             this.BNclose.ForeColor = System.Drawing.Color.Black;
             this.BNclose.Image = global::HMS.Properties.Resources.close__1_;
             this.BNclose.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.BNclose.Location = new System.Drawing.Point(794, 540);
+            this.BNclose.Location = new System.Drawing.Point(794, 561);
             this.BNclose.Name = "BNclose";
             this.BNclose.Size = new System.Drawing.Size(146, 45);
             this.BNclose.TabIndex = 2;
             this.BNclose.Text = "Close";
+            this.BNclose.Click += new System.EventHandler(this.BNclose_Click_1);
             // 
             // uCpersonCardWithFilter3
             // 
             this.uCpersonCardWithFilter3.BackColor = System.Drawing.Color.Gainsboro;
             this.uCpersonCardWithFilter3.FilterEnabled = true;
             this.uCpersonCardWithFilter3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uCpersonCardWithFilter3.Location = new System.Drawing.Point(13, 67);
+            this.uCpersonCardWithFilter3.Location = new System.Drawing.Point(13, 78);
             this.uCpersonCardWithFilter3.Margin = new System.Windows.Forms.Padding(4);
             this.uCpersonCardWithFilter3.Name = "uCpersonCardWithFilter3";
             this.uCpersonCardWithFilter3.ShowAddnewPerson = true;
-            this.uCpersonCardWithFilter3.Size = new System.Drawing.Size(952, 466);
+            this.uCpersonCardWithFilter3.Size = new System.Drawing.Size(952, 478);
             this.uCpersonCardWithFilter3.TabIndex = 3;
-            // 
-            // uCpersonCard1
-            // 
-            this.uCpersonCard1.BackColor = System.Drawing.Color.Gainsboro;
-            this.uCpersonCard1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uCpersonCard1.Location = new System.Drawing.Point(23, 216);
-            this.uCpersonCard1.Margin = new System.Windows.Forms.Padding(4);
-            this.uCpersonCard1.Name = "uCpersonCard1";
-            this.uCpersonCard1.Size = new System.Drawing.Size(930, 317);
-            this.uCpersonCard1.TabIndex = 4;
             // 
             // FrmFindPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1002, 616);
-            this.Controls.Add(this.uCpersonCard1);
+            this.ClientSize = new System.Drawing.Size(1002, 613);
             this.Controls.Add(this.uCpersonCardWithFilter3);
             this.Controls.Add(this.BNclose);
             this.Controls.Add(this.guna2HtmlLabel2);
@@ -110,7 +99,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2Button BNclose;
         private People.Controls.UCpersonCardWithFilter uCpersonCardWithFilter3;
-        private People.Controls.UCpersonCard uCpersonCard1;
     }
 }
 

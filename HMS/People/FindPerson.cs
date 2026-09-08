@@ -30,5 +30,10 @@ namespace HMS
             OnPersonSelected.Invoke(this, uCpersonCardWithFilter1.SelectedPersonID);
 
         }
+
+        private void BNclose_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
