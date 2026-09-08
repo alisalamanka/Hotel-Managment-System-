@@ -168,5 +168,11 @@ namespace HMS.People.Controls
         {
 
         }
+
+        private void btnAddNewPerson_Click(object sender, EventArgs e)
+        {
+            FrmAdd_EditPersonInfo frmAdd_EditPersonInfo = new FrmAdd_EditPersonInfo();
+            frmAdd_EditPersonInfo.ShowDialog();
+        }
     }
 }

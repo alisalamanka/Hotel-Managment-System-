@@ -128,6 +128,7 @@
             this.btnAddNewPerson.Name = "btnAddNewPerson";
             this.btnAddNewPerson.Size = new System.Drawing.Size(85, 45);
             this.btnAddNewPerson.TabIndex = 5;
+            this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
             // 
             // GPFilter
             // 
