@@ -69,7 +69,7 @@ namespace HMS.People.Controls
 
             switch(FindBytext)
             {
-                case "PersonID":
+                case "Person ID":
                     uCpersonCard1._LoadPersonInfo(int.Parse(txtFilterByValue.Text.Trim()));
                     break;
                 case "National Number":
