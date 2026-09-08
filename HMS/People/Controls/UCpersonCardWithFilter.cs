@@ -106,8 +106,8 @@ namespace HMS.People.Controls
         {
             if (CBfilterby.Text=="Person ID")
             {
-                e.Handled = !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar);
-                return;
+                e.Handled = !char.IsControl(e.KeyChar)&& !char.IsDigit(e.KeyChar);
+                
             }
             if (e.KeyChar==(char)13)
             {
@@ -115,6 +115,11 @@ namespace HMS.People.Controls
 
             }
 
+        }
+
+        public void Clear()
+        {
+            uCpersonCard1.Clear();
         }
 
         public void LoadPersonInfo(int PersonID)
