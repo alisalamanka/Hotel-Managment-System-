@@ -58,8 +58,7 @@
             this.CBfilterby.ItemHeight = 30;
             this.CBfilterby.Items.AddRange(new object[] {
             "Person ID",
-            "National Number",
-            ""});
+            "National Number"});
             this.CBfilterby.Location = new System.Drawing.Point(120, 68);
             this.CBfilterby.Name = "CBfilterby";
             this.CBfilterby.Size = new System.Drawing.Size(247, 36);
@@ -113,6 +112,7 @@
             // btnAddNewPerson
             // 
             this.btnAddNewPerson.Animated = true;
+            this.btnAddNewPerson.BackColor = System.Drawing.Color.Transparent;
             this.btnAddNewPerson.BorderColor = System.Drawing.Color.DimGray;
             this.btnAddNewPerson.BorderRadius = 13;
             this.btnAddNewPerson.BorderThickness = 2;
@@ -164,6 +164,7 @@
             this.uCpersonCard1.Name = "uCpersonCard1";
             this.uCpersonCard1.Size = new System.Drawing.Size(930, 317);
             this.uCpersonCard1.TabIndex = 2;
+            this.uCpersonCard1.Load += new System.EventHandler(this.uCpersonCard1_Load);
             // 
             // UCpersonCardWithFilter
             // 
