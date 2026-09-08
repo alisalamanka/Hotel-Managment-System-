@@ -17,7 +17,7 @@ namespace HMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmFindPerson());
+            Application.Run(new Form1());
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using HMS_Business;
+﻿using GlobalClasses;
+using HMS_Business;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -68,7 +69,7 @@ namespace HMS.People.Controls
 
             switch(FindBytext)
             {
-                case "PersonID":
+                case "Person ID":
                     uCpersonCard1._LoadPersonInfo(int.Parse(txtFilterByValue.Text.Trim()));
                     break;
                 case "National Number":
@@ -116,6 +117,11 @@ namespace HMS.People.Controls
 
         }
 
+        public void Clear()
+        {
+            uCpersonCard1.Clear();
+        }
+
         public void LoadPersonInfo(int PersonID)
         {
             CBfilterby.SelectedIndex = 0;
@@ -146,6 +152,27 @@ namespace HMS.People.Controls
         public void FilterFocus()
         {
             txtFilterByValue.Focus();
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            if (!this.ValidateChildren())
+            {
+                ClsUtil.ShowErrorMessage("please correct the errors before Find the person!");
+                return;
+            }
+            Find();
+        }
+
+        private void uCpersonCard1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddNewPerson_Click(object sender, EventArgs e)
+        {
+            FrmAdd_EditPersonInfo frmAdd_EditPersonInfo = new FrmAdd_EditPersonInfo();
+            frmAdd_EditPersonInfo.ShowDialog();
         }
     }
 }

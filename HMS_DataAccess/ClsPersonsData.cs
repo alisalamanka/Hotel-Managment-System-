@@ -72,7 +72,7 @@ namespace HMS_DataAccess
             {
                 using (SqlConnection conn = new SqlConnection(ConnString))
                 {
-                    using (SqlCommand cmd = new SqlCommand("SP_FindPersonByName", conn))
+                    using (SqlCommand cmd = new SqlCommand("SP_FindPersonByNationalNumber", conn))
                     {
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@NatNumber", NatNumber);

@@ -58,8 +58,7 @@
             this.CBfilterby.ItemHeight = 30;
             this.CBfilterby.Items.AddRange(new object[] {
             "Person ID",
-            "National Number",
-            ""});
+            "National Number"});
             this.CBfilterby.Location = new System.Drawing.Point(120, 68);
             this.CBfilterby.Name = "CBfilterby";
             this.CBfilterby.Size = new System.Drawing.Size(247, 36);
@@ -108,10 +107,12 @@
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(83, 45);
             this.btnFind.TabIndex = 4;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // btnAddNewPerson
             // 
             this.btnAddNewPerson.Animated = true;
+            this.btnAddNewPerson.BackColor = System.Drawing.Color.Transparent;
             this.btnAddNewPerson.BorderColor = System.Drawing.Color.DimGray;
             this.btnAddNewPerson.BorderRadius = 13;
             this.btnAddNewPerson.BorderThickness = 2;
@@ -127,6 +128,7 @@
             this.btnAddNewPerson.Name = "btnAddNewPerson";
             this.btnAddNewPerson.Size = new System.Drawing.Size(85, 45);
             this.btnAddNewPerson.TabIndex = 5;
+            this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
             // 
             // GPFilter
             // 
@@ -158,7 +160,7 @@
             // 
             this.uCpersonCard1.BackColor = System.Drawing.Color.Gainsboro;
             this.uCpersonCard1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uCpersonCard1.Location = new System.Drawing.Point(13, 149);
+            this.uCpersonCard1.Location = new System.Drawing.Point(13, 145);
             this.uCpersonCard1.Margin = new System.Windows.Forms.Padding(4);
             this.uCpersonCard1.Name = "uCpersonCard1";
             this.uCpersonCard1.Size = new System.Drawing.Size(930, 317);
@@ -174,7 +176,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UCpersonCardWithFilter";
-            this.Size = new System.Drawing.Size(952, 466);
+            this.Size = new System.Drawing.Size(952, 478);
             this.Load += new System.EventHandler(this.UCpersonCardWithFilter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.InputsErrorPro)).EndInit();
             this.GPFilter.ResumeLayout(false);
