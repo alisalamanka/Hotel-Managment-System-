@@ -113,6 +113,16 @@ namespace HMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap adduserr {
+            get {
+                object obj = ResourceManager.GetObject("adduserr", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap administrator {
             get {
                 object obj = ResourceManager.GetObject("administrator", resourceCulture);
@@ -626,6 +636,16 @@ namespace HMS.Properties {
         internal static System.Drawing.Bitmap female_worker {
             get {
                 object obj = ResourceManager.GetObject("female_worker", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap finduserr {
+            get {
+                object obj = ResourceManager.GetObject("finduserr", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

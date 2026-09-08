@@ -36,7 +36,7 @@ namespace HMS.Users.UserControls
                 _CurrentUser = Clsuser.Find(_userId.Value);
                 if (_CurrentUser != null)
                 {
-                    uCpersonCard1._LoadPersonInfo(_CurrentUser.PersonID.Value);
+                    uCpersonCard2._LoadPersonInfo(_CurrentUser.PersonID.Value);
                     _FillUserInfo();
                 }
                 else

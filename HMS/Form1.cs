@@ -19,7 +19,7 @@ namespace HMS
 
         private void Form1_Load(object sender, EventArgs e)
         {
-               ctrlUserInfo1.LoadUserInfo(2);
+            ctrlUserInfo1.LoadUserInfo(2);
 
         }
     }
