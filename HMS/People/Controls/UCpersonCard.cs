@@ -62,7 +62,7 @@ namespace HMS.People.Controls
         public void _LoadPersonInfo(int personID)
         {
             _Person = ClsPerson.Find(personID);
-            if (_Person.Id!=null)
+            if (_Person.Id.HasValue)
             {
                 _PersonID = _Person.Id;
                 FillPersonInfo();
@@ -76,7 +76,7 @@ namespace HMS.People.Controls
         public void _LoadPersonInfo(string NatNumber)
         {
             _Person = ClsPerson.Find(NatNumber);
-            if (_Person.Id != null)
+            if (_Person.Id.HasValue)
             {
                 _PersonID = _Person.Id;
                 FillPersonInfo();
@@ -116,8 +116,11 @@ namespace HMS.People.Controls
 
         private void llblEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FrmAdd_EditPersonInfo frm = new FrmAdd_EditPersonInfo(_Person.Id.Value);
-            frm.ShowDialog();
+            if (_Person!=null)
+            {
+                FrmAdd_EditPersonInfo frm = new FrmAdd_EditPersonInfo(_Person.Id.Value);
+                frm.ShowDialog();
+            }
         }
     }
 }
