@@ -43,6 +43,7 @@ namespace HMS_Business
             PersonID = personID;
             this.isActive = isActive;
             PersonInfo = ClsPerson.Find(personID.Value);
+            Mode = EnMode.Update;
         }
         public static Clsuser Find(int userID)
         {
@@ -182,7 +183,33 @@ namespace HMS_Business
                     return false;
 
             }
+            
         }
+        public static bool UserNameUsed(string UsernName,ref bool ErrorOccured)
+        {
+            Exception ex= null;
+            bool Used = ClsUserData.UserNameUsed(UsernName, ref ex);
+            if (ex!=null)
+            {
+                ErrorOccured = true;
+            }
+           return Used;
+
+        }
+
+        public static bool PersonHasAUser(int PersonID, ref bool ErrorOccured)
+        {
+            Exception ex = null;
+            bool Used = ClsUserData.PersonUsed(PersonID, ref ex);
+            if (ex != null)
+            {
+                ErrorOccured = true;
+                return false;
+            }
+            return Used;
+
+        }
+
     }
 }
     

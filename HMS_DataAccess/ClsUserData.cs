@@ -175,7 +175,7 @@ namespace HMS_DataAccess
                         cmd.Parameters.AddWithValue("@Password", Password);
                         cmd.Parameters.AddWithValue("@isActive", IsActive);
                         cmd.Parameters.AddWithValue("@PersonID", PeronID);
-
+                        cmd.Parameters.AddWithValue("Rolenumber",DBNull.Value);
                         cnn.Open();
 
                         return Convert.ToInt32(cmd.ExecuteScalar());
@@ -220,8 +220,55 @@ namespace HMS_DataAccess
             }
         }
 
+        public static bool UserNameUsed(string UserName, ref Exception Ex)
+        {
+            string Connstring = ConfigurationManager.AppSettings["ConnectionString"];
 
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Connstring))
+                using (SqlCommand cmd = new SqlCommand("SP_UserNameUsed", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@UserName", UserName);
 
+                    conn.Open();
+
+                    return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+                }
+            }
+            catch (Exception e)
+            {
+                Ex = e;
+                return false;
+            }
+        }
+
+        public static bool PersonUsed(int PersonID, ref Exception Ex)
+        {
+            string Connstring = ConfigurationManager.AppSettings["ConnectionString"];
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Connstring))
+                using (SqlCommand cmd = new SqlCommand("SP_UserExistsByPersonID", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@PersonID", PersonID);
+
+                    conn.Open();
+
+                    return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+                }
+            }
+            catch (Exception e)
+            {
+                Ex = e;
+                return false;
+            }
+        }
+
+        
 
     }
 }

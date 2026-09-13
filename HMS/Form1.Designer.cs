@@ -35,7 +35,7 @@
             // 
             this.ctrlUserInfo1.BackColor = System.Drawing.Color.Gainsboro;
             this.ctrlUserInfo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrlUserInfo1.Location = new System.Drawing.Point(571, 324);
+            this.ctrlUserInfo1.Location = new System.Drawing.Point(235, 160);
             this.ctrlUserInfo1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ctrlUserInfo1.Name = "ctrlUserInfo1";
             this.ctrlUserInfo1.Size = new System.Drawing.Size(974, 502);

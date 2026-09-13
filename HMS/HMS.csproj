@@ -127,6 +127,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Users\FRMaddNewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\FRMaddNewUser.Designer.cs">
+      <DependentUpon>FRMaddNewUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\UserControls\ctrlUserInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -173,6 +179,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\FRMaddNewUser.resx">
+      <DependentUpon>FRMaddNewUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\UserControls\ctrlUserInfo.resx">
       <DependentUpon>ctrlUserInfo.cs</DependentUpon>
@@ -631,6 +640,9 @@
     <Content Include="packages\Guna.UI2.WinForms.2.0.4.8\lib\net7.0-windows7.0\Guna.UI2.dll" />
     <Content Include="packages\Guna.UI2.WinForms.2.0.4.8\lib\netcoreapp3.1\Guna.UI2.dll" />
     <Content Include="packages\Guna.UI2.WinForms.2.0.4.8\LICENSE.txt" />
+    <None Include="Resources\user-profile.png" />
+    <None Include="Resources\password-protection.png" />
+    <None Include="Resources\hashtag.png" />
     <None Include="Resources\adduserr.png" />
     <None Include="Resources\finduserr.png" />
   </ItemGroup>
