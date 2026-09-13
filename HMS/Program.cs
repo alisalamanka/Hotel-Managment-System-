@@ -18,7 +18,7 @@ namespace HMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UserDetailsForm(10));
+            Application.Run(new FRMaddNew_EditUser(4));
         }
     }
 }

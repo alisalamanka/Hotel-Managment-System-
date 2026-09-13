@@ -30,7 +30,7 @@ namespace HMS.People
             _Mode = EnMode.Update;
         }
 
-        public event Action<object, int?> Databack;
+        public event Action<object, int> Databack;
 
         public enum EnGender
         {
@@ -370,7 +370,7 @@ namespace HMS.People
                 ClsUtil.ShowSuccessMessage("Person Info Saved Successfully!");
                 if (Databack != null)
                 {
-                    Databack(this, _CurrentPerson.Id);
+                    Databack(this, _CurrentPerson.Id.Value);
                 }
             }
             else

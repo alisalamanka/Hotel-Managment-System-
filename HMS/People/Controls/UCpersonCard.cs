@@ -63,7 +63,7 @@ namespace HMS.People.Controls
         public void _LoadPersonInfo(int personID)
         {
             _Person = ClsPerson.Find(personID);
-            if (_Person.Id.HasValue)
+            if (_Person!=null&&_Person.Id.HasValue)
             {
                 _PersonID = _Person.Id;
                 FillPersonInfo();

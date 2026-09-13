@@ -1,4 +1,5 @@
 ﻿using GlobalClasses;
+using HMS.Users.UserControls;
 using HMS_Business;
 using System;
 using System.Collections.Generic;
@@ -172,7 +173,16 @@ namespace HMS.People.Controls
         private void btnAddNewPerson_Click(object sender, EventArgs e)
         {
             FrmAdd_EditPersonInfo frmAdd_EditPersonInfo = new FrmAdd_EditPersonInfo();
+            frmAdd_EditPersonInfo.Databack += DataBackEvent;
             frmAdd_EditPersonInfo.ShowDialog();
+
+        }
+
+        private void _Databack(object sender, int PersonID)
+        {
+            CBfilterby.SelectedIndex = 0;
+            txtFilterByValue.Text = PersonID.ToString();
+            uCpersonCard1._LoadPersonInfo(PersonID);
         }
     }
 }
