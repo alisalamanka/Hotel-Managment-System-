@@ -123,6 +123,22 @@ namespace HMS_Business
 
         }
 
+        public bool PasswordChanged(string NewPassword,ref bool ErrorOccoured)
+        {
+            Exception exception = null;
+            bool Changed = ClsUserData.PasswordChanged(UserID.Value, NewPassword, ref exception);
+            if (exception != null)
+            {
+                ClsUtil.ClsLogger.LogError("Failed to Change User Password", exception);
+                ErrorOccoured = true;
+                return false;
+            }
+            else
+            {
+                return Changed;
+            }
+        }
+
         public bool UpdateUserInfo()
         {
             Exception exception = null;

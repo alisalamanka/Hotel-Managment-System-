@@ -244,6 +244,32 @@ namespace HMS_DataAccess
             }
         }
 
+        public static bool PasswordChanged(int UserID,string NewPassword, ref Exception Ex)
+        {
+            string Connstring = ConfigurationManager.AppSettings["ConnectionString"];
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Connstring))
+                using (SqlCommand cmd = new SqlCommand("SP_ChangeUserPassword", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@UserID", UserID);
+                    cmd.Parameters.AddWithValue("@NewPassword", NewPassword);
+
+                    conn.Open();
+                    int RowsAffected = cmd.ExecuteNonQuery();
+                    return RowsAffected > 0;
+
+                }
+            }
+            catch (Exception e)
+            {
+                Ex = e;
+                return false;
+            }
+        }
+
         public static bool PersonUsed(int PersonID, ref Exception Ex)
         {
             string Connstring = ConfigurationManager.AppSettings["ConnectionString"];
