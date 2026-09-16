@@ -14,9 +14,11 @@ namespace HMS
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        private FrmLogin _LoginForm = new FrmLogin();
+        public MainForm(FrmLogin loginForm)
         {
             InitializeComponent();
+            _LoginForm = loginForm;
         }
 
         private void btnHover(object sender, EventArgs e)
