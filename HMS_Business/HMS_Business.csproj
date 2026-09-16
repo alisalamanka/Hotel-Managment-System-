@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClsGlobal.cs" />
     <Compile Include="ClsPerson.cs" />
     <Compile Include="ClsCountry.cs" />
     <Compile Include="Clsuser.cs" />

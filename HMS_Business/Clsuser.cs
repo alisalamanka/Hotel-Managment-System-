@@ -72,22 +72,22 @@ namespace HMS_Business
         public static Clsuser Find(string Username, string Password)
         {
             int personID = 0;
-            byte isActive = 0;
+            bool isActive = false;
             int UserID = 0;
             Exception error = null;
-            string HashedPassword = ClsUtil.GetHashstring(Password);
-            bool UserFounded = ClsUserData.GetUserInfoBynameAndPasssword(Username, Password, ref UserID, ref personID, ref isActive, ref error);
+            string HashedPassword = ClsUtil.GetHashstring(Password).Trim();
+            bool UserFounded = ClsUserData.GetUserInfoBynameAndPasssword(Username, HashedPassword, ref UserID, ref personID, ref isActive, ref error);
 
             if (!UserFounded)
             {
             if (error != null)
             {
                 ClsUtil.ClsLogger.LogError($"Failed to get User Info  ", error);
-                }
+            }
                 return null;
             }
 
-            return new Clsuser(UserID, Username, HashedPassword, personID, isActive == 1);
+            return new Clsuser(UserID, Username, HashedPassword, personID, isActive);
         }
 
         public static DataTable GetAllUsers()
@@ -106,8 +106,7 @@ namespace HMS_Business
         public bool AddNewUser(string Username, string password, int PersonID, bool isActive)
         {
             Exception exception = null;
-            string HashedPassword = ClsUtil.GetHashstring(password);
-            int? NewUserID = ClsUserData.AddNewUser(Username, HashedPassword, PersonID, isActive, ref exception);
+            int? NewUserID = ClsUserData.AddNewUser(Username, Password, PersonID, isActive, ref exception);
             if (NewUserID==null)
             {
             if (exception != null)
@@ -127,8 +126,7 @@ namespace HMS_Business
         public bool PasswordChanged(string NewPassword,ref bool ErrorOccoured)
         {
             Exception exception = null;
-            string HashedPassword = ClsUtil.GetHashstring(NewPassword);
-            bool Changed = ClsUserData.PasswordChanged(UserID.Value, HashedPassword, ref exception);
+            bool Changed = ClsUserData.PasswordChanged(UserID.Value, Password, ref exception);
             if (exception != null)
             {
                 ClsUtil.ClsLogger.LogError("Failed to Change User Password", exception);
@@ -144,9 +142,8 @@ namespace HMS_Business
         public bool UpdateUserInfo()
         {
             Exception exception = null;
-            string HashedPassword = ClsUtil.GetHashstring(Password);
             bool Updated = ClsUserData.UpdateUserInfo(PersonInfo.Id.Value, PersonInfo.FirstName, PersonInfo.LastName, PersonInfo.NationalNumber, PersonInfo.DateOfBirth,
-                PersonInfo.Phone, PersonInfo.Email, PersonInfo.Gendor, PersonInfo.ImagePath, PersonInfo.CountryID, Username, HashedPassword, isActive,UserID.Value, ref exception);
+                PersonInfo.Phone, PersonInfo.Email, PersonInfo.Gendor, PersonInfo.ImagePath, PersonInfo.CountryID, Username, Password, isActive,UserID.Value, ref exception);
             if (exception != null)
             {
                 ClsUtil.ClsLogger.LogError("Failed to Update User Info", exception);
@@ -184,6 +181,7 @@ namespace HMS_Business
                     {
                         if (AddNewUser(Username, Password, PersonID.Value, isActive))
                         {
+                            Password = ClsUtil.GetHashstring(Password);
                             Mode = EnMode.Update;
                             return UserID!=null;
                         }

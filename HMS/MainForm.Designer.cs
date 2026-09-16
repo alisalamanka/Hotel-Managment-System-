@@ -36,9 +36,9 @@
             this.tsmiEmployees = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2CustomGradientPanel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2CustomGradientPanel4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.PBuserpicture = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.btnSettings = new Guna.UI2.WinForms.Guna2Button();
             this.btnReport = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdministrations = new Guna.UI2.WinForms.Guna2Button();
@@ -49,23 +49,22 @@
             this.btnReservations = new Guna.UI2.WinForms.Guna2Button();
             this.btnGuests = new Guna.UI2.WinForms.Guna2Button();
             this.btnDboard = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.lblEmail = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblUserName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.PBuserImage = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.UsernameLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.UserImagePB = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.CMSadministrations.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
             this.guna2CustomGradientPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBuserpicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBuserImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserImagePB)).BeginInit();
             this.SuspendLayout();
             // 
             // CMSadministrations
@@ -89,6 +88,7 @@
             this.tsmiUsers.Name = "tsmiUsers";
             this.tsmiUsers.Size = new System.Drawing.Size(173, 36);
             this.tsmiUsers.Text = "Users";
+            this.tsmiUsers.Click += new System.EventHandler(this.tsmiUsers_Click);
             // 
             // TSMIpersons
             // 
@@ -137,6 +137,20 @@
             this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(1417, 1017);
             this.guna2CustomGradientPanel3.TabIndex = 0;
             // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2CirclePictureBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox1.Image = global::HMS.Properties.Resources.backgrofund;
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(1417, 1017);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox1.TabIndex = 0;
+            this.guna2CirclePictureBox1.TabStop = false;
+            // 
             // guna2CustomGradientPanel1
             // 
             this.guna2CustomGradientPanel1.BackColor = System.Drawing.Color.Gainsboro;
@@ -162,7 +176,7 @@
             // 
             this.guna2CustomGradientPanel4.BackColor = System.Drawing.Color.Gainsboro;
             this.guna2CustomGradientPanel4.BorderRadius = 20;
-            this.guna2CustomGradientPanel4.Controls.Add(this.PBuserpicture);
+            this.guna2CustomGradientPanel4.Controls.Add(this.UserImagePB);
             this.guna2CustomGradientPanel4.Controls.Add(this.btnSettings);
             this.guna2CustomGradientPanel4.Controls.Add(this.btnReport);
             this.guna2CustomGradientPanel4.Controls.Add(this.btnAdministrations);
@@ -173,8 +187,7 @@
             this.guna2CustomGradientPanel4.Controls.Add(this.btnReservations);
             this.guna2CustomGradientPanel4.Controls.Add(this.btnGuests);
             this.guna2CustomGradientPanel4.Controls.Add(this.btnDboard);
-            this.guna2CustomGradientPanel4.Controls.Add(this.guna2HtmlLabel1);
-            this.guna2CustomGradientPanel4.Controls.Add(this.guna2HtmlLabel2);
+            this.guna2CustomGradientPanel4.Controls.Add(this.UsernameLabel);
             this.guna2CustomGradientPanel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2CustomGradientPanel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
             this.guna2CustomGradientPanel4.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
@@ -184,17 +197,6 @@
             this.guna2CustomGradientPanel4.Name = "guna2CustomGradientPanel4";
             this.guna2CustomGradientPanel4.Size = new System.Drawing.Size(343, 1037);
             this.guna2CustomGradientPanel4.TabIndex = 6;
-            // 
-            // PBuserpicture
-            // 
-            this.PBuserpicture.BackColor = System.Drawing.Color.Transparent;
-            this.PBuserpicture.ImageRotate = 0F;
-            this.PBuserpicture.Location = new System.Drawing.Point(102, 26);
-            this.PBuserpicture.Name = "PBuserpicture";
-            this.PBuserpicture.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.PBuserpicture.Size = new System.Drawing.Size(114, 83);
-            this.PBuserpicture.TabIndex = 1;
-            this.PBuserpicture.TabStop = false;
             // 
             // btnSettings
             // 
@@ -211,7 +213,7 @@
             this.btnSettings.Image = global::HMS.Properties.Resources.setting1;
             this.btnSettings.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSettings.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnSettings.Location = new System.Drawing.Point(28, 918);
+            this.btnSettings.Location = new System.Drawing.Point(31, 879);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.PressedColor = System.Drawing.Color.Blue;
             this.btnSettings.Size = new System.Drawing.Size(275, 57);
@@ -235,7 +237,7 @@
             this.btnReport.Image = global::HMS.Properties.Resources.report1;
             this.btnReport.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnReport.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnReport.Location = new System.Drawing.Point(28, 845);
+            this.btnReport.Location = new System.Drawing.Point(34, 803);
             this.btnReport.Name = "btnReport";
             this.btnReport.PressedColor = System.Drawing.Color.Blue;
             this.btnReport.Size = new System.Drawing.Size(275, 57);
@@ -260,7 +262,7 @@
             this.btnAdministrations.Image = global::HMS.Properties.Resources.administrator;
             this.btnAdministrations.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAdministrations.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnAdministrations.Location = new System.Drawing.Point(28, 769);
+            this.btnAdministrations.Location = new System.Drawing.Point(28, 727);
             this.btnAdministrations.Name = "btnAdministrations";
             this.btnAdministrations.PressedColor = System.Drawing.Color.Blue;
             this.btnAdministrations.Size = new System.Drawing.Size(275, 57);
@@ -284,7 +286,7 @@
             this.btnServices.Image = global::HMS.Properties.Resources.customer_service;
             this.btnServices.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnServices.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnServices.Location = new System.Drawing.Point(31, 694);
+            this.btnServices.Location = new System.Drawing.Point(31, 651);
             this.btnServices.Name = "btnServices";
             this.btnServices.PressedColor = System.Drawing.Color.Blue;
             this.btnServices.Size = new System.Drawing.Size(275, 57);
@@ -308,7 +310,7 @@
             this.btnApplications.Image = global::HMS.Properties.Resources.Applications;
             this.btnApplications.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnApplications.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnApplications.Location = new System.Drawing.Point(34, 622);
+            this.btnApplications.Location = new System.Drawing.Point(34, 575);
             this.btnApplications.Name = "btnApplications";
             this.btnApplications.PressedColor = System.Drawing.Color.Blue;
             this.btnApplications.Size = new System.Drawing.Size(275, 57);
@@ -332,7 +334,7 @@
             this.btnStays.Image = global::HMS.Properties.Resources.Stays;
             this.btnStays.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnStays.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnStays.Location = new System.Drawing.Point(34, 545);
+            this.btnStays.Location = new System.Drawing.Point(34, 499);
             this.btnStays.Name = "btnStays";
             this.btnStays.PressedColor = System.Drawing.Color.Blue;
             this.btnStays.Size = new System.Drawing.Size(275, 57);
@@ -356,7 +358,7 @@
             this.btnRooms.Image = global::HMS.Properties.Resources.living_room;
             this.btnRooms.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnRooms.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnRooms.Location = new System.Drawing.Point(34, 469);
+            this.btnRooms.Location = new System.Drawing.Point(34, 423);
             this.btnRooms.Name = "btnRooms";
             this.btnRooms.PressedColor = System.Drawing.Color.Blue;
             this.btnRooms.Size = new System.Drawing.Size(275, 57);
@@ -380,7 +382,7 @@
             this.btnReservations.Image = global::HMS.Properties.Resources.reservation;
             this.btnReservations.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnReservations.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnReservations.Location = new System.Drawing.Point(34, 394);
+            this.btnReservations.Location = new System.Drawing.Point(34, 347);
             this.btnReservations.Name = "btnReservations";
             this.btnReservations.PressedColor = System.Drawing.Color.Blue;
             this.btnReservations.Size = new System.Drawing.Size(275, 57);
@@ -404,7 +406,7 @@
             this.btnGuests.Image = global::HMS.Properties.Resources.bridesmaids;
             this.btnGuests.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnGuests.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnGuests.Location = new System.Drawing.Point(34, 319);
+            this.btnGuests.Location = new System.Drawing.Point(34, 271);
             this.btnGuests.Name = "btnGuests";
             this.btnGuests.PressedColor = System.Drawing.Color.Blue;
             this.btnGuests.Size = new System.Drawing.Size(275, 57);
@@ -428,7 +430,7 @@
             this.btnDboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDboard.Image")));
             this.btnDboard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDboard.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnDboard.Location = new System.Drawing.Point(31, 244);
+            this.btnDboard.Location = new System.Drawing.Point(34, 195);
             this.btnDboard.Name = "btnDboard";
             this.btnDboard.PressedColor = System.Drawing.Color.Blue;
             this.btnDboard.Size = new System.Drawing.Size(275, 57);
@@ -436,28 +438,6 @@
             this.btnDboard.Text = "Dashboard";
             this.btnDboard.MouseLeave += new System.EventHandler(this.btnexit);
             this.btnDboard.MouseHover += new System.EventHandler(this.btnHover);
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(119, 195);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(55, 21);
-            this.guna2HtmlLabel1.TabIndex = 2;
-            this.guna2HtmlLabel1.Text = "Email";
-            // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(102, 147);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(94, 21);
-            this.guna2HtmlLabel2.TabIndex = 1;
-            this.guna2HtmlLabel2.Text = "UserName";
             // 
             // guna2Button2
             // 
@@ -547,19 +527,34 @@
             this.PBuserImage.TabIndex = 0;
             this.PBuserImage.TabStop = false;
             // 
-            // guna2CirclePictureBox1
+            // UsernameLabel
             // 
-            this.guna2CirclePictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2CirclePictureBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox1.Image = global::HMS.Properties.Resources.backgrofund;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(1417, 1017);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox1.TabIndex = 0;
-            this.guna2CirclePictureBox1.TabStop = false;
+            this.UsernameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.UsernameLabel.AutoSize = false;
+            this.UsernameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.UsernameLabel.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsernameLabel.ForeColor = System.Drawing.Color.White;
+            this.UsernameLabel.Location = new System.Drawing.Point(102, 147);
+            this.UsernameLabel.Name = "UsernameLabel";
+            this.UsernameLabel.Size = new System.Drawing.Size(94, 21);
+            this.UsernameLabel.TabIndex = 1;
+            this.UsernameLabel.Text = "UserName";
+            this.UsernameLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // UserImagePB
+            // 
+            this.UserImagePB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.UserImagePB.BackColor = System.Drawing.Color.Transparent;
+            this.UserImagePB.ImageRotate = 0F;
+            this.UserImagePB.Location = new System.Drawing.Point(77, 26);
+            this.UserImagePB.Name = "UserImagePB";
+            this.UserImagePB.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.UserImagePB.Size = new System.Drawing.Size(186, 83);
+            this.UserImagePB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.UserImagePB.TabIndex = 1;
+            this.UserImagePB.TabStop = false;
             // 
             // MainForm
             // 
@@ -579,13 +574,12 @@
             this.CMSadministrations.ResumeLayout(false);
             this.guna2CustomGradientPanel2.ResumeLayout(false);
             this.guna2CustomGradientPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
             this.guna2CustomGradientPanel4.ResumeLayout(false);
-            this.guna2CustomGradientPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBuserpicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBuserImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserImagePB)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -608,8 +602,6 @@
         private Guna.UI2.WinForms.Guna2Button btnReservations;
         private Guna.UI2.WinForms.Guna2Button btnGuests;
         private Guna.UI2.WinForms.Guna2Button btnDboard;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button btnSettings;
@@ -617,7 +609,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiUsers;
         private System.Windows.Forms.ToolStripMenuItem TSMIpersons;
         private System.Windows.Forms.ToolStripMenuItem tsmiEmployees;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox PBuserpicture;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox UserImagePB;
+        private Guna.UI2.WinForms.Guna2HtmlLabel UsernameLabel;
     }
 }

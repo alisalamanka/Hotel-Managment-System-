@@ -1,5 +1,8 @@
-﻿using Guna.UI2.WinForms;
+﻿using GlobalClasses;
+using Guna.UI2.WinForms;
 using HMS.People;
+using HMS.Users;
+using HMS_Business;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +17,11 @@ namespace HMS
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        private FrmLogin _LoginForm = new FrmLogin();
+        public MainForm(FrmLogin loginForm)
         {
             InitializeComponent();
+            _LoginForm = loginForm;
         }
 
         private void btnHover(object sender, EventArgs e)
@@ -42,11 +47,19 @@ namespace HMS
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            UsernameLabel.Text=CLSglobal.LoggedInUser.Username;
+            UserImagePB.ImageLocation = CLSglobal.LoggedInUser.PersonInfo.ImagePath;
         }
 
         private void TSMIpersons_Click(object sender, EventArgs e)
         {
             FrmManagePersons frm = new FrmManagePersons();
+            frm.ShowDialog();
+        }
+
+        private void tsmiUsers_Click(object sender, EventArgs e)
+        {
+            FRMlistUsers frm = new FRMlistUsers();
             frm.ShowDialog();
         }
     }

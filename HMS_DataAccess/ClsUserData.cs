@@ -49,7 +49,7 @@ namespace HMS_DataAccess
             return true;
         }
 
-        public static bool GetUserInfoBynameAndPasssword(string UserName, string Password, ref int ID, ref int PersonID, ref byte isActive, ref Exception ErrorAccoured)
+        public static bool GetUserInfoBynameAndPasssword(string UserName, string Password, ref int ID, ref int PersonID, ref bool isActive, ref Exception ErrorAccoured)
         {
             string conn = ConfigurationManager.AppSettings["ConnectionString"];
             try
@@ -68,7 +68,7 @@ namespace HMS_DataAccess
                             {
                                 ID = (int)dr["UserID"];
                                 PersonID = (int)dr["PersonID"];
-                                isActive = (byte)dr["isActive"];
+                                isActive = (bool)dr["isActive"];
                                 return true;
                             }
                             else
