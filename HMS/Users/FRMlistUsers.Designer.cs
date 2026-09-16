@@ -93,7 +93,7 @@
             this.CBfilterBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBfilterBy.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.CBfilterBy.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CBfilterBy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBfilterBy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.CBfilterBy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.CBfilterBy.ItemHeight = 30;
             this.CBfilterBy.Items.AddRange(new object[] {
@@ -101,8 +101,7 @@
             "User ID",
             "Person ID",
             "Full Name",
-            "is Active",
-            ""});
+            "is Active"});
             this.CBfilterBy.Location = new System.Drawing.Point(215, 380);
             this.CBfilterBy.Name = "CBfilterBy";
             this.CBfilterBy.Size = new System.Drawing.Size(332, 36);
