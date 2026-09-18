@@ -224,6 +224,33 @@ namespace HMS_DataAccess
             }
         }
 
+        public static DataTable GetDepartmentsList(ref Exception ErrorOccurred)
+        {
+            string conn = ConfigurationManager.AppSettings["ConnectionString"];
+
+            try
+            {
+                using (SqlConnection cnn = new SqlConnection(conn))
+                using (SqlCommand cmd = new SqlCommand("SP_GetDepartmentsList", cnn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cnn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        DataTable dt = new DataTable();
+                        dt.Load(dr);
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                ErrorOccurred = e;
+                return null;
+            }
+        }
 
         public static bool EmployeeExistsByID(
             int EmployeeID,
