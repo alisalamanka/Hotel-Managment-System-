@@ -12,6 +12,7 @@ namespace HMS_DataAccess
             ref int PersonID,
             ref int DepartmentID,
             ref bool IsActive,
+            ref decimal Salary,
             ref Exception ErrorOccurred)
         {
             string conn = ConfigurationManager.AppSettings["ConnectionString"];
@@ -34,7 +35,7 @@ namespace HMS_DataAccess
                             PersonID = (int)dr["PersonID"];
                             DepartmentID = (int)dr["DepartmentID"];
                             IsActive = (bool)dr["IsActive"];
-
+                            Salary = (decimal)dr["Salary"];
                             return true;
                         }
 
@@ -55,6 +56,7 @@ namespace HMS_DataAccess
             ref int EmployeeID,
             ref int DepartmentID,
             ref bool IsActive,
+            ref decimal Salary,
             ref Exception ErrorOccurred)
         {
             string conn = ConfigurationManager.AppSettings["ConnectionString"];
@@ -77,7 +79,7 @@ namespace HMS_DataAccess
                             EmployeeID = (int)dr["EmployeeID"];
                             DepartmentID = (int)dr["DepartmentID"];
                             IsActive = (bool)dr["IsActive"];
-
+                            Salary = (decimal)dr["Salary"];
                             return true;
                         }
 
@@ -97,6 +99,7 @@ namespace HMS_DataAccess
             int PersonID,
             int DepartmentID,
             bool IsActive,
+            decimal Salary,
             ref Exception ErrorOccurred)
         {
             string conn = ConfigurationManager.AppSettings["ConnectionString"];
@@ -112,7 +115,7 @@ namespace HMS_DataAccess
                     cmd.Parameters.AddWithValue("@PersonID", PersonID);
                     cmd.Parameters.AddWithValue("@DepartmentID", DepartmentID);
                     cmd.Parameters.AddWithValue("@IsActive", IsActive);
-
+                    cmd.Parameters.AddWithValue("@Salary", Salary);
                     cnn.Open();
 
                     return Convert.ToInt32(cmd.ExecuteScalar());
@@ -127,10 +130,21 @@ namespace HMS_DataAccess
 
 
         public static bool UpdateEmployee(
-            int EmployeeID,
-            int DepartmentID,
-            bool IsActive,
-            ref Exception ErrorOccurred)
+     int EmployeeID,
+     int PersonID,
+     string FirstName,
+     string LastName,
+     DateTime DateOfBirth,
+     string Phone,
+     string Email,
+     string NationalNo,
+     int CountryID,
+     byte Gender,
+     string ImagePath,
+     int DepartmentID,
+     bool IsActive,
+     decimal Salary,
+     ref Exception ErrorOccurred)
         {
             string conn = ConfigurationManager.AppSettings["ConnectionString"];
 
@@ -143,8 +157,21 @@ namespace HMS_DataAccess
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@EmployeeID", EmployeeID);
+                    cmd.Parameters.AddWithValue("@PersonID", PersonID);
+
+                    cmd.Parameters.AddWithValue("@FirstName", FirstName);
+                    cmd.Parameters.AddWithValue("@LastName", LastName);
+                    cmd.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
+                    cmd.Parameters.AddWithValue("@Phone", Phone);
+                    cmd.Parameters.AddWithValue("@Email", Email);
+                    cmd.Parameters.AddWithValue("@NationalNo", NationalNo);
+                    cmd.Parameters.AddWithValue("@CountryID", CountryID);
+                    cmd.Parameters.AddWithValue("@Gender", Gender);
+                    cmd.Parameters.AddWithValue("@ImagePath", ImagePath);
+
                     cmd.Parameters.AddWithValue("@DepartmentID", DepartmentID);
                     cmd.Parameters.AddWithValue("@IsActive", IsActive);
+                    cmd.Parameters.AddWithValue("@Salary", Salary);
 
                     cnn.Open();
 
@@ -224,33 +251,6 @@ namespace HMS_DataAccess
             }
         }
 
-        public static DataTable GetDepartmentsList(ref Exception ErrorOccurred)
-        {
-            string conn = ConfigurationManager.AppSettings["ConnectionString"];
-
-            try
-            {
-                using (SqlConnection cnn = new SqlConnection(conn))
-                using (SqlCommand cmd = new SqlCommand("SP_GetDepartmentsList", cnn))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cnn.Open();
-
-                    using (SqlDataReader dr = cmd.ExecuteReader())
-                    {
-                        DataTable dt = new DataTable();
-                        dt.Load(dr);
-                        return dt;
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                ErrorOccurred = e;
-                return null;
-            }
-        }
 
         public static bool EmployeeExistsByID(
             int EmployeeID,

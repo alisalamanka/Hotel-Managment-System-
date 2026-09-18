@@ -11,8 +11,10 @@ namespace HMS_Business
         public int? PersonID { get; set; }
         public int? DepartmentID { get; set; }
         public bool IsActive { get; set; }
-
+        public decimal Salary { get; set; }
         public ClsPerson PersonInfo { get; set; }
+
+        public ClsDepartment DepartmentInfo { get; set; }
 
         public enum EnMode
         {
@@ -28,7 +30,7 @@ namespace HMS_Business
             PersonID = null;
             DepartmentID = null;
             IsActive = false;
-
+            Salary = 0; 
             PersonInfo = new ClsPerson();
 
             Mode = EnMode.AddNew;
@@ -38,15 +40,17 @@ namespace HMS_Business
             int employeeID,
             int personID,
             int departmentID,
+            decimal salary,
             bool isActive)
         {
             EmployeeID = employeeID;
             PersonID = personID;
             DepartmentID = departmentID;
             IsActive = isActive;
+            Salary = salary;
 
             PersonInfo = ClsPerson.Find(personID);
-
+            DepartmentInfo = ClsDepartment.Find(departmentID);
             Mode = EnMode.Update;
         }
 
@@ -56,6 +60,7 @@ namespace HMS_Business
             int personID = 0;
             int departmentID = 0;
             bool isActive = false;
+            decimal salary = 0;
             Exception error = null;
 
             bool found = ClsEmployeeData.GetEmployeeInfoByID(
@@ -63,6 +68,7 @@ namespace HMS_Business
                 ref personID,
                 ref departmentID,
                 ref isActive,
+                ref salary,
                 ref error);
 
             if (!found)
@@ -81,6 +87,7 @@ namespace HMS_Business
                 employeeID,
                 personID,
                 departmentID,
+                salary,
                 isActive);
         }
 
@@ -90,6 +97,7 @@ namespace HMS_Business
             int employeeID = 0;
             int departmentID = 0;
             bool isActive = false;
+            decimal salary = 0;
             Exception error = null;
 
             bool found = ClsEmployeeData.GetEmployeeInfoByPersonID(
@@ -97,6 +105,7 @@ namespace HMS_Business
                 ref employeeID,
                 ref departmentID,
                 ref isActive,
+                ref salary,
                 ref error);
 
             if (!found)
@@ -115,6 +124,7 @@ namespace HMS_Business
                 employeeID,
                 personID,
                 departmentID,
+                salary,
                 isActive);
         }
 
@@ -170,7 +180,7 @@ namespace HMS_Business
         public static DataTable GetAllDepartments()
         {
             Exception exception = null;
-            DataTable dt= ClsEmployeeData.GetDepartmentsList(ref exception);
+            DataTable dt= ClsEmployeeData.GetEmployeesList(ref exception);
             if (exception!=null)
             {
                 ClsUtil.ClsLogger.LogError("Failed to get depatments list", exception);
@@ -188,6 +198,7 @@ namespace HMS_Business
                 PersonID.Value,
                 DepartmentID.Value,
                 IsActive,
+                Salary,
                 ref exception);
 
             if (newEmployeeID == null)
@@ -213,8 +224,19 @@ namespace HMS_Business
 
             bool updated = ClsEmployeeData.UpdateEmployee(
                 EmployeeID.Value,
+                PersonID.Value,
+                PersonInfo.FirstName,
+                PersonInfo.LastName,
+                PersonInfo.DateOfBirth,
+                PersonInfo.Phone,
+                PersonInfo.Email,
+                PersonInfo.NationalNumber,
+                PersonInfo.CountryID,
+                PersonInfo.Gendor,
+                PersonInfo.ImagePath,
                 DepartmentID.Value,
                 IsActive,
+                Salary,
                 ref exception);
 
             if (exception != null)
