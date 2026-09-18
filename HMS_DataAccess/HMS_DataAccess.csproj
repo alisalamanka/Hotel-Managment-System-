@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClsCountryData.cs" />
+    <Compile Include="ClsDepartemntData.cs" />
     <Compile Include="ClsEmployeeData.cs" />
     <Compile Include="ClsPersonsData.cs" />
     <Compile Include="ClsUserData.cs" />
