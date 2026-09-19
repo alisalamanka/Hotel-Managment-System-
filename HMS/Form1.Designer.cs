@@ -28,13 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.ctrlEmployeesInfo1 = new HMS.Employees.Controls.ctrlEmployeesInfo();
             this.SuspendLayout();
+            // 
+            // ctrlEmployeesInfo1
+            // 
+            this.ctrlEmployeesInfo1.BackColor = System.Drawing.Color.Gainsboro;
+            this.ctrlEmployeesInfo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrlEmployeesInfo1.Location = new System.Drawing.Point(136, 98);
+            this.ctrlEmployeesInfo1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ctrlEmployeesInfo1.Name = "ctrlEmployeesInfo1";
+            this.ctrlEmployeesInfo1.Size = new System.Drawing.Size(987, 594);
+            this.ctrlEmployeesInfo1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1853, 1061);
+            this.Controls.Add(this.ctrlEmployeesInfo1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -43,5 +55,7 @@
         }
 
         #endregion
+
+        private Employees.Controls.ctrlEmployeesInfo ctrlEmployeesInfo1;
     }
 }

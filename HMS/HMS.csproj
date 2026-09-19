@@ -676,6 +676,9 @@
     <Content Include="packages\Guna.UI2.WinForms.2.0.4.8\lib\net7.0-windows7.0\Guna.UI2.dll" />
     <Content Include="packages\Guna.UI2.WinForms.2.0.4.8\lib\netcoreapp3.1\Guna.UI2.dll" />
     <Content Include="packages\Guna.UI2.WinForms.2.0.4.8\LICENSE.txt" />
+    <None Include="Resources\add-friend.png" />
+    <None Include="Resources\department %281%29.png" />
+    <None Include="Resources\dollar1.png" />
     <None Include="Resources\login.png" />
     <None Include="Resources\tianya1223-hotel-6878057.jpg" />
     <None Include="Resources\user-profile.png" />
