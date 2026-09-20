@@ -34,6 +34,9 @@
             this.btnNext = new Guna.UI2.WinForms.Guna2Button();
             this.uCpersonCardWithFilter1 = new HMS.People.Controls.UCpersonCardWithFilter();
             this.Tuserinfo = new System.Windows.Forms.TabPage();
+            this.CBactive = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.lblUserID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.CBrole = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -52,19 +55,16 @@
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.InputsEP = new System.Windows.Forms.ErrorProvider(this.components);
-            this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.CBactive = new Guna.UI2.WinForms.Guna2CheckBox();
             this.TBuser.SuspendLayout();
             this.TPpersoninfo.SuspendLayout();
             this.Tuserinfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InputsEP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // TBuser
@@ -73,7 +73,7 @@
             this.TBuser.Controls.Add(this.TPpersoninfo);
             this.TBuser.Controls.Add(this.Tuserinfo);
             this.TBuser.ItemSize = new System.Drawing.Size(180, 40);
-            this.TBuser.Location = new System.Drawing.Point(42, 83);
+            this.TBuser.Location = new System.Drawing.Point(38, 83);
             this.TBuser.Name = "TBuser";
             this.TBuser.SelectedIndex = 0;
             this.TBuser.Size = new System.Drawing.Size(1199, 594);
@@ -169,6 +169,49 @@
             this.Tuserinfo.TabIndex = 1;
             this.Tuserinfo.Text = "User Info";
             this.Tuserinfo.UseVisualStyleBackColor = true;
+            // 
+            // CBactive
+            // 
+            this.CBactive.AutoSize = true;
+            this.CBactive.BackColor = System.Drawing.Color.LightGray;
+            this.CBactive.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CBactive.CheckedState.BorderRadius = 0;
+            this.CBactive.CheckedState.BorderThickness = 0;
+            this.CBactive.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CBactive.CheckMarkColor = System.Drawing.Color.YellowGreen;
+            this.CBactive.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBactive.Location = new System.Drawing.Point(328, 442);
+            this.CBactive.Name = "CBactive";
+            this.CBactive.Size = new System.Drawing.Size(15, 14);
+            this.CBactive.TabIndex = 23;
+            this.CBactive.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.CBactive.UncheckedState.BorderRadius = 0;
+            this.CBactive.UncheckedState.BorderThickness = 0;
+            this.CBactive.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.CBactive.UseVisualStyleBackColor = false;
+            // 
+            // guna2CirclePictureBox3
+            // 
+            this.guna2CirclePictureBox3.Image = global::HMS.Properties.Resources.check__1_;
+            this.guna2CirclePictureBox3.ImageRotate = 0F;
+            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(250, 436);
+            this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
+            this.guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox3.Size = new System.Drawing.Size(47, 30);
+            this.guna2CirclePictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox3.TabIndex = 22;
+            this.guna2CirclePictureBox3.TabStop = false;
+            // 
+            // guna2HtmlLabel6
+            // 
+            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(149, 435);
+            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(95, 27);
+            this.guna2HtmlLabel6.TabIndex = 21;
+            this.guna2HtmlLabel6.Text = "Active? : ";
+            this.guna2HtmlLabel6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnSave
             // 
@@ -416,49 +459,6 @@
             // 
             this.InputsEP.ContainerControl = this;
             // 
-            // guna2CirclePictureBox3
-            // 
-            this.guna2CirclePictureBox3.Image = global::HMS.Properties.Resources.check__1_;
-            this.guna2CirclePictureBox3.ImageRotate = 0F;
-            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(250, 436);
-            this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
-            this.guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox3.Size = new System.Drawing.Size(47, 30);
-            this.guna2CirclePictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox3.TabIndex = 22;
-            this.guna2CirclePictureBox3.TabStop = false;
-            // 
-            // guna2HtmlLabel6
-            // 
-            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(149, 435);
-            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(95, 27);
-            this.guna2HtmlLabel6.TabIndex = 21;
-            this.guna2HtmlLabel6.Text = "Active? : ";
-            this.guna2HtmlLabel6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // CBactive
-            // 
-            this.CBactive.AutoSize = true;
-            this.CBactive.BackColor = System.Drawing.Color.LightGray;
-            this.CBactive.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CBactive.CheckedState.BorderRadius = 0;
-            this.CBactive.CheckedState.BorderThickness = 0;
-            this.CBactive.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CBactive.CheckMarkColor = System.Drawing.Color.YellowGreen;
-            this.CBactive.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBactive.Location = new System.Drawing.Point(328, 442);
-            this.CBactive.Name = "CBactive";
-            this.CBactive.Size = new System.Drawing.Size(15, 14);
-            this.CBactive.TabIndex = 23;
-            this.CBactive.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.CBactive.UncheckedState.BorderRadius = 0;
-            this.CBactive.UncheckedState.BorderThickness = 0;
-            this.CBactive.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.CBactive.UseVisualStyleBackColor = false;
-            // 
             // FRMaddNew_EditUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -476,13 +476,13 @@
             this.TPpersoninfo.ResumeLayout(false);
             this.Tuserinfo.ResumeLayout(false);
             this.Tuserinfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.InputsEP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
