@@ -48,6 +48,10 @@
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.CBdepartment = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2CirclePictureBox4 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.txtSalary = new Guna.UI2.WinForms.Guna2TextBox();
             this.InputsEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.TBuser.SuspendLayout();
@@ -57,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InputsEP)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,6 +70,7 @@
             this.TBuser.Alignment = System.Windows.Forms.TabAlignment.Left;
             this.TBuser.Controls.Add(this.TPpersoninfo);
             this.TBuser.Controls.Add(this.Tuserinfo);
+            this.TBuser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TBuser.ItemSize = new System.Drawing.Size(180, 40);
             this.TBuser.Location = new System.Drawing.Point(12, 110);
             this.TBuser.Name = "TBuser";
@@ -363,6 +369,68 @@
             this.guna2HtmlLabel3.Text = "Employee ID : ";
             this.guna2HtmlLabel3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // CBdepartment
+            // 
+            this.CBdepartment.BackColor = System.Drawing.Color.Transparent;
+            this.CBdepartment.BorderRadius = 15;
+            this.CBdepartment.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CBdepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBdepartment.FillColor = System.Drawing.Color.LightGray;
+            this.CBdepartment.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CBdepartment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CBdepartment.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.CBdepartment.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.CBdepartment.ItemHeight = 30;
+            this.CBdepartment.Location = new System.Drawing.Point(328, 150);
+            this.CBdepartment.Name = "CBdepartment";
+            this.CBdepartment.Size = new System.Drawing.Size(315, 36);
+            this.CBdepartment.TabIndex = 24;
+            this.CBdepartment.Validating += new System.ComponentModel.CancelEventHandler(this.CBdepartment_Validating_1);
+            // 
+            // guna2CirclePictureBox4
+            // 
+            this.guna2CirclePictureBox4.Image = global::HMS.Properties.Resources.dollar;
+            this.guna2CirclePictureBox4.ImageRotate = 0F;
+            this.guna2CirclePictureBox4.Location = new System.Drawing.Point(250, 221);
+            this.guna2CirclePictureBox4.Name = "guna2CirclePictureBox4";
+            this.guna2CirclePictureBox4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox4.Size = new System.Drawing.Size(47, 30);
+            this.guna2CirclePictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox4.TabIndex = 26;
+            this.guna2CirclePictureBox4.TabStop = false;
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(160, 221);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(84, 27);
+            this.guna2HtmlLabel2.TabIndex = 25;
+            this.guna2HtmlLabel2.Text = "Salary : ";
+            this.guna2HtmlLabel2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtSalary
+            // 
+            this.txtSalary.BorderRadius = 15;
+            this.txtSalary.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSalary.DefaultText = "";
+            this.txtSalary.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSalary.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSalary.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSalary.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSalary.FillColor = System.Drawing.Color.LightGray;
+            this.txtSalary.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSalary.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSalary.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSalary.Location = new System.Drawing.Point(328, 221);
+            this.txtSalary.Name = "txtSalary";
+            this.txtSalary.PlaceholderText = "";
+            this.txtSalary.SelectedText = "";
+            this.txtSalary.Size = new System.Drawing.Size(315, 36);
+            this.txtSalary.TabIndex = 27;
+            this.txtSalary.Validating += new System.ComponentModel.CancelEventHandler(this.txtSalary_Validating_1);
+            // 
             // InputsEP
             // 
             this.InputsEP.ContainerControl = this;
@@ -399,6 +467,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.InputsEP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
