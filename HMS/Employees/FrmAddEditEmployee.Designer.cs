@@ -115,7 +115,7 @@
             this.btnNext.Image = global::HMS.Properties.Resources.confirm;
             this.btnNext.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnNext.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnNext.Location = new System.Drawing.Point(798, 524);
+            this.btnNext.Location = new System.Drawing.Point(796, 560);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(180, 45);
             this.btnNext.TabIndex = 1;
@@ -155,7 +155,7 @@
             this.Tuserinfo.Location = new System.Drawing.Point(184, 4);
             this.Tuserinfo.Name = "Tuserinfo";
             this.Tuserinfo.Padding = new System.Windows.Forms.Padding(3);
-            this.Tuserinfo.Size = new System.Drawing.Size(1028, 743);
+            this.Tuserinfo.Size = new System.Drawing.Size(1028, 631);
             this.Tuserinfo.TabIndex = 1;
             this.Tuserinfo.Text = "User Info";
             // 

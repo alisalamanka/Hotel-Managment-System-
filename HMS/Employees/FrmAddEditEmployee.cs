@@ -217,6 +217,7 @@ namespace HMS.Employees
 
                 lblEmployeeID.Text =
                     _CurrentEmployee.EmployeeID.Value.ToString();
+                lblTitle.Text = "Update Employee Info";
 
                 Mode = EnMode.Update;
 
