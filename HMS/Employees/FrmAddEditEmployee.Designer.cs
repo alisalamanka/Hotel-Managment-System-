@@ -127,7 +127,7 @@
             this.uCpersonCardWithFilter1.BackColor = System.Drawing.Color.Gainsboro;
             this.uCpersonCardWithFilter1.FilterEnabled = true;
             this.uCpersonCardWithFilter1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uCpersonCardWithFilter1.Location = new System.Drawing.Point(26, 20);
+            this.uCpersonCardWithFilter1.Location = new System.Drawing.Point(36, 91);
             this.uCpersonCardWithFilter1.Margin = new System.Windows.Forms.Padding(4);
             this.uCpersonCardWithFilter1.Name = "uCpersonCardWithFilter1";
             this.uCpersonCardWithFilter1.ShowAddnewPerson = true;
@@ -155,7 +155,7 @@
             this.Tuserinfo.Location = new System.Drawing.Point(184, 4);
             this.Tuserinfo.Name = "Tuserinfo";
             this.Tuserinfo.Padding = new System.Windows.Forms.Padding(3);
-            this.Tuserinfo.Size = new System.Drawing.Size(1028, 631);
+            this.Tuserinfo.Size = new System.Drawing.Size(1028, 743);
             this.Tuserinfo.TabIndex = 1;
             this.Tuserinfo.Text = "User Info";
             // 
@@ -371,10 +371,10 @@
             // 
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(547, 34);
+            this.lblTitle.Location = new System.Drawing.Point(458, 38);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(64, 39);
-            this.lblTitle.TabIndex = 2;
+            this.lblTitle.TabIndex = 3;
             this.lblTitle.Text = "Add";
             // 
             // FrmAddEditEmployee
