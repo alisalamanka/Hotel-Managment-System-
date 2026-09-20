@@ -82,6 +82,12 @@
     <Compile Include="Employees\Controls\ctrlEmployeesInfo.Designer.cs">
       <DependentUpon>ctrlEmployeesInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Employees\FrmAddEditEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employees\FrmAddEditEmployee.Designer.cs">
+      <DependentUpon>FrmAddEditEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     </Compile>
     <EmbeddedResource Include="Employees\Controls\ctrlEmployeesInfo.resx">
       <DependentUpon>ctrlEmployeesInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employees\FrmAddEditEmployee.resx">
+      <DependentUpon>FrmAddEditEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
