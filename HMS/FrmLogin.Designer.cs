@@ -69,6 +69,7 @@
             this.guna2CustomGradientPanel1.Padding = new System.Windows.Forms.Padding(10);
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1035, 666);
             this.guna2CustomGradientPanel1.TabIndex = 0;
+            this.guna2CustomGradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2CustomGradientPanel1_Paint);
             // 
             // btnLogin
             // 
@@ -125,6 +126,7 @@
             this.txtPassword.Location = new System.Drawing.Point(607, 281);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.PlaceholderText = "";
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(328, 51);
@@ -233,6 +235,7 @@
             this.Name = "FrmLogin";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Text = "FrmLogin";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();

@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.WinForms;
+using HMS.Employees;
 using HMS.People;
 using System;
 using System.Collections.Generic;
@@ -49,6 +50,12 @@ namespace HMS
         private void TSMIpersons_Click(object sender, EventArgs e)
         {
             FrmManagePersons frm = new FrmManagePersons();
+            frm.ShowDialog();
+        }
+
+        private void tsmiEmployees_Click(object sender, EventArgs e)
+        {
+            FrmManageEmployees frm = new FrmManageEmployees();
             frm.ShowDialog();
         }
     }

@@ -85,5 +85,24 @@ namespace HMS
                 return;
             }
         }
+
+        private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            string UserName = "", password = "";
+            CLSglobal.GetCurrentCredential(ref UserName, ref password);
+            if (!string.IsNullOrEmpty(UserName)&&!string.IsNullOrEmpty(password))
+            {
+                txtPassword.Text = password;
+                txtUserName.Text = UserName;
+                CBrememberMe.Checked = true;
+                
+            }
+           
+        }
     }
 }

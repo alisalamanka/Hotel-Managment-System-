@@ -36,6 +36,7 @@
             this.tsmiEmployees = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2CustomGradientPanel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2CustomGradientPanel4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.PBuserpicture = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -57,15 +58,14 @@
             this.lblEmail = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblUserName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.PBuserImage = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.CMSadministrations.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
             this.guna2CustomGradientPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBuserpicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBuserImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // CMSadministrations
@@ -79,7 +79,7 @@
             this.tsmiEmployees});
             this.CMSadministrations.Name = "CMSadministrations";
             this.CMSadministrations.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.CMSadministrations.Size = new System.Drawing.Size(174, 112);
+            this.CMSadministrations.Size = new System.Drawing.Size(195, 134);
             // 
             // tsmiUsers
             // 
@@ -87,7 +87,7 @@
             this.tsmiUsers.ForeColor = System.Drawing.Color.White;
             this.tsmiUsers.Image = global::HMS.Properties.Resources.team;
             this.tsmiUsers.Name = "tsmiUsers";
-            this.tsmiUsers.Size = new System.Drawing.Size(173, 36);
+            this.tsmiUsers.Size = new System.Drawing.Size(194, 36);
             this.tsmiUsers.Text = "Users";
             // 
             // TSMIpersons
@@ -98,7 +98,7 @@
             this.TSMIpersons.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.TSMIpersons.ImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
             this.TSMIpersons.Name = "TSMIpersons";
-            this.TSMIpersons.Size = new System.Drawing.Size(173, 36);
+            this.TSMIpersons.Size = new System.Drawing.Size(194, 36);
             this.TSMIpersons.Text = "Persons";
             this.TSMIpersons.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.TSMIpersons.Click += new System.EventHandler(this.TSMIpersons_Click);
@@ -108,8 +108,9 @@
             this.tsmiEmployees.ForeColor = System.Drawing.Color.White;
             this.tsmiEmployees.Image = global::HMS.Properties.Resources.employee1;
             this.tsmiEmployees.Name = "tsmiEmployees";
-            this.tsmiEmployees.Size = new System.Drawing.Size(173, 36);
+            this.tsmiEmployees.Size = new System.Drawing.Size(194, 36);
             this.tsmiEmployees.Text = "Employees";
+            this.tsmiEmployees.Click += new System.EventHandler(this.tsmiEmployees_Click);
             // 
             // guna2CustomGradientPanel2
             // 
@@ -136,6 +137,20 @@
             this.guna2CustomGradientPanel3.Name = "guna2CustomGradientPanel3";
             this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(1417, 1017);
             this.guna2CustomGradientPanel3.TabIndex = 0;
+            // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2CirclePictureBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox1.Image = global::HMS.Properties.Resources.backgrofund;
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(1417, 1017);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox1.TabIndex = 0;
+            this.guna2CirclePictureBox1.TabStop = false;
             // 
             // guna2CustomGradientPanel1
             // 
@@ -547,20 +562,6 @@
             this.PBuserImage.TabIndex = 0;
             this.PBuserImage.TabStop = false;
             // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2CirclePictureBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox1.Image = global::HMS.Properties.Resources.backgrofund;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(1417, 1017);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox1.TabIndex = 0;
-            this.guna2CirclePictureBox1.TabStop = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -579,13 +580,13 @@
             this.CMSadministrations.ResumeLayout(false);
             this.guna2CustomGradientPanel2.ResumeLayout(false);
             this.guna2CustomGradientPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
             this.guna2CustomGradientPanel4.ResumeLayout(false);
             this.guna2CustomGradientPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBuserpicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBuserImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

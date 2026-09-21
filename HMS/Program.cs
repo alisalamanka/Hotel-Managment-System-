@@ -19,7 +19,7 @@ namespace HMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmAddEditEmployee(2));
+            Application.Run(new FrmLogin());
         }
     }
 }
