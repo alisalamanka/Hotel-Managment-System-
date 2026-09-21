@@ -50,14 +50,17 @@
             this.btnReservations = new Guna.UI2.WinForms.Guna2Button();
             this.btnGuests = new Guna.UI2.WinForms.Guna2Button();
             this.btnDboard = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lbusername = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.lblEmail = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblUserName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.PBuserImage = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.CMSsettings = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.TSMIshowcurrentUserInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMIchangePassword = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMIsignOut = new System.Windows.Forms.ToolStripMenuItem();
             this.CMSadministrations.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
             this.guna2CustomGradientPanel3.SuspendLayout();
@@ -66,6 +69,7 @@
             this.guna2CustomGradientPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBuserpicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBuserImage)).BeginInit();
+            this.CMSsettings.SuspendLayout();
             this.SuspendLayout();
             // 
             // CMSadministrations
@@ -79,7 +83,7 @@
             this.tsmiEmployees});
             this.CMSadministrations.Name = "CMSadministrations";
             this.CMSadministrations.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.CMSadministrations.Size = new System.Drawing.Size(195, 134);
+            this.CMSadministrations.Size = new System.Drawing.Size(174, 112);
             // 
             // tsmiUsers
             // 
@@ -87,8 +91,9 @@
             this.tsmiUsers.ForeColor = System.Drawing.Color.White;
             this.tsmiUsers.Image = global::HMS.Properties.Resources.team;
             this.tsmiUsers.Name = "tsmiUsers";
-            this.tsmiUsers.Size = new System.Drawing.Size(194, 36);
+            this.tsmiUsers.Size = new System.Drawing.Size(173, 36);
             this.tsmiUsers.Text = "Users";
+            this.tsmiUsers.Click += new System.EventHandler(this.tsmiUsers_Click);
             // 
             // TSMIpersons
             // 
@@ -98,7 +103,7 @@
             this.TSMIpersons.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.TSMIpersons.ImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
             this.TSMIpersons.Name = "TSMIpersons";
-            this.TSMIpersons.Size = new System.Drawing.Size(194, 36);
+            this.TSMIpersons.Size = new System.Drawing.Size(173, 36);
             this.TSMIpersons.Text = "Persons";
             this.TSMIpersons.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.TSMIpersons.Click += new System.EventHandler(this.TSMIpersons_Click);
@@ -108,7 +113,7 @@
             this.tsmiEmployees.ForeColor = System.Drawing.Color.White;
             this.tsmiEmployees.Image = global::HMS.Properties.Resources.employee1;
             this.tsmiEmployees.Name = "tsmiEmployees";
-            this.tsmiEmployees.Size = new System.Drawing.Size(194, 36);
+            this.tsmiEmployees.Size = new System.Drawing.Size(173, 36);
             this.tsmiEmployees.Text = "Employees";
             this.tsmiEmployees.Click += new System.EventHandler(this.tsmiEmployees_Click);
             // 
@@ -188,8 +193,7 @@
             this.guna2CustomGradientPanel4.Controls.Add(this.btnReservations);
             this.guna2CustomGradientPanel4.Controls.Add(this.btnGuests);
             this.guna2CustomGradientPanel4.Controls.Add(this.btnDboard);
-            this.guna2CustomGradientPanel4.Controls.Add(this.guna2HtmlLabel1);
-            this.guna2CustomGradientPanel4.Controls.Add(this.guna2HtmlLabel2);
+            this.guna2CustomGradientPanel4.Controls.Add(this.lbusername);
             this.guna2CustomGradientPanel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2CustomGradientPanel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
             this.guna2CustomGradientPanel4.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
@@ -203,11 +207,13 @@
             // PBuserpicture
             // 
             this.PBuserpicture.BackColor = System.Drawing.Color.Transparent;
+            this.PBuserpicture.Image = global::HMS.Properties.Resources.woman;
             this.PBuserpicture.ImageRotate = 0F;
             this.PBuserpicture.Location = new System.Drawing.Point(102, 26);
             this.PBuserpicture.Name = "PBuserpicture";
             this.PBuserpicture.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.PBuserpicture.Size = new System.Drawing.Size(114, 83);
+            this.PBuserpicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBuserpicture.TabIndex = 1;
             this.PBuserpicture.TabStop = false;
             // 
@@ -215,6 +221,7 @@
             // 
             this.btnSettings.BackColor = System.Drawing.Color.Transparent;
             this.btnSettings.BorderRadius = 15;
+            this.btnSettings.ContextMenuStrip = this.CMSsettings;
             this.btnSettings.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSettings.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSettings.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -226,7 +233,7 @@
             this.btnSettings.Image = global::HMS.Properties.Resources.setting1;
             this.btnSettings.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSettings.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnSettings.Location = new System.Drawing.Point(28, 918);
+            this.btnSettings.Location = new System.Drawing.Point(31, 834);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.PressedColor = System.Drawing.Color.Blue;
             this.btnSettings.Size = new System.Drawing.Size(275, 57);
@@ -250,7 +257,7 @@
             this.btnReport.Image = global::HMS.Properties.Resources.report1;
             this.btnReport.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnReport.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnReport.Location = new System.Drawing.Point(28, 845);
+            this.btnReport.Location = new System.Drawing.Point(28, 763);
             this.btnReport.Name = "btnReport";
             this.btnReport.PressedColor = System.Drawing.Color.Blue;
             this.btnReport.Size = new System.Drawing.Size(275, 57);
@@ -275,7 +282,7 @@
             this.btnAdministrations.Image = global::HMS.Properties.Resources.administrator;
             this.btnAdministrations.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAdministrations.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnAdministrations.Location = new System.Drawing.Point(28, 769);
+            this.btnAdministrations.Location = new System.Drawing.Point(28, 692);
             this.btnAdministrations.Name = "btnAdministrations";
             this.btnAdministrations.PressedColor = System.Drawing.Color.Blue;
             this.btnAdministrations.Size = new System.Drawing.Size(275, 57);
@@ -299,7 +306,7 @@
             this.btnServices.Image = global::HMS.Properties.Resources.customer_service;
             this.btnServices.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnServices.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnServices.Location = new System.Drawing.Point(31, 694);
+            this.btnServices.Location = new System.Drawing.Point(31, 621);
             this.btnServices.Name = "btnServices";
             this.btnServices.PressedColor = System.Drawing.Color.Blue;
             this.btnServices.Size = new System.Drawing.Size(275, 57);
@@ -323,7 +330,7 @@
             this.btnApplications.Image = global::HMS.Properties.Resources.Applications;
             this.btnApplications.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnApplications.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnApplications.Location = new System.Drawing.Point(34, 622);
+            this.btnApplications.Location = new System.Drawing.Point(34, 550);
             this.btnApplications.Name = "btnApplications";
             this.btnApplications.PressedColor = System.Drawing.Color.Blue;
             this.btnApplications.Size = new System.Drawing.Size(275, 57);
@@ -347,7 +354,7 @@
             this.btnStays.Image = global::HMS.Properties.Resources.Stays;
             this.btnStays.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnStays.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnStays.Location = new System.Drawing.Point(34, 545);
+            this.btnStays.Location = new System.Drawing.Point(34, 479);
             this.btnStays.Name = "btnStays";
             this.btnStays.PressedColor = System.Drawing.Color.Blue;
             this.btnStays.Size = new System.Drawing.Size(275, 57);
@@ -371,7 +378,7 @@
             this.btnRooms.Image = global::HMS.Properties.Resources.living_room;
             this.btnRooms.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnRooms.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnRooms.Location = new System.Drawing.Point(34, 469);
+            this.btnRooms.Location = new System.Drawing.Point(34, 408);
             this.btnRooms.Name = "btnRooms";
             this.btnRooms.PressedColor = System.Drawing.Color.Blue;
             this.btnRooms.Size = new System.Drawing.Size(275, 57);
@@ -395,7 +402,7 @@
             this.btnReservations.Image = global::HMS.Properties.Resources.reservation;
             this.btnReservations.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnReservations.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnReservations.Location = new System.Drawing.Point(34, 394);
+            this.btnReservations.Location = new System.Drawing.Point(34, 337);
             this.btnReservations.Name = "btnReservations";
             this.btnReservations.PressedColor = System.Drawing.Color.Blue;
             this.btnReservations.Size = new System.Drawing.Size(275, 57);
@@ -419,7 +426,7 @@
             this.btnGuests.Image = global::HMS.Properties.Resources.bridesmaids;
             this.btnGuests.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnGuests.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnGuests.Location = new System.Drawing.Point(34, 319);
+            this.btnGuests.Location = new System.Drawing.Point(34, 266);
             this.btnGuests.Name = "btnGuests";
             this.btnGuests.PressedColor = System.Drawing.Color.Blue;
             this.btnGuests.Size = new System.Drawing.Size(275, 57);
@@ -443,7 +450,7 @@
             this.btnDboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDboard.Image")));
             this.btnDboard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDboard.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnDboard.Location = new System.Drawing.Point(31, 244);
+            this.btnDboard.Location = new System.Drawing.Point(31, 195);
             this.btnDboard.Name = "btnDboard";
             this.btnDboard.PressedColor = System.Drawing.Color.Blue;
             this.btnDboard.Size = new System.Drawing.Size(275, 57);
@@ -452,27 +459,17 @@
             this.btnDboard.MouseLeave += new System.EventHandler(this.btnexit);
             this.btnDboard.MouseHover += new System.EventHandler(this.btnHover);
             // 
-            // guna2HtmlLabel1
+            // lbusername
             // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(119, 195);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(55, 21);
-            this.guna2HtmlLabel1.TabIndex = 2;
-            this.guna2HtmlLabel1.Text = "Email";
-            // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(102, 147);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(94, 21);
-            this.guna2HtmlLabel2.TabIndex = 1;
-            this.guna2HtmlLabel2.Text = "UserName";
+            this.lbusername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbusername.BackColor = System.Drawing.Color.Transparent;
+            this.lbusername.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbusername.ForeColor = System.Drawing.Color.White;
+            this.lbusername.Location = new System.Drawing.Point(116, 147);
+            this.lbusername.Name = "lbusername";
+            this.lbusername.Size = new System.Drawing.Size(110, 24);
+            this.lbusername.TabIndex = 1;
+            this.lbusername.Text = "UserName";
             // 
             // guna2Button2
             // 
@@ -562,6 +559,51 @@
             this.PBuserImage.TabIndex = 0;
             this.PBuserImage.TabStop = false;
             // 
+            // CMSsettings
+            // 
+            this.CMSsettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
+            this.CMSsettings.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CMSsettings.ImageScalingSize = new System.Drawing.Size(30, 30);
+            this.CMSsettings.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSMIshowcurrentUserInfo,
+            this.TSMIchangePassword,
+            this.TSMIsignOut});
+            this.CMSsettings.Name = "CMSadministrations";
+            this.CMSsettings.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.CMSsettings.Size = new System.Drawing.Size(265, 112);
+            // 
+            // TSMIshowcurrentUserInfo
+            // 
+            this.TSMIshowcurrentUserInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.TSMIshowcurrentUserInfo.ForeColor = System.Drawing.Color.White;
+            this.TSMIshowcurrentUserInfo.Image = global::HMS.Properties.Resources.team;
+            this.TSMIshowcurrentUserInfo.Name = "TSMIshowcurrentUserInfo";
+            this.TSMIshowcurrentUserInfo.Size = new System.Drawing.Size(264, 36);
+            this.TSMIshowcurrentUserInfo.Text = "Show Current User Info";
+            this.TSMIshowcurrentUserInfo.Click += new System.EventHandler(this.TSMIshowcurrentUserInfo_Click);
+            // 
+            // TSMIchangePassword
+            // 
+            this.TSMIchangePassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TSMIchangePassword.ForeColor = System.Drawing.Color.White;
+            this.TSMIchangePassword.Image = global::HMS.Properties.Resources.bridesmaids;
+            this.TSMIchangePassword.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.TSMIchangePassword.ImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
+            this.TSMIchangePassword.Name = "TSMIchangePassword";
+            this.TSMIchangePassword.Size = new System.Drawing.Size(264, 36);
+            this.TSMIchangePassword.Text = "Change Password";
+            this.TSMIchangePassword.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.TSMIchangePassword.Click += new System.EventHandler(this.TSMIchangePassword_Click);
+            // 
+            // TSMIsignOut
+            // 
+            this.TSMIsignOut.ForeColor = System.Drawing.Color.White;
+            this.TSMIsignOut.Image = global::HMS.Properties.Resources.employee1;
+            this.TSMIsignOut.Name = "TSMIsignOut";
+            this.TSMIsignOut.Size = new System.Drawing.Size(264, 36);
+            this.TSMIsignOut.Text = "Sign Out";
+            this.TSMIsignOut.Click += new System.EventHandler(this.TSMIsignOut_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -587,6 +629,7 @@
             this.guna2CustomGradientPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBuserpicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBuserImage)).EndInit();
+            this.CMSsettings.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -609,8 +652,7 @@
         private Guna.UI2.WinForms.Guna2Button btnReservations;
         private Guna.UI2.WinForms.Guna2Button btnGuests;
         private Guna.UI2.WinForms.Guna2Button btnDboard;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbusername;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button btnSettings;
@@ -620,5 +662,9 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiEmployees;
         private Guna.UI2.WinForms.Guna2CirclePictureBox PBuserpicture;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private System.Windows.Forms.ContextMenuStrip CMSsettings;
+        private System.Windows.Forms.ToolStripMenuItem TSMIshowcurrentUserInfo;
+        private System.Windows.Forms.ToolStripMenuItem TSMIchangePassword;
+        private System.Windows.Forms.ToolStripMenuItem TSMIsignOut;
     }
 }

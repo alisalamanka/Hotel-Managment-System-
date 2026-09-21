@@ -1,6 +1,8 @@
 ﻿using Guna.UI2.WinForms;
 using HMS.Employees;
 using HMS.People;
+using GlobalClasses;
+using HMS.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HMS_Business;
 
 namespace HMS
 {
@@ -45,6 +48,8 @@ namespace HMS
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            lbusername.Text = CLSglobal.LoggedInUser.Username;
+            PBuserpicture.Image = Image.FromFile(CLSglobal.LoggedInUser.PersonInfo.ImagePath);
         }
 
         private void TSMIpersons_Click(object sender, EventArgs e)
@@ -57,6 +62,30 @@ namespace HMS
         {
             FrmManageEmployees frm = new FrmManageEmployees();
             frm.ShowDialog();
+        }
+
+        private void tsmiUsers_Click(object sender, EventArgs e)
+        {
+            FRMlistUsers frm = new FRMlistUsers();
+            frm.ShowDialog();
+        }
+
+        private void TSMIshowcurrentUserInfo_Click(object sender, EventArgs e)
+        {
+            UserDetailsForm frm = new UserDetailsForm(CLSglobal.LoggedInUser.UserID);
+            frm.ShowDialog();
+        }
+
+        private void TSMIchangePassword_Click(object sender, EventArgs e)
+        {
+            FrmChangePassword frm = new FrmChangePassword(CLSglobal.LoggedInUser.UserID.Value);
+            frm.ShowDialog();
+        }
+
+        private void TSMIsignOut_Click(object sender, EventArgs e)
+        {
+            _LoginForm.Show();
+            this.Hide();
         }
     }
 }
