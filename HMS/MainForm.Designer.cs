@@ -58,6 +58,10 @@
             this.lblEmail = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblUserName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.PBuserImage = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.CMSsettings = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.TSMIshowcurrentUserInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMIchangePassword = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMIsignOut = new System.Windows.Forms.ToolStripMenuItem();
             this.CMSadministrations.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
             this.guna2CustomGradientPanel3.SuspendLayout();
@@ -66,6 +70,7 @@
             this.guna2CustomGradientPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBuserpicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBuserImage)).BeginInit();
+            this.CMSsettings.SuspendLayout();
             this.SuspendLayout();
             // 
             // CMSadministrations
@@ -79,7 +84,7 @@
             this.tsmiEmployees});
             this.CMSadministrations.Name = "CMSadministrations";
             this.CMSadministrations.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.CMSadministrations.Size = new System.Drawing.Size(195, 134);
+            this.CMSadministrations.Size = new System.Drawing.Size(174, 112);
             // 
             // tsmiUsers
             // 
@@ -87,8 +92,9 @@
             this.tsmiUsers.ForeColor = System.Drawing.Color.White;
             this.tsmiUsers.Image = global::HMS.Properties.Resources.team;
             this.tsmiUsers.Name = "tsmiUsers";
-            this.tsmiUsers.Size = new System.Drawing.Size(194, 36);
+            this.tsmiUsers.Size = new System.Drawing.Size(173, 36);
             this.tsmiUsers.Text = "Users";
+            this.tsmiUsers.Click += new System.EventHandler(this.tsmiUsers_Click);
             // 
             // TSMIpersons
             // 
@@ -98,7 +104,7 @@
             this.TSMIpersons.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.TSMIpersons.ImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
             this.TSMIpersons.Name = "TSMIpersons";
-            this.TSMIpersons.Size = new System.Drawing.Size(194, 36);
+            this.TSMIpersons.Size = new System.Drawing.Size(173, 36);
             this.TSMIpersons.Text = "Persons";
             this.TSMIpersons.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.TSMIpersons.Click += new System.EventHandler(this.TSMIpersons_Click);
@@ -108,7 +114,7 @@
             this.tsmiEmployees.ForeColor = System.Drawing.Color.White;
             this.tsmiEmployees.Image = global::HMS.Properties.Resources.employee1;
             this.tsmiEmployees.Name = "tsmiEmployees";
-            this.tsmiEmployees.Size = new System.Drawing.Size(194, 36);
+            this.tsmiEmployees.Size = new System.Drawing.Size(173, 36);
             this.tsmiEmployees.Text = "Employees";
             this.tsmiEmployees.Click += new System.EventHandler(this.tsmiEmployees_Click);
             // 
@@ -215,6 +221,7 @@
             // 
             this.btnSettings.BackColor = System.Drawing.Color.Transparent;
             this.btnSettings.BorderRadius = 15;
+            this.btnSettings.ContextMenuStrip = this.CMSsettings;
             this.btnSettings.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSettings.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSettings.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -562,6 +569,51 @@
             this.PBuserImage.TabIndex = 0;
             this.PBuserImage.TabStop = false;
             // 
+            // CMSsettings
+            // 
+            this.CMSsettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
+            this.CMSsettings.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CMSsettings.ImageScalingSize = new System.Drawing.Size(30, 30);
+            this.CMSsettings.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSMIshowcurrentUserInfo,
+            this.TSMIchangePassword,
+            this.TSMIsignOut});
+            this.CMSsettings.Name = "CMSadministrations";
+            this.CMSsettings.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.CMSsettings.Size = new System.Drawing.Size(265, 112);
+            // 
+            // TSMIshowcurrentUserInfo
+            // 
+            this.TSMIshowcurrentUserInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.TSMIshowcurrentUserInfo.ForeColor = System.Drawing.Color.White;
+            this.TSMIshowcurrentUserInfo.Image = global::HMS.Properties.Resources.team;
+            this.TSMIshowcurrentUserInfo.Name = "TSMIshowcurrentUserInfo";
+            this.TSMIshowcurrentUserInfo.Size = new System.Drawing.Size(264, 36);
+            this.TSMIshowcurrentUserInfo.Text = "Show Current User Info";
+            this.TSMIshowcurrentUserInfo.Click += new System.EventHandler(this.TSMIshowcurrentUserInfo_Click);
+            // 
+            // TSMIchangePassword
+            // 
+            this.TSMIchangePassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TSMIchangePassword.ForeColor = System.Drawing.Color.White;
+            this.TSMIchangePassword.Image = global::HMS.Properties.Resources.bridesmaids;
+            this.TSMIchangePassword.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.TSMIchangePassword.ImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
+            this.TSMIchangePassword.Name = "TSMIchangePassword";
+            this.TSMIchangePassword.Size = new System.Drawing.Size(264, 36);
+            this.TSMIchangePassword.Text = "Change Password";
+            this.TSMIchangePassword.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.TSMIchangePassword.Click += new System.EventHandler(this.TSMIchangePassword_Click);
+            // 
+            // TSMIsignOut
+            // 
+            this.TSMIsignOut.ForeColor = System.Drawing.Color.White;
+            this.TSMIsignOut.Image = global::HMS.Properties.Resources.employee1;
+            this.TSMIsignOut.Name = "TSMIsignOut";
+            this.TSMIsignOut.Size = new System.Drawing.Size(264, 36);
+            this.TSMIsignOut.Text = "Sign Out";
+            this.TSMIsignOut.Click += new System.EventHandler(this.TSMIsignOut_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -587,6 +639,7 @@
             this.guna2CustomGradientPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBuserpicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBuserImage)).EndInit();
+            this.CMSsettings.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -620,5 +673,9 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiEmployees;
         private Guna.UI2.WinForms.Guna2CirclePictureBox PBuserpicture;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private System.Windows.Forms.ContextMenuStrip CMSsettings;
+        private System.Windows.Forms.ToolStripMenuItem TSMIshowcurrentUserInfo;
+        private System.Windows.Forms.ToolStripMenuItem TSMIchangePassword;
+        private System.Windows.Forms.ToolStripMenuItem TSMIsignOut;
     }
 }
