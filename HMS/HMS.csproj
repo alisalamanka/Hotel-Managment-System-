@@ -112,6 +112,12 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Guests\Controls\ctrlGuestDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Guests\Controls\ctrlGuestDetails.Designer.cs">
+      <DependentUpon>ctrlGuestDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guests\Controls\ctrlGuestDetails.resx">
+      <DependentUpon>ctrlGuestDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
