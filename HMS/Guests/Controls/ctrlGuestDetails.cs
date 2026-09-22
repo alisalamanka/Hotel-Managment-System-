@@ -19,11 +19,12 @@ namespace HMS.Guests.Controls
         public ctrlGuestDetails()
         {
             InitializeComponent();
+            GuestID = guestID;
         }
 
         private void ctrlGuestDetails_Load(object sender, EventArgs e)
         {
-          
+    
         }
 
         public void LoadGuestInfo(int? GuestID)
@@ -43,6 +44,7 @@ namespace HMS.Guests.Controls
                 return;
             }
         }
+
         public void Reset()
         {
             uCpersonCard1.Clear();
