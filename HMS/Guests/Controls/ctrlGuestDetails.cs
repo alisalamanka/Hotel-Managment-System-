@@ -19,7 +19,6 @@ namespace HMS.Guests.Controls
         public ctrlGuestDetails()
         {
             InitializeComponent();
-            GuestID = guestID;
         }
 
         private void ctrlGuestDetails_Load(object sender, EventArgs e)
