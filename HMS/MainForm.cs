@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HMS_Business;
+using HMS.Guests;
 
 namespace HMS
 {
@@ -86,6 +87,19 @@ namespace HMS
         {
             _LoginForm.Show();
             this.Hide();
+        }
+
+        private void TMSAdNewGuest_Click(object sender, EventArgs e)
+        {
+            FrmAddEditGuestForm frm = new FrmAddEditGuestForm();
+            frm.ShowDialog();
+        }
+
+        private void TSMIGuestList_Click(object sender, EventArgs e)
+        {
+            FrmManageGuests frm = new FrmManageGuests();
+            frm.ShowDialog();
+
         }
     }
 }

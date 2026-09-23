@@ -211,7 +211,7 @@ namespace HMS.Guests
         {
             if (DGVListGuests.CurrentRow != null)
             {
-                int GuestID = (int)DGVListGuests.CurrentRow.Cells[1].Value;
+                int GuestID = (int)DGVListGuests.CurrentRow.Cells[0].Value;
                 FrmAddEditGuestForm drm = new FrmAddEditGuestForm(GuestID);
                 drm.ShowDialog();
             }
@@ -235,7 +235,7 @@ namespace HMS.Guests
                     MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
 
-                    int GuestID = (int)DGVListGuests.CurrentRow.Cells[1].Value;
+                    int GuestID = (int)DGVListGuests.CurrentRow.Cells[0].Value;
                     ClsGuest Guest = ClsGuest.Find(GuestID);
                     if (Guest!=null)
                     {

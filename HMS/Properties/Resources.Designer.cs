@@ -413,6 +413,16 @@ namespace HMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap contact_list {
+            get {
+                object obj = ResourceManager.GetObject("contact-list", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap contract {
             get {
                 object obj = ResourceManager.GetObject("contract", resourceCulture);
@@ -536,6 +546,16 @@ namespace HMS.Properties {
         internal static System.Drawing.Bitmap department__1_ {
             get {
                 object obj = ResourceManager.GetObject("department (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap desk {
+            get {
+                object obj = ResourceManager.GetObject("desk", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
