@@ -1,4 +1,5 @@
 ﻿using HMS.Employees;
+using HMS.Guests;
 using HMS.People;
 using HMS.Users;
 using System;
@@ -19,7 +20,7 @@ namespace HMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLogin());
+            Application.Run(new FrmManageGuests());
         }
     }
 }
