@@ -35,6 +35,11 @@
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.cbIsActive = new Guna.UI2.WinForms.Guna2ComboBox();
             this.DGVListGuests = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.CMSGuests = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.TSMIaddNewGuest = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMIshowdetails = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMIeditinfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMIdelete = new System.Windows.Forms.ToolStripMenuItem();
             this.txtFilterByValue = new Guna.UI2.WinForms.Guna2TextBox();
             this.CBfilterBy = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -44,14 +49,9 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddNewGuest = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.CMSGuests = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            this.TSMIaddNewGuest = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMIshowdetails = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMIeditinfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMIdelete = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DGVListGuests)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.CMSGuests.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNOusers
@@ -134,6 +134,66 @@
             this.DGVListGuests.ThemeStyle.HeaderStyle.Height = 20;
             this.DGVListGuests.ThemeStyle.ReadOnly = true;
             this.DGVListGuests.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // CMSGuests
+            // 
+            this.CMSGuests.BackColor = System.Drawing.Color.LightGray;
+            this.CMSGuests.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CMSGuests.ImageScalingSize = new System.Drawing.Size(30, 30);
+            this.CMSGuests.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
+            this.CMSGuests.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSMIaddNewGuest,
+            this.TSMIshowdetails,
+            this.TSMIeditinfo,
+            this.TSMIdelete});
+            this.CMSGuests.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.CMSGuests.Name = "CMSusers";
+            this.CMSGuests.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.CMSGuests.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.CMSGuests.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
+            this.CMSGuests.RenderStyle.ColorTable = null;
+            this.CMSGuests.RenderStyle.RoundedEdges = true;
+            this.CMSGuests.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
+            this.CMSGuests.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.CMSGuests.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.CMSGuests.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
+            this.CMSGuests.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.CMSGuests.Size = new System.Drawing.Size(255, 170);
+            // 
+            // TSMIaddNewGuest
+            // 
+            this.TSMIaddNewGuest.Image = global::HMS.Properties.Resources.AddPerson;
+            this.TSMIaddNewGuest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TSMIaddNewGuest.Name = "TSMIaddNewGuest";
+            this.TSMIaddNewGuest.Size = new System.Drawing.Size(254, 36);
+            this.TSMIaddNewGuest.Text = "Add New Guest";
+            this.TSMIaddNewGuest.Click += new System.EventHandler(this.TSMIaddNewGuest_Click);
+            // 
+            // TSMIshowdetails
+            // 
+            this.TSMIshowdetails.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TSMIshowdetails.Image = global::HMS.Properties.Resources.PersonInfo;
+            this.TSMIshowdetails.Name = "TSMIshowdetails";
+            this.TSMIshowdetails.Size = new System.Drawing.Size(254, 36);
+            this.TSMIshowdetails.Text = "Show Details";
+            this.TSMIshowdetails.Click += new System.EventHandler(this.TSMIshowdetails_Click);
+            // 
+            // TSMIeditinfo
+            // 
+            this.TSMIeditinfo.Image = global::HMS.Properties.Resources.edit_Person;
+            this.TSMIeditinfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TSMIeditinfo.Name = "TSMIeditinfo";
+            this.TSMIeditinfo.Size = new System.Drawing.Size(254, 36);
+            this.TSMIeditinfo.Text = "Edit Info";
+            this.TSMIeditinfo.Click += new System.EventHandler(this.TSMIeditinfo_Click);
+            // 
+            // TSMIdelete
+            // 
+            this.TSMIdelete.Image = global::HMS.Properties.Resources.delete_Person;
+            this.TSMIdelete.Name = "TSMIdelete";
+            this.TSMIdelete.Size = new System.Drawing.Size(254, 36);
+            this.TSMIdelete.Text = "Delete";
+            this.TSMIdelete.Click += new System.EventHandler(this.TSMIdelete_Click);
             // 
             // txtFilterByValue
             // 
@@ -290,65 +350,6 @@
             this.guna2CirclePictureBox1.TabIndex = 12;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
-            // CMSGuests
-            // 
-            this.CMSGuests.BackColor = System.Drawing.Color.LightGray;
-            this.CMSGuests.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CMSGuests.ImageScalingSize = new System.Drawing.Size(30, 30);
-            this.CMSGuests.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
-            this.CMSGuests.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TSMIaddNewGuest,
-            this.TSMIshowdetails,
-            this.TSMIeditinfo,
-            this.TSMIdelete});
-            this.CMSGuests.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.CMSGuests.Name = "CMSusers";
-            this.CMSGuests.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.CMSGuests.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.CMSGuests.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
-            this.CMSGuests.RenderStyle.ColorTable = null;
-            this.CMSGuests.RenderStyle.RoundedEdges = true;
-            this.CMSGuests.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
-            this.CMSGuests.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.CMSGuests.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.CMSGuests.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
-            this.CMSGuests.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.CMSGuests.Size = new System.Drawing.Size(255, 170);
-            // 
-            // TSMIaddNewGuest
-            // 
-            this.TSMIaddNewGuest.Image = global::HMS.Properties.Resources.AddPerson;
-            this.TSMIaddNewGuest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TSMIaddNewGuest.Name = "TSMIaddNewGuest";
-            this.TSMIaddNewGuest.Size = new System.Drawing.Size(254, 36);
-            this.TSMIaddNewGuest.Text = "Add New Guest";
-            this.TSMIaddNewGuest.Click += new System.EventHandler(this.TSMIaddNewGuest_Click);
-            // 
-            // TSMIshowdetails
-            // 
-            this.TSMIshowdetails.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TSMIshowdetails.Image = global::HMS.Properties.Resources.PersonInfo;
-            this.TSMIshowdetails.Name = "TSMIshowdetails";
-            this.TSMIshowdetails.Size = new System.Drawing.Size(254, 36);
-            this.TSMIshowdetails.Text = "Show Details";
-            this.TSMIshowdetails.Click += new System.EventHandler(this.TSMIshowdetails_Click);
-            // 
-            // TSMIeditinfo
-            // 
-            this.TSMIeditinfo.Image = global::HMS.Properties.Resources.edit_Person;
-            this.TSMIeditinfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TSMIeditinfo.Name = "TSMIeditinfo";
-            this.TSMIeditinfo.Size = new System.Drawing.Size(254, 36);
-            this.TSMIeditinfo.Text = "Edit Info";
-            // 
-            // TSMIdelete
-            // 
-            this.TSMIdelete.Image = global::HMS.Properties.Resources.delete_Person;
-            this.TSMIdelete.Name = "TSMIdelete";
-            this.TSMIdelete.Size = new System.Drawing.Size(254, 36);
-            this.TSMIdelete.Text = "Delete";
-            this.TSMIdelete.Click += new System.EventHandler(this.TSMIdelete_Click);
-            // 
             // FrmManageGuests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -374,8 +375,8 @@
             this.Text = "Guests List";
             this.Load += new System.EventHandler(this.FrmManageGuests_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVListGuests)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.CMSGuests.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

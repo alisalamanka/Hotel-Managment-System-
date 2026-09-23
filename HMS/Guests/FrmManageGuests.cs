@@ -200,6 +200,7 @@ namespace HMS.Guests
         {
             FrmAddEditGuestForm frm = new FrmAddEditGuestForm();
             frm.ShowDialog();
+            _RefreshPagination();
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -209,12 +210,8 @@ namespace HMS.Guests
 
         private void TSMIaddNewGuest_Click(object sender, EventArgs e)
         {
-            if (DGVListGuests.CurrentRow != null)
-            {
-                int GuestID = (int)DGVListGuests.CurrentRow.Cells[0].Value;
-                FrmAddEditGuestForm drm = new FrmAddEditGuestForm(GuestID);
-                drm.ShowDialog();
-            }
+           FrmAddEditGuestForm form = new FrmAddEditGuestForm();
+            form.ShowDialog();
         }
 
         private void TSMIshowdetails_Click(object sender, EventArgs e)
@@ -242,6 +239,7 @@ namespace HMS.Guests
                         if (Guest.DeleteGuest())
                         {
                             ClsUtil.ShowSuccessMessage("Guest Deleted Successfully!");
+                            _RefreshPagination();
                             return;
                         }
                         else
@@ -251,6 +249,17 @@ namespace HMS.Guests
                         }
                     }
                 }
+            }
+        }
+
+        private void TSMIeditinfo_Click(object sender, EventArgs e)
+        {
+            if (DGVListGuests.CurrentRow != null)
+            {
+                int GuestID = (int)DGVListGuests.CurrentRow.Cells[0].Value;
+                FrmAddEditGuestForm drm = new FrmAddEditGuestForm(GuestID);
+                drm.ShowDialog();
+                _RefreshPagination();
             }
         }
     } 
