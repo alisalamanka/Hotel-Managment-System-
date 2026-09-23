@@ -159,41 +159,6 @@
             this.CMSemployees.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.CMSemployees.Size = new System.Drawing.Size(294, 148);
             // 
-            // TSMIaddNewEmployee
-            // 
-            this.TSMIaddNewEmployee.Image = global::HMS.Properties.Resources.AddPerson;
-            this.TSMIaddNewEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TSMIaddNewEmployee.Name = "TSMIaddNewEmployee";
-            this.TSMIaddNewEmployee.Size = new System.Drawing.Size(293, 36);
-            this.TSMIaddNewEmployee.Text = "Add New Employee";
-            this.TSMIaddNewEmployee.Click += new System.EventHandler(this.TSMIaddNewEmployee_Click);
-            // 
-            // TSMIshowdetails
-            // 
-            this.TSMIshowdetails.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TSMIshowdetails.Image = global::HMS.Properties.Resources.PersonInfo;
-            this.TSMIshowdetails.Name = "TSMIshowdetails";
-            this.TSMIshowdetails.Size = new System.Drawing.Size(293, 36);
-            this.TSMIshowdetails.Text = "Show Details";
-            this.TSMIshowdetails.Click += new System.EventHandler(this.TSMIshowdetails_Click);
-            // 
-            // TSMIeditinfo
-            // 
-            this.TSMIeditinfo.Image = global::HMS.Properties.Resources.edit_Person;
-            this.TSMIeditinfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TSMIeditinfo.Name = "TSMIeditinfo";
-            this.TSMIeditinfo.Size = new System.Drawing.Size(293, 36);
-            this.TSMIeditinfo.Text = "Edit Info";
-            this.TSMIeditinfo.Click += new System.EventHandler(this.TSMIeditinfo_Click);
-            // 
-            // TSMIdelete
-            // 
-            this.TSMIdelete.Image = global::HMS.Properties.Resources.delete_Person;
-            this.TSMIdelete.Name = "TSMIdelete";
-            this.TSMIdelete.Size = new System.Drawing.Size(293, 36);
-            this.TSMIdelete.Text = "Delete";
-            this.TSMIdelete.Click += new System.EventHandler(this.TSMIdelete_Click);
-            // 
             // txtFilterByValue
             // 
             this.txtFilterByValue.BorderRadius = 16;
