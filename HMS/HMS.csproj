@@ -118,6 +118,24 @@
     <Compile Include="Guests\Controls\ctrlGuestDetails.Designer.cs">
       <DependentUpon>ctrlGuestDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Guests\FrmAddEditGuestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guests\FrmAddEditGuestForm.Designer.cs">
+      <DependentUpon>FrmAddEditGuestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guests\FrmGuestDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guests\FrmGuestDetails.Designer.cs">
+      <DependentUpon>FrmGuestDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guests\FrmManageGuests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guests\FrmManageGuests.Designer.cs">
+      <DependentUpon>FrmManageGuests.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +237,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Guests\Controls\ctrlGuestDetails.resx">
       <DependentUpon>ctrlGuestDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guests\FrmAddEditGuestForm.resx">
+      <DependentUpon>FrmAddEditGuestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guests\FrmGuestDetails.resx">
+      <DependentUpon>FrmGuestDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guests\FrmManageGuests.resx">
+      <DependentUpon>FrmManageGuests.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -712,6 +739,8 @@
     <Content Include="packages\Guna.UI2.WinForms.2.0.4.8\lib\net7.0-windows7.0\Guna.UI2.dll" />
     <Content Include="packages\Guna.UI2.WinForms.2.0.4.8\lib\netcoreapp3.1\Guna.UI2.dll" />
     <Content Include="packages\Guna.UI2.WinForms.2.0.4.8\LICENSE.txt" />
+    <None Include="Resources\right-arrow.png" />
+    <None Include="Resources\left-arrow.png" />
     <None Include="Resources\add-friend.png" />
     <None Include="Resources\department %281%29.png" />
     <None Include="Resources\dollar1.png" />

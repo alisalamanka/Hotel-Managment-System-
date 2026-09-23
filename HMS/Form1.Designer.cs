@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrlEmployeesInfo1 = new HMS.Employees.Controls.ctrlEmployeesInfo();
+            this.ctrlGuestDetails1 = new HMS.Guests.Controls.ctrlGuestDetails();
             this.SuspendLayout();
             // 
-            // ctrlEmployeesInfo1
+            // ctrlGuestDetails1
             // 
-            this.ctrlEmployeesInfo1.BackColor = System.Drawing.Color.Gainsboro;
-            this.ctrlEmployeesInfo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrlEmployeesInfo1.Location = new System.Drawing.Point(136, 98);
-            this.ctrlEmployeesInfo1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ctrlEmployeesInfo1.Name = "ctrlEmployeesInfo1";
-            this.ctrlEmployeesInfo1.Size = new System.Drawing.Size(987, 594);
-            this.ctrlEmployeesInfo1.TabIndex = 0;
+            this.ctrlGuestDetails1.BackColor = System.Drawing.Color.Gainsboro;
+            this.ctrlGuestDetails1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrlGuestDetails1.Location = new System.Drawing.Point(78, 36);
+            this.ctrlGuestDetails1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ctrlGuestDetails1.Name = "ctrlGuestDetails1";
+            this.ctrlGuestDetails1.Size = new System.Drawing.Size(1016, 546);
+            this.ctrlGuestDetails1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1853, 1061);
-            this.Controls.Add(this.ctrlEmployeesInfo1);
+            this.ClientSize = new System.Drawing.Size(1247, 1061);
+            this.Controls.Add(this.ctrlGuestDetails1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -56,6 +56,6 @@
 
         #endregion
 
-        private Employees.Controls.ctrlEmployeesInfo ctrlEmployeesInfo1;
+        private Guests.Controls.ctrlGuestDetails ctrlGuestDetails1;
     }
 }

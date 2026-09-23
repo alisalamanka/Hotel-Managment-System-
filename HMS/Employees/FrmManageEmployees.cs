@@ -19,10 +19,10 @@ namespace HMS.Employees
         {
             _dtEmployees = ClsEmployee.GetAllEmployees();
 
-            DGVemployeesList.DataSource = _dtEmployees;
+            DGVEmployeesList.DataSource = _dtEmployees;
 
             lblNumberOfEmployees.Text =
-                DGVemployeesList.Rows.Count.ToString();
+                DGVEmployeesList.Rows.Count.ToString();
         }
 
 
@@ -165,45 +165,45 @@ namespace HMS.Employees
             cbIsActive.Visible = false;
             txtFilterByValue.Visible = false;
 
-            DGVemployeesList.DataSource = _dtEmployees;
+            DGVEmployeesList.DataSource = _dtEmployees;
 
             lblNumberOfEmployees.Text =
-                DGVemployeesList.Rows.Count.ToString();
+                DGVEmployeesList.Rows.Count.ToString();
 
             // Columns
-            DGVemployeesList.Columns[0].HeaderText = "Person ID";
-            DGVemployeesList.Columns[0].Width = 110;
+            DGVEmployeesList.Columns[0].HeaderText = "Person ID";
+            DGVEmployeesList.Columns[0].Width = 110;
 
-            DGVemployeesList.Columns[1].HeaderText = "Employee ID";
-            DGVemployeesList.Columns[1].Width = 110;
+            DGVEmployeesList.Columns[1].HeaderText = "Employee ID";
+            DGVEmployeesList.Columns[1].Width = 110;
 
-            DGVemployeesList.Columns[2].HeaderText = "Full Name";
-            DGVemployeesList.Columns[2].Width = 220;
+            DGVEmployeesList.Columns[2].HeaderText = "Full Name";
+            DGVEmployeesList.Columns[2].Width = 220;
 
-            DGVemployeesList.Columns[3].HeaderText = "National Number";
-            DGVemployeesList.Columns[3].Width = 120;
+            DGVEmployeesList.Columns[3].HeaderText = "National Number";
+            DGVEmployeesList.Columns[3].Width = 120;
 
-            DGVemployeesList.Columns[4].HeaderText = "Date Of Birth";
-            DGVemployeesList.Columns[4].Width = 130;
+            DGVEmployeesList.Columns[4].HeaderText = "Date Of Birth";
+            DGVEmployeesList.Columns[4].Width = 130;
 
-            DGVemployeesList.Columns[5].HeaderText = "Phone";
-            DGVemployeesList.Columns[5].Width = 140;
+            DGVEmployeesList.Columns[5].HeaderText = "Phone";
+            DGVEmployeesList.Columns[5].Width = 140;
 
-            DGVemployeesList.Columns[6].HeaderText = "Email";
-            DGVemployeesList.Columns[6].Width = 250;
+            DGVEmployeesList.Columns[6].HeaderText = "Email";
+            DGVEmployeesList.Columns[6].Width = 250;
 
-            DGVemployeesList.Columns[7].HeaderText = "Country";
-            DGVemployeesList.Columns[7].Width = 100;
+            DGVEmployeesList.Columns[7].HeaderText = "Country";
+            DGVEmployeesList.Columns[7].Width = 100;
 
 
-            DGVemployeesList.Columns[8].HeaderText = "Department";
-            DGVemployeesList.Columns[8].Width = 120;
+            DGVEmployeesList.Columns[8].HeaderText = "Department";
+            DGVEmployeesList.Columns[8].Width = 120;
 
-            DGVemployeesList.Columns[9].HeaderText = "Salary";
-            DGVemployeesList.Columns[9].Width = 100;
+            DGVEmployeesList.Columns[9].HeaderText = "Salary";
+            DGVEmployeesList.Columns[9].Width = 100;
 
-            DGVemployeesList.Columns[10].HeaderText = "Is Active";
-            DGVemployeesList.Columns[10].Width = 100;
+            DGVEmployeesList.Columns[10].HeaderText = "Is Active";
+            DGVEmployeesList.Columns[10].Width = 100;
         }
 
         private void TSMIaddnewuser_Click(object sender, EventArgs e)
@@ -220,9 +220,9 @@ namespace HMS.Employees
 
         private void TSMIshowdetails_Click(object sender, EventArgs e)
         {
-            if (DGVemployeesList.CurrentRow != null)
+            if (DGVEmployeesList.CurrentRow != null)
             {
-                int EmpID = (int)DGVemployeesList.CurrentRow.Cells[1].Value;
+                int EmpID = (int)DGVEmployeesList.CurrentRow.Cells[1].Value;
                 FrmEmployeeDetails frm = new FrmEmployeeDetails(EmpID);
                 frm.ShowDialog();
             }
@@ -232,9 +232,9 @@ namespace HMS.Employees
 
         private void TSMIeditinfo_Click(object sender, EventArgs e)
         {
-            if (DGVemployeesList.CurrentRow != null)
+            if (DGVEmployeesList.CurrentRow != null)
             {
-                int EmpID = (int)DGVemployeesList.CurrentRow.Cells[1].Value;
+                int EmpID = (int)DGVEmployeesList.CurrentRow.Cells[1].Value;
                 FrmAddEditEmployee frm = new FrmAddEditEmployee(EmpID);
                 frm.ShowDialog();
                 _RefreshEmployeeList();
@@ -248,7 +248,7 @@ namespace HMS.Employees
             if (MessageBox.Show("Are You Sure You Want to Delete this Employee?",
                 "Delete Confirmation!",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.Yes)
             {
-                int EmpID = (int)DGVemployeesList.CurrentRow.Cells[1].Value;
+                int EmpID = (int)DGVEmployeesList.CurrentRow.Cells[1].Value;
                 ClsEmployee emp = ClsEmployee.Find(EmpID);
                 if (emp.DeleteEmployee())
                 {
@@ -266,9 +266,9 @@ namespace HMS.Employees
 
         private void DGVemployeesList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (DGVemployeesList.CurrentRow!=null)
+            if (DGVEmployeesList.CurrentRow!=null)
             {
-                int EmpID = (int)DGVemployeesList.CurrentRow.Cells[1].Value;
+                int EmpID = (int)DGVEmployeesList.CurrentRow.Cells[1].Value;
                 FrmEmployeeDetails frm = new FrmEmployeeDetails(EmpID);
                 frm.ShowDialog();
                 _RefreshEmployeeList();

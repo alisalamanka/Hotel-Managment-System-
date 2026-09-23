@@ -29,15 +29,21 @@ namespace HMS.Guests
 
         private void FrmGuestDetails_Load(object sender, EventArgs e)
         {
-            ClsGuest Guest = ClsGuest.Find(_GuestID.Value);
-            if (Guest!=null)
+            bool ErrorOcoured = false;
+            bool Exists = ClsGuest.GuestExistsByID(_GuestID.Value, ref ErrorOcoured);
+            if (ErrorOcoured)
             {
-                ctrlGuestDetails1.LoadGuestInfo(_GuestID);
+                ClsUtil.ShowErrorMessage("An Error Occoured Please Show the Event Log!");
+                return;
+            }
+            if (!Exists)
+            {
+                ClsUtil.ShowErrorMessage($"No Guest With Id = {_GuestID.Value}");
+                return;
             }
             else
             {
-                ClsUtil.ShowErrorMessage("Failed To Load Guest Info");
-                return;
+                ctrlGuestDetails1.LoadGuestInfo(_GuestID);
             }
         }
     }
