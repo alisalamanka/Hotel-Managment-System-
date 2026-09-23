@@ -86,8 +86,7 @@ namespace HMS.Guests
             {
                 _dtCurrentPage.DefaultView.RowFilter = "";
 
-                lblNOusers.Text =
-                    _dtCurrentPage.DefaultView.Count.ToString();
+                _LoadCurrentPage();
             }
         }
 
@@ -118,7 +117,8 @@ namespace HMS.Guests
             if (string.IsNullOrWhiteSpace(txtFilterByValue.Text) ||
                 CBfilterBy.Text == "None")
             {
-                _dtCurrentPage.DefaultView.RowFilter = "";
+                _dtGuests.DefaultView.RowFilter = "";
+                _LoadCurrentPage();
             }
             else
             {
@@ -128,18 +128,18 @@ namespace HMS.Guests
                 if (CBfilterBy.Text == "Guest ID" ||
                     CBfilterBy.Text == "Person ID")
                 {
-                    _dtCurrentPage.DefaultView.RowFilter =
+                    _dtGuests.DefaultView.RowFilter =
                         $"[{FilterColumn}] = {Value}";
                 }
                 else
                 {
-                    _dtCurrentPage.DefaultView.RowFilter =
+                    _dtGuests.DefaultView.RowFilter =
                         $"[{FilterColumn}] LIKE '{Value}%'";
                 }
             }
-
+            DGVListGuests.DataSource = _dtGuests;
             lblNOusers.Text =
-                _dtCurrentPage.DefaultView.Count.ToString();
+                DGVListGuests.Rows.Count.ToString();
         }
 
         private void cbIsActive_SelectedIndexChanged(object sender, EventArgs e)
@@ -148,21 +148,22 @@ namespace HMS.Guests
 
             if (FilterValue == "All")
             {
-                _dtCurrentPage.DefaultView.RowFilter = "";
+                _dtGuests.DefaultView.RowFilter = "";
             }
             else if (FilterValue == "Yes")
             {
-                _dtCurrentPage.DefaultView.RowFilter =
+                _dtGuests.DefaultView.RowFilter =
                     "[IsActive] = 1";
             }
             else if (FilterValue == "No")
             {
-                _dtCurrentPage.DefaultView.RowFilter =
+                _dtGuests.DefaultView.RowFilter =
                     "[IsActive] = 0";
             }
 
+            DGVListGuests.DataSource = _dtGuests;
             lblNOusers.Text =
-                _dtCurrentPage.DefaultView.Count.ToString();
+                DGVListGuests.Rows.Count.ToString();
         }
 
         private void txtFilterByValue_KeyPress(object sender, KeyPressEventArgs e)
@@ -212,6 +213,7 @@ namespace HMS.Guests
         {
            FrmAddEditGuestForm form = new FrmAddEditGuestForm();
             form.ShowDialog();
+            _RefreshPagination();
         }
 
         private void TSMIshowdetails_Click(object sender, EventArgs e)
