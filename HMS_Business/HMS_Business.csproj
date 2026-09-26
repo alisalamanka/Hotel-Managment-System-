@@ -51,6 +51,7 @@
     <Compile Include="ClsGuest.cs" />
     <Compile Include="ClsPerson.cs" />
     <Compile Include="ClsCountry.cs" />
+    <Compile Include="ClsRoomType.cs" />
     <Compile Include="Clsuser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -50,6 +50,7 @@
     <Compile Include="ClsEmployeeData.cs" />
     <Compile Include="ClsGuestData.cs" />
     <Compile Include="ClsPersonsData.cs" />
+    <Compile Include="ClsRoomTypeData.cs" />
     <Compile Include="ClsUserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
