@@ -756,6 +756,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\Release\" />
+    <Folder Include="Rooms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
