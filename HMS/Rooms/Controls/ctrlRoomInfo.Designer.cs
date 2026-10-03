@@ -39,12 +39,27 @@
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblRoomID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2CirclePictureBox4 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2CirclePictureBox5 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2GroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.BorderRadius = 17;
+            this.guna2GroupBox1.Controls.Add(this.guna2CirclePictureBox5);
+            this.guna2GroupBox1.Controls.Add(this.guna2CirclePictureBox4);
+            this.guna2GroupBox1.Controls.Add(this.guna2CirclePictureBox3);
+            this.guna2GroupBox1.Controls.Add(this.guna2CirclePictureBox2);
+            this.guna2GroupBox1.Controls.Add(this.guna2CirclePictureBox1);
             this.guna2GroupBox1.Controls.Add(this.lblStatus);
             this.guna2GroupBox1.Controls.Add(this.guna2HtmlLabel9);
             this.guna2GroupBox1.Controls.Add(this.lblPricePerNight);
@@ -68,7 +83,7 @@
             this.lblStatus.BackColor = System.Drawing.Color.Transparent;
             this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.Color.Black;
-            this.lblStatus.Location = new System.Drawing.Point(202, 189);
+            this.lblStatus.Location = new System.Drawing.Point(247, 189);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(35, 27);
             this.lblStatus.TabIndex = 12;
@@ -90,7 +105,7 @@
             this.lblPricePerNight.BackColor = System.Drawing.Color.Transparent;
             this.lblPricePerNight.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPricePerNight.ForeColor = System.Drawing.Color.Black;
-            this.lblPricePerNight.Location = new System.Drawing.Point(721, 134);
+            this.lblPricePerNight.Location = new System.Drawing.Point(756, 134);
             this.lblPricePerNight.Name = "lblPricePerNight";
             this.lblPricePerNight.Size = new System.Drawing.Size(35, 27);
             this.lblPricePerNight.TabIndex = 10;
@@ -112,7 +127,7 @@
             this.lblRoomType.BackColor = System.Drawing.Color.Transparent;
             this.lblRoomType.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoomType.ForeColor = System.Drawing.Color.Black;
-            this.lblRoomType.Location = new System.Drawing.Point(721, 74);
+            this.lblRoomType.Location = new System.Drawing.Point(759, 74);
             this.lblRoomType.Name = "lblRoomType";
             this.lblRoomType.Size = new System.Drawing.Size(35, 27);
             this.lblRoomType.TabIndex = 8;
@@ -134,7 +149,7 @@
             this.lblRoomNumber.BackColor = System.Drawing.Color.Transparent;
             this.lblRoomNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoomNumber.ForeColor = System.Drawing.Color.Black;
-            this.lblRoomNumber.Location = new System.Drawing.Point(202, 134);
+            this.lblRoomNumber.Location = new System.Drawing.Point(243, 134);
             this.lblRoomNumber.Name = "lblRoomNumber";
             this.lblRoomNumber.Size = new System.Drawing.Size(35, 27);
             this.lblRoomNumber.TabIndex = 6;
@@ -156,7 +171,7 @@
             this.lblRoomID.BackColor = System.Drawing.Color.Transparent;
             this.lblRoomID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoomID.ForeColor = System.Drawing.Color.Black;
-            this.lblRoomID.Location = new System.Drawing.Point(202, 74);
+            this.lblRoomID.Location = new System.Drawing.Point(243, 74);
             this.lblRoomID.Name = "lblRoomID";
             this.lblRoomID.Size = new System.Drawing.Size(35, 27);
             this.lblRoomID.TabIndex = 4;
@@ -173,6 +188,71 @@
             this.guna2HtmlLabel1.TabIndex = 3;
             this.guna2HtmlLabel1.Text = "Room ID : ";
             // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox1.Image = global::HMS.Properties.Resources.hashtag;
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(197, 74);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(40, 30);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox1.TabIndex = 13;
+            this.guna2CirclePictureBox1.TabStop = false;
+            // 
+            // guna2CirclePictureBox2
+            // 
+            this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox2.Image = global::HMS.Properties.Resources._67;
+            this.guna2CirclePictureBox2.ImageRotate = 0F;
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(197, 131);
+            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
+            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(40, 30);
+            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox2.TabIndex = 14;
+            this.guna2CirclePictureBox2.TabStop = false;
+            // 
+            // guna2CirclePictureBox3
+            // 
+            this.guna2CirclePictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox3.Image = global::HMS.Properties.Resources.project_status;
+            this.guna2CirclePictureBox3.ImageRotate = 0F;
+            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(197, 189);
+            this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
+            this.guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox3.Size = new System.Drawing.Size(40, 30);
+            this.guna2CirclePictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox3.TabIndex = 15;
+            this.guna2CirclePictureBox3.TabStop = false;
+            // 
+            // guna2CirclePictureBox4
+            // 
+            this.guna2CirclePictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox4.Image = global::HMS.Properties.Resources.bed;
+            this.guna2CirclePictureBox4.ImageRotate = 0F;
+            this.guna2CirclePictureBox4.Location = new System.Drawing.Point(706, 71);
+            this.guna2CirclePictureBox4.Name = "guna2CirclePictureBox4";
+            this.guna2CirclePictureBox4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox4.Size = new System.Drawing.Size(40, 30);
+            this.guna2CirclePictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox4.TabIndex = 16;
+            this.guna2CirclePictureBox4.TabStop = false;
+            // 
+            // guna2CirclePictureBox5
+            // 
+            this.guna2CirclePictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox5.Image = global::HMS.Properties.Resources.dollar1;
+            this.guna2CirclePictureBox5.ImageRotate = 0F;
+            this.guna2CirclePictureBox5.Location = new System.Drawing.Point(704, 131);
+            this.guna2CirclePictureBox5.Name = "guna2CirclePictureBox5";
+            this.guna2CirclePictureBox5.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox5.Size = new System.Drawing.Size(40, 30);
+            this.guna2CirclePictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox5.TabIndex = 17;
+            this.guna2CirclePictureBox5.TabStop = false;
+            // 
             // ctrlRoomInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -180,11 +260,16 @@
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.Controls.Add(this.guna2GroupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ctrlRoomInfo";
             this.Size = new System.Drawing.Size(1032, 338);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -202,5 +287,10 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblRoomID;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox5;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox4;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox3;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
     }
 }
