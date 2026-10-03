@@ -41,9 +41,11 @@
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.EPinputs = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
+            this.btnClose = new Guna.UI2.WinForms.Guna2Button();
+            this.EPinputs = new System.Windows.Forms.ErrorProvider(this.components);
+            //this.btnClose = new Guna.UI2.WinForms.Guna2Button();
+            //this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CirclePictureBox5 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox4 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
