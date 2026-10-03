@@ -2,6 +2,7 @@
 using HMS_DataAccess;
 using System;
 using System.Data;
+using System.Web;
 
 namespace HMS_Business
 {
@@ -11,8 +12,21 @@ namespace HMS_Business
         public int? RoomTypeID { get; set; }
         public decimal PricePerNight { get; set; }
         public int RoomNumber { get; set; }
+
+        public ClsRoomType RoomTypeInfo { get; set; }
         public short Status { get; set; }
 
+
+        public enum EnRoomStatus
+        {
+            Available = 1,
+            Reserved = 2,
+            Occupied = 3,
+            Cleaning = 4,
+            Maintenance = 5,
+        }
+
+        public EnRoomStatus RoomStatus { get; set; }
 
         public enum EnMode
         {
@@ -45,12 +59,32 @@ namespace HMS_Business
             this.GuestRoomID = GuestRoomID;
             this.RoomTypeID = RoomTypeID;
             this.PricePerNight = PricePerNight;
+            RoomTypeInfo = ClsRoomType.Find(RoomTypeID);
             this.RoomNumber = RoomNumber;
             this.Status = Status;
 
             Mode = EnMode.Update;
         }
 
+
+        public static string GetStatusString(EnRoomStatus status)
+        {
+            switch(status)
+            {
+                case EnRoomStatus.Available:
+                    return "Available";
+                case EnRoomStatus.Occupied:
+                    return "Occupied";
+                case EnRoomStatus.Reserved:
+                    return "Reserved";
+                case EnRoomStatus.Maintenance:
+                    return "Maintenence";
+                case EnRoomStatus.Cleaning:
+                    return "Cleaning";
+                default:
+                    return "Available";
+            }
+        }
 
         public static ClsRoom Find(int GuestRoomID)
         {
