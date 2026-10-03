@@ -187,6 +187,12 @@
     <Compile Include="Rooms\Controls\ctrlRoomInfo.Designer.cs">
       <DependentUpon>ctrlRoomInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rooms\FrmAddEditRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rooms\FrmAddEditRoom.Designer.cs">
+      <DependentUpon>FrmAddEditRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\FRMaddNewUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Rooms\Controls\ctrlRoomInfo.resx">
       <DependentUpon>ctrlRoomInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rooms\FrmAddEditRoom.resx">
+      <DependentUpon>FrmAddEditRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\FRMaddNewUser.resx">
       <DependentUpon>FRMaddNewUser.cs</DependentUpon>
