@@ -21,7 +21,7 @@ namespace HMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmAddEditRoom(1));
+            Application.Run(new FrmManageRooms());
         }
     }
 }

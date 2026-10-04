@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace HMS.Rooms
 {
-    public partial class FrmRooDetails : Form
+    public partial class FrmRoomDetails : Form
     {
         private int _RoomID;
-        public FrmRooDetails(int RoomID)
+        public FrmRoomDetails(int RoomID)
         {
             InitializeComponent();
             _RoomID = RoomID;

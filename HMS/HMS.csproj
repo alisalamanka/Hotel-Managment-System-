@@ -193,6 +193,12 @@
     <Compile Include="Rooms\FrmAddEditRoom.Designer.cs">
       <DependentUpon>FrmAddEditRoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rooms\FrmManageRooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rooms\FrmManageRooms.Designer.cs">
+      <DependentUpon>FrmManageRooms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Rooms\FrmRooDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -296,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Rooms\FrmAddEditRoom.resx">
       <DependentUpon>FrmAddEditRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rooms\FrmManageRooms.resx">
+      <DependentUpon>FrmManageRooms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rooms\FrmRooDetails.resx">
       <DependentUpon>FrmRooDetails.cs</DependentUpon>
@@ -766,6 +775,11 @@
     <Content Include="packages\Guna.UI2.WinForms.2.0.4.8\lib\net7.0-windows7.0\Guna.UI2.dll" />
     <Content Include="packages\Guna.UI2.WinForms.2.0.4.8\lib\netcoreapp3.1\Guna.UI2.dll" />
     <Content Include="packages\Guna.UI2.WinForms.2.0.4.8\LICENSE.txt" />
+    <None Include="Resources\info1.png" />
+    <None Include="Resources\trash.png" />
+    <None Include="Resources\pencil.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\bed 264.png" />
     <None Include="Resources\bed1.png" />
     <None Include="Resources\project-status.png" />
     <None Include="Resources\67.png" />

@@ -301,6 +301,7 @@
             // guna2CirclePictureBox1
             // 
             this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox1.Image = global::HMS.Properties.Resources.shortlist;
             this.guna2CirclePictureBox1.ImageRotate = 0F;
             this.guna2CirclePictureBox1.Location = new System.Drawing.Point(479, 12);
             this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -330,7 +331,7 @@
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.guna2CirclePictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmManagePersons";
             this.Text = "FrmManagePersons";
             this.Load += new System.EventHandler(this.FrmManagePersons_Load);
