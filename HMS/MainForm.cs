@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HMS_Business;
 using HMS.Guests;
+using HMS.Rooms;
 
 namespace HMS
 {
@@ -100,6 +101,12 @@ namespace HMS
             FrmManageGuests frm = new FrmManageGuests();
             frm.ShowDialog();
 
+        }
+
+        private void btnRooms_Click(object sender, EventArgs e)
+        {
+            FrmManageRooms frm =new FrmManageRooms();
+            frm.ShowDialog();
         }
     }
 }
