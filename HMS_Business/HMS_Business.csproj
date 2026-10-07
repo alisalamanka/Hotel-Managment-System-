@@ -51,6 +51,7 @@
     <Compile Include="ClsGuest.cs" />
     <Compile Include="ClsPerson.cs" />
     <Compile Include="ClsCountry.cs" />
+    <Compile Include="ClsResevation.cs" />
     <Compile Include="ClsRoom.cs" />
     <Compile Include="ClsRoomType.cs" />
     <Compile Include="Clsuser.cs" />
