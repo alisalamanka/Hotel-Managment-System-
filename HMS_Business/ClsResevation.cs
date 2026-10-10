@@ -11,25 +11,37 @@ namespace HMS_Business
 {
     public class ClsResevation
     {
-        int? ReservationID { get; set; }
-        int? UserID { get; set; }
-        int? GuestID { get; set; }
-        int? RoomID { get; set; }
-        int? GuestTypeID { get; set; }
-        int NumberOfGuests { get; set; }
-        DateTime ReservationDate { get; set; }
-        DateTime PlannedCheckin { get; set; }
-        DateTime PlannedCheckOut { get; set; }
+       public int? ReservationID { get; set; }
+        public int? UserID { get; set; }
 
-        decimal PricePerNight { get; set; }
-        decimal TotalAmount { get; set; }
-        int? Status { get; set; }
-        string Notes { get; set; }
+        public Clsuser UserInfo;
+        public int? GuestID { get; set; }
+        public ClsGuest GuestInfo;
+        public int? RoomID { get; set; }
+        public ClsGuest RoomInfo;
+        public int? GuestTypeID { get; set; }
+        public ClsGuestType GuestTypeInfo;
+        public int NumberOfGuests { get; set; }
+        public DateTime ReservationDate { get; set; }
+        public DateTime PlannedCheckin { get; set; }
+        public DateTime PlannedCheckOut { get; set; }
+
+        public decimal PricePerNight { get; set; }
+        public decimal TotalAmount { get; set; }
+        public int? Status { get; set; }
+        public string Notes { get; set; }
         public enum EnMode
         {
             AddNew=0,Update=1
         }
         public EnMode Mode { get; set; }
+
+        public enum EnStatus
+        {
+            Pending=1,Confirmed=2,
+            Cancelled=3,CheckedIn=4,
+            CheckedOut=5, NoShow = 6
+        }
 
         public ClsResevation()
         {
@@ -84,6 +96,26 @@ namespace HMS_Business
 
         }
 
+        public  string GetStatusString()
+        {
+            switch(Status)
+            {
+                case (int)EnStatus.Pending:
+                    return "Pending";
+                case (int)EnStatus.Confirmed:
+                    return "Confirmed";
+                case (int)EnStatus.Cancelled:
+                    return "Cancelled";
+                case (int)EnStatus.CheckedIn:
+                    return "Checked In";
+                case (int)EnStatus.CheckedOut:
+                    return "Checked Out";
+                case (int)EnStatus.NoShow:
+                    return "No Show";
+                default:
+                    return "Pending";
+            }
+        }
         public int? AddNewReseration()
         {
             Exception e = null;

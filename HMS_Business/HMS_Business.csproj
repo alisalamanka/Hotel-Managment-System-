@@ -49,6 +49,7 @@
     <Compile Include="ClsEmployee.cs" />
     <Compile Include="ClsGlobal.cs" />
     <Compile Include="ClsGuest.cs" />
+    <Compile Include="ClsGuestType.cs" />
     <Compile Include="ClsPerson.cs" />
     <Compile Include="ClsCountry.cs" />
     <Compile Include="ClsResevation.cs" />
