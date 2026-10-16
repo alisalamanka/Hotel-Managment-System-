@@ -19,7 +19,7 @@ namespace HMS
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ctrlGuestDetails1.LoadGuestInfo(2);
+            ctrlReservationInfo1.LoadReservationInfo(4);
         }
     }
 }

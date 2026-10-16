@@ -1,6 +1,7 @@
 ﻿using HMS.Employees;
 using HMS.Guests;
 using HMS.People;
+using HMS.Reservations;
 using HMS.Rooms;
 using HMS.Users;
 using System;
@@ -21,7 +22,7 @@ namespace HMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmManageRooms());
+            Application.Run(new FrmAddEditReservation(6));
         }
     }
 }

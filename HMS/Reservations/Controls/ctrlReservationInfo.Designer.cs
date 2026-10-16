@@ -29,6 +29,20 @@
         private void InitializeComponent()
         {
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.lblRoomNumber = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblNotes = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblTotalAmount = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblPricePerNight = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblPlannedCheckOut = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblPlannedCheckIn = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblReservationDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblStatus = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblNumberOfGuests = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblGuestType = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblGuestID = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblUserID = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblResID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -41,6 +55,7 @@
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2CirclePictureBox13 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox8 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox9 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -53,22 +68,8 @@
             this.guna2CirclePictureBox4 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.lblResID = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblUserID = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblGuestID = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblGuestType = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblNumberOfGuests = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblStatus = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblReservationDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblPlannedCheckIn = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblPlannedCheckOut = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblPricePerNight = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblTotalAmount = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblNotes = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblRoomID = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2CirclePictureBox13 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2GroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox9)).BeginInit();
@@ -81,14 +82,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox13)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2GroupBox1.BorderRadius = 17;
-            this.guna2GroupBox1.Controls.Add(this.lblRoomID);
+            this.guna2GroupBox1.Controls.Add(this.lblRoomNumber);
             this.guna2GroupBox1.Controls.Add(this.guna2CirclePictureBox13);
             this.guna2GroupBox1.Controls.Add(this.guna2HtmlLabel14);
             this.guna2GroupBox1.Controls.Add(this.lblNotes);
@@ -135,6 +135,160 @@
             this.guna2GroupBox1.Size = new System.Drawing.Size(969, 465);
             this.guna2GroupBox1.TabIndex = 0;
             this.guna2GroupBox1.Text = "Reservation Details";
+            // 
+            // lblRoomNumber
+            // 
+            this.lblRoomNumber.BackColor = System.Drawing.Color.Transparent;
+            this.lblRoomNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomNumber.ForeColor = System.Drawing.Color.DimGray;
+            this.lblRoomNumber.Location = new System.Drawing.Point(220, 162);
+            this.lblRoomNumber.Name = "lblRoomNumber";
+            this.lblRoomNumber.Size = new System.Drawing.Size(31, 23);
+            this.lblRoomNumber.TabIndex = 39;
+            this.lblRoomNumber.Text = "????";
+            // 
+            // guna2HtmlLabel14
+            // 
+            this.guna2HtmlLabel14.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel14.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel14.Location = new System.Drawing.Point(44, 164);
+            this.guna2HtmlLabel14.Name = "guna2HtmlLabel14";
+            this.guna2HtmlLabel14.Size = new System.Drawing.Size(119, 23);
+            this.guna2HtmlLabel14.TabIndex = 37;
+            this.guna2HtmlLabel14.Text = "Room Number:";
+            // 
+            // lblNotes
+            // 
+            this.lblNotes.BackColor = System.Drawing.Color.Transparent;
+            this.lblNotes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotes.ForeColor = System.Drawing.Color.DimGray;
+            this.lblNotes.Location = new System.Drawing.Point(711, 309);
+            this.lblNotes.Name = "lblNotes";
+            this.lblNotes.Size = new System.Drawing.Size(31, 23);
+            this.lblNotes.TabIndex = 36;
+            this.lblNotes.Text = "????";
+            // 
+            // lblTotalAmount
+            // 
+            this.lblTotalAmount.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalAmount.ForeColor = System.Drawing.Color.DimGray;
+            this.lblTotalAmount.Location = new System.Drawing.Point(711, 262);
+            this.lblTotalAmount.Name = "lblTotalAmount";
+            this.lblTotalAmount.Size = new System.Drawing.Size(31, 23);
+            this.lblTotalAmount.TabIndex = 35;
+            this.lblTotalAmount.Text = "????";
+            // 
+            // lblPricePerNight
+            // 
+            this.lblPricePerNight.BackColor = System.Drawing.Color.Transparent;
+            this.lblPricePerNight.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPricePerNight.ForeColor = System.Drawing.Color.DimGray;
+            this.lblPricePerNight.Location = new System.Drawing.Point(711, 215);
+            this.lblPricePerNight.Name = "lblPricePerNight";
+            this.lblPricePerNight.Size = new System.Drawing.Size(31, 23);
+            this.lblPricePerNight.TabIndex = 34;
+            this.lblPricePerNight.Text = "????";
+            // 
+            // lblPlannedCheckOut
+            // 
+            this.lblPlannedCheckOut.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlannedCheckOut.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlannedCheckOut.ForeColor = System.Drawing.Color.DimGray;
+            this.lblPlannedCheckOut.Location = new System.Drawing.Point(711, 168);
+            this.lblPlannedCheckOut.Name = "lblPlannedCheckOut";
+            this.lblPlannedCheckOut.Size = new System.Drawing.Size(31, 23);
+            this.lblPlannedCheckOut.TabIndex = 33;
+            this.lblPlannedCheckOut.Text = "????";
+            // 
+            // lblPlannedCheckIn
+            // 
+            this.lblPlannedCheckIn.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlannedCheckIn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlannedCheckIn.ForeColor = System.Drawing.Color.DimGray;
+            this.lblPlannedCheckIn.Location = new System.Drawing.Point(711, 121);
+            this.lblPlannedCheckIn.Name = "lblPlannedCheckIn";
+            this.lblPlannedCheckIn.Size = new System.Drawing.Size(31, 23);
+            this.lblPlannedCheckIn.TabIndex = 32;
+            this.lblPlannedCheckIn.Text = "????";
+            // 
+            // lblReservationDate
+            // 
+            this.lblReservationDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblReservationDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReservationDate.ForeColor = System.Drawing.Color.DimGray;
+            this.lblReservationDate.Location = new System.Drawing.Point(711, 74);
+            this.lblReservationDate.Name = "lblReservationDate";
+            this.lblReservationDate.Size = new System.Drawing.Size(31, 23);
+            this.lblReservationDate.TabIndex = 31;
+            this.lblReservationDate.Text = "????";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.DimGray;
+            this.lblStatus.Location = new System.Drawing.Point(220, 350);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(31, 23);
+            this.lblStatus.TabIndex = 30;
+            this.lblStatus.Text = "????";
+            // 
+            // lblNumberOfGuests
+            // 
+            this.lblNumberOfGuests.BackColor = System.Drawing.Color.Transparent;
+            this.lblNumberOfGuests.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumberOfGuests.ForeColor = System.Drawing.Color.DimGray;
+            this.lblNumberOfGuests.Location = new System.Drawing.Point(220, 301);
+            this.lblNumberOfGuests.Name = "lblNumberOfGuests";
+            this.lblNumberOfGuests.Size = new System.Drawing.Size(31, 23);
+            this.lblNumberOfGuests.TabIndex = 29;
+            this.lblNumberOfGuests.Text = "????";
+            // 
+            // lblGuestType
+            // 
+            this.lblGuestType.BackColor = System.Drawing.Color.Transparent;
+            this.lblGuestType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGuestType.ForeColor = System.Drawing.Color.DimGray;
+            this.lblGuestType.Location = new System.Drawing.Point(220, 252);
+            this.lblGuestType.Name = "lblGuestType";
+            this.lblGuestType.Size = new System.Drawing.Size(31, 23);
+            this.lblGuestType.TabIndex = 28;
+            this.lblGuestType.Text = "????";
+            // 
+            // lblGuestID
+            // 
+            this.lblGuestID.BackColor = System.Drawing.Color.Transparent;
+            this.lblGuestID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGuestID.ForeColor = System.Drawing.Color.DimGray;
+            this.lblGuestID.Location = new System.Drawing.Point(220, 203);
+            this.lblGuestID.Name = "lblGuestID";
+            this.lblGuestID.Size = new System.Drawing.Size(31, 23);
+            this.lblGuestID.TabIndex = 27;
+            this.lblGuestID.Text = "????";
+            // 
+            // lblUserID
+            // 
+            this.lblUserID.BackColor = System.Drawing.Color.Transparent;
+            this.lblUserID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserID.ForeColor = System.Drawing.Color.DimGray;
+            this.lblUserID.Location = new System.Drawing.Point(220, 115);
+            this.lblUserID.Name = "lblUserID";
+            this.lblUserID.Size = new System.Drawing.Size(31, 23);
+            this.lblUserID.TabIndex = 26;
+            this.lblUserID.Text = "????";
+            // 
+            // lblResID
+            // 
+            this.lblResID.BackColor = System.Drawing.Color.Transparent;
+            this.lblResID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResID.ForeColor = System.Drawing.Color.DimGray;
+            this.lblResID.Location = new System.Drawing.Point(220, 66);
+            this.lblResID.Name = "lblResID";
+            this.lblResID.Size = new System.Drawing.Size(31, 23);
+            this.lblResID.TabIndex = 25;
+            this.lblResID.Text = "????";
             // 
             // guna2HtmlLabel12
             // 
@@ -267,6 +421,18 @@
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(114, 23);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "ReservationID:";
+            // 
+            // guna2CirclePictureBox13
+            // 
+            this.guna2CirclePictureBox13.Image = global::HMS.Properties.Resources.hashtag;
+            this.guna2CirclePictureBox13.ImageRotate = 0F;
+            this.guna2CirclePictureBox13.Location = new System.Drawing.Point(169, 158);
+            this.guna2CirclePictureBox13.Name = "guna2CirclePictureBox13";
+            this.guna2CirclePictureBox13.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox13.Size = new System.Drawing.Size(36, 34);
+            this.guna2CirclePictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox13.TabIndex = 38;
+            this.guna2CirclePictureBox13.TabStop = false;
             // 
             // guna2CirclePictureBox2
             // 
@@ -412,172 +578,6 @@
             this.guna2CirclePictureBox1.TabIndex = 12;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
-            // lblResID
-            // 
-            this.lblResID.BackColor = System.Drawing.Color.Transparent;
-            this.lblResID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResID.ForeColor = System.Drawing.Color.DimGray;
-            this.lblResID.Location = new System.Drawing.Point(220, 66);
-            this.lblResID.Name = "lblResID";
-            this.lblResID.Size = new System.Drawing.Size(31, 23);
-            this.lblResID.TabIndex = 25;
-            this.lblResID.Text = "????";
-            // 
-            // lblUserID
-            // 
-            this.lblUserID.BackColor = System.Drawing.Color.Transparent;
-            this.lblUserID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserID.ForeColor = System.Drawing.Color.DimGray;
-            this.lblUserID.Location = new System.Drawing.Point(220, 115);
-            this.lblUserID.Name = "lblUserID";
-            this.lblUserID.Size = new System.Drawing.Size(31, 23);
-            this.lblUserID.TabIndex = 26;
-            this.lblUserID.Text = "????";
-            // 
-            // lblGuestID
-            // 
-            this.lblGuestID.BackColor = System.Drawing.Color.Transparent;
-            this.lblGuestID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGuestID.ForeColor = System.Drawing.Color.DimGray;
-            this.lblGuestID.Location = new System.Drawing.Point(220, 203);
-            this.lblGuestID.Name = "lblGuestID";
-            this.lblGuestID.Size = new System.Drawing.Size(31, 23);
-            this.lblGuestID.TabIndex = 27;
-            this.lblGuestID.Text = "????";
-            // 
-            // lblGuestType
-            // 
-            this.lblGuestType.BackColor = System.Drawing.Color.Transparent;
-            this.lblGuestType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGuestType.ForeColor = System.Drawing.Color.DimGray;
-            this.lblGuestType.Location = new System.Drawing.Point(220, 252);
-            this.lblGuestType.Name = "lblGuestType";
-            this.lblGuestType.Size = new System.Drawing.Size(31, 23);
-            this.lblGuestType.TabIndex = 28;
-            this.lblGuestType.Text = "????";
-            // 
-            // lblNumberOfGuests
-            // 
-            this.lblNumberOfGuests.BackColor = System.Drawing.Color.Transparent;
-            this.lblNumberOfGuests.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumberOfGuests.ForeColor = System.Drawing.Color.DimGray;
-            this.lblNumberOfGuests.Location = new System.Drawing.Point(220, 301);
-            this.lblNumberOfGuests.Name = "lblNumberOfGuests";
-            this.lblNumberOfGuests.Size = new System.Drawing.Size(31, 23);
-            this.lblNumberOfGuests.TabIndex = 29;
-            this.lblNumberOfGuests.Text = "????";
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.BackColor = System.Drawing.Color.Transparent;
-            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.ForeColor = System.Drawing.Color.DimGray;
-            this.lblStatus.Location = new System.Drawing.Point(220, 350);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(31, 23);
-            this.lblStatus.TabIndex = 30;
-            this.lblStatus.Text = "????";
-            // 
-            // lblReservationDate
-            // 
-            this.lblReservationDate.BackColor = System.Drawing.Color.Transparent;
-            this.lblReservationDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReservationDate.ForeColor = System.Drawing.Color.DimGray;
-            this.lblReservationDate.Location = new System.Drawing.Point(711, 74);
-            this.lblReservationDate.Name = "lblReservationDate";
-            this.lblReservationDate.Size = new System.Drawing.Size(31, 23);
-            this.lblReservationDate.TabIndex = 31;
-            this.lblReservationDate.Text = "????";
-            // 
-            // lblPlannedCheckIn
-            // 
-            this.lblPlannedCheckIn.BackColor = System.Drawing.Color.Transparent;
-            this.lblPlannedCheckIn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlannedCheckIn.ForeColor = System.Drawing.Color.DimGray;
-            this.lblPlannedCheckIn.Location = new System.Drawing.Point(711, 121);
-            this.lblPlannedCheckIn.Name = "lblPlannedCheckIn";
-            this.lblPlannedCheckIn.Size = new System.Drawing.Size(31, 23);
-            this.lblPlannedCheckIn.TabIndex = 32;
-            this.lblPlannedCheckIn.Text = "????";
-            // 
-            // lblPlannedCheckOut
-            // 
-            this.lblPlannedCheckOut.BackColor = System.Drawing.Color.Transparent;
-            this.lblPlannedCheckOut.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlannedCheckOut.ForeColor = System.Drawing.Color.DimGray;
-            this.lblPlannedCheckOut.Location = new System.Drawing.Point(711, 168);
-            this.lblPlannedCheckOut.Name = "lblPlannedCheckOut";
-            this.lblPlannedCheckOut.Size = new System.Drawing.Size(31, 23);
-            this.lblPlannedCheckOut.TabIndex = 33;
-            this.lblPlannedCheckOut.Text = "????";
-            // 
-            // lblPricePerNight
-            // 
-            this.lblPricePerNight.BackColor = System.Drawing.Color.Transparent;
-            this.lblPricePerNight.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPricePerNight.ForeColor = System.Drawing.Color.DimGray;
-            this.lblPricePerNight.Location = new System.Drawing.Point(711, 215);
-            this.lblPricePerNight.Name = "lblPricePerNight";
-            this.lblPricePerNight.Size = new System.Drawing.Size(31, 23);
-            this.lblPricePerNight.TabIndex = 34;
-            this.lblPricePerNight.Text = "????";
-            // 
-            // lblTotalAmount
-            // 
-            this.lblTotalAmount.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotalAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalAmount.ForeColor = System.Drawing.Color.DimGray;
-            this.lblTotalAmount.Location = new System.Drawing.Point(711, 262);
-            this.lblTotalAmount.Name = "lblTotalAmount";
-            this.lblTotalAmount.Size = new System.Drawing.Size(31, 23);
-            this.lblTotalAmount.TabIndex = 35;
-            this.lblTotalAmount.Text = "????";
-            // 
-            // lblNotes
-            // 
-            this.lblNotes.BackColor = System.Drawing.Color.Transparent;
-            this.lblNotes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotes.ForeColor = System.Drawing.Color.DimGray;
-            this.lblNotes.Location = new System.Drawing.Point(711, 309);
-            this.lblNotes.Name = "lblNotes";
-            this.lblNotes.Size = new System.Drawing.Size(31, 23);
-            this.lblNotes.TabIndex = 36;
-            this.lblNotes.Text = "????";
-            // 
-            // lblRoomID
-            // 
-            this.lblRoomID.BackColor = System.Drawing.Color.Transparent;
-            this.lblRoomID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomID.ForeColor = System.Drawing.Color.DimGray;
-            this.lblRoomID.Location = new System.Drawing.Point(220, 162);
-            this.lblRoomID.Name = "lblRoomID";
-            this.lblRoomID.Size = new System.Drawing.Size(31, 23);
-            this.lblRoomID.TabIndex = 39;
-            this.lblRoomID.Text = "????";
-            // 
-            // guna2CirclePictureBox13
-            // 
-            this.guna2CirclePictureBox13.Image = global::HMS.Properties.Resources.hashtag;
-            this.guna2CirclePictureBox13.ImageRotate = 0F;
-            this.guna2CirclePictureBox13.Location = new System.Drawing.Point(169, 158);
-            this.guna2CirclePictureBox13.Name = "guna2CirclePictureBox13";
-            this.guna2CirclePictureBox13.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox13.Size = new System.Drawing.Size(36, 34);
-            this.guna2CirclePictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox13.TabIndex = 38;
-            this.guna2CirclePictureBox13.TabStop = false;
-            // 
-            // guna2HtmlLabel14
-            // 
-            this.guna2HtmlLabel14.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel14.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel14.Location = new System.Drawing.Point(90, 162);
-            this.guna2HtmlLabel14.Name = "guna2HtmlLabel14";
-            this.guna2HtmlLabel14.Size = new System.Drawing.Size(69, 23);
-            this.guna2HtmlLabel14.TabIndex = 37;
-            this.guna2HtmlLabel14.Text = "RoomID:";
-            // 
             // ctrlReservationInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -590,6 +590,7 @@
             this.Size = new System.Drawing.Size(994, 512);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox9)).EndInit();
@@ -602,7 +603,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox13)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -646,7 +646,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblReservationDate;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblStatus;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNumberOfGuests;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblRoomID;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblRoomNumber;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox13;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel14;
     }
