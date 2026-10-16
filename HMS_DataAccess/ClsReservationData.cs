@@ -126,9 +126,7 @@ namespace HMS_DataAccess
        int NumberOfGuests,
        DateTime PlannedCheckIn,
        DateTime PlannedCheckOut,
-       DateTime ReservationDate,
        decimal PricePerNight,
-       decimal TotalAmount,
        int Status,
        string Notes,
        ref Exception ErrorOccurred)
@@ -149,17 +147,18 @@ namespace HMS_DataAccess
                     cmd.Parameters.AddWithValue("@RoomID", RoomID);
                     cmd.Parameters.AddWithValue("@GuestTypeID", GuestTypeID);
                     cmd.Parameters.AddWithValue("@NumberOfGuests", NumberOfGuests);
-                    cmd.Parameters.AddWithValue("@ReservationDate", ReservationDate);
                     cmd.Parameters.AddWithValue("@PlanedCheckInDate", PlannedCheckIn);
-                    cmd.Parameters.AddWithValue("@PlanedCheckOutDate", PlannedCheckOut);
+                    cmd.Parameters.AddWithValue("@PlanedCheckOut", PlannedCheckOut);
                     cmd.Parameters.AddWithValue("@PricePerNight", PricePerNight);
-                    cmd.Parameters.AddWithValue("@TotalAmount", TotalAmount);
                     cmd.Parameters.AddWithValue("@Status", Status);
                     cmd.Parameters.AddWithValue("@Notes", Notes);
 
-                    cnn.Open();
+                    SqlParameter NewID = cmd.Parameters.Add("@ResID", DbType.Int32);
+                    NewID.Direction= ParameterDirection.Output;
 
-                    return Convert.ToInt32(cmd.ExecuteScalar());
+                    cnn.Open();
+                    cmd.ExecuteNonQuery();
+                    return Convert.ToInt32( NewID.Value);
                 }
             }
             catch (Exception e)
@@ -179,7 +178,6 @@ namespace HMS_DataAccess
     DateTime PlannedCheckIn,
     DateTime PlannedCheckOut,
     decimal PricePerNight,
-    decimal TotalAmount,
     int Status,
     string Notes,
     ref Exception ErrorOccurred)
@@ -204,13 +202,15 @@ namespace HMS_DataAccess
                     cmd.Parameters.AddWithValue("@CheckIn", PlannedCheckIn);
                     cmd.Parameters.AddWithValue("@CheckOut", PlannedCheckOut);
                     cmd.Parameters.AddWithValue("@PricePerNight", PricePerNight);
-                    cmd.Parameters.AddWithValue("@TotalAmount", TotalAmount);
-                    cmd.Parameters.AddWithValue("@Status", Status);
+                    cmd.Parameters.AddWithValue("@ReservationStatus", Status);
                     cmd.Parameters.AddWithValue("@Notes", Notes);
+                   SqlParameter RP= cmd.Parameters.Add("@RowsAffected", DbType.Int32);
+                    RP.Direction = ParameterDirection.Output;
 
                     cnn.Open();
+                    cmd.ExecuteNonQuery();
 
-                    int RowsAffected = cmd.ExecuteNonQuery();
+                    int RowsAffected =Convert.ToInt32( RP.Value);
 
                     return RowsAffected > 0;
                 }
@@ -252,6 +252,36 @@ namespace HMS_DataAccess
             {
                 ErrorOccurred = e;
                 return null;
+            }
+        }
+
+        public static bool IsRoomAvaibleForReservation(int RoomID,DateTime CheckIn,DateTime CheckOut,ref Exception e ,int? ResID=null)
+        {
+          string Connstring=ConfigurationManager.AppSettings["ConnectionString"];
+            try
+            {
+                using (SqlConnection cnn = new SqlConnection(Connstring))
+                using (SqlCommand cmd = new SqlCommand(
+                    "SP_IsRoomAvailableForReservation", cnn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@RoomID", RoomID);
+                    cmd.Parameters.AddWithValue("@CheckIn", CheckIn);
+                    cmd.Parameters.AddWithValue("@CheckOut", CheckOut);
+                    if (ResID.HasValue)
+                        cmd.Parameters.AddWithValue("@ReservationID", ResID.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@ReservationID", DBNull.Value);
+
+                    cnn.Open();
+
+                    return Convert.ToBoolean(cmd.ExecuteScalar());
+                }
+            }
+            catch (Exception ex)
+            {
+                e = ex;
+                return false;
             }
         }
     }

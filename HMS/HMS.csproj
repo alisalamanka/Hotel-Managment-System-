@@ -187,6 +187,18 @@
     <Compile Include="Reservations\Controls\ctrlReservationInfo.Designer.cs">
       <DependentUpon>ctrlReservationInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reservations\FrmAddEditReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservations\FrmAddEditReservation.Designer.cs">
+      <DependentUpon>FrmAddEditReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservations\FrmReservationDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservations\FrmReservationDetails.Designer.cs">
+      <DependentUpon>FrmReservationDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Rooms\Controls\ctrlRoomInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -305,6 +317,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reservations\Controls\ctrlReservationInfo.resx">
       <DependentUpon>ctrlReservationInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservations\FrmAddEditReservation.resx">
+      <DependentUpon>FrmAddEditReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservations\FrmReservationDetails.resx">
+      <DependentUpon>FrmReservationDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rooms\Controls\ctrlRoomInfo.resx">
       <DependentUpon>ctrlRoomInfo.cs</DependentUpon>

@@ -18,7 +18,7 @@ namespace HMS_Business
         public int? GuestID { get; set; }
         public ClsGuest GuestInfo;
         public int? RoomID { get; set; }
-        public ClsGuest RoomInfo;
+        public ClsRoom RoomInfo;
         public int? GuestTypeID { get; set; }
         public ClsGuestType GuestTypeInfo;
         public int NumberOfGuests { get; set; }
@@ -79,11 +79,16 @@ namespace HMS_Business
             int Status,
             string Notes)
         {
+            Mode = EnMode.Update;
             this.ReservationID = ReservationID;
             this.UserID = UserID;
+            UserInfo = Clsuser.Find(UserID);
             this.GuestID = GuestID;
+            GuestInfo = ClsGuest.Find(GuestID);
             this.RoomID = RoomID;
+            RoomInfo = ClsRoom.Find(RoomID);
             this.GuestTypeID = GuestTypeID;
+            GuestTypeInfo = ClsGuestType.Find(GuestTypeID);
             this.NumberOfGuests = NumberOfGuests;
             this.ReservationDate = ReservationDate;
             this.PlannedCheckin = PlannedCheckin;
@@ -120,7 +125,7 @@ namespace HMS_Business
         {
             Exception e = null;
             int?ID = ClsReservationData.AddNewReservation(UserID.Value,GuestID.Value,RoomID.Value,GuestTypeID.Value,NumberOfGuests,PlannedCheckin,
-               PlannedCheckOut,ReservationDate,PricePerNight,TotalAmount,Status.Value,Notes,ref e);
+               PlannedCheckOut,PricePerNight,Status.Value,Notes,ref e);
               if (e != null)
             {
                 ClsUtil.ClsLogger.LogError("Falied To Add This Reservation",e);
@@ -135,7 +140,7 @@ namespace HMS_Business
         {
             Exception e = null;
             bool Updated = ClsReservationData.UpdateReservation(ReservationID.Value,UserID.Value,GuestID.Value, RoomID.Value, GuestTypeID.Value, NumberOfGuests, PlannedCheckin,
-               PlannedCheckOut,PricePerNight, TotalAmount, Status.Value, Notes, ref e);
+               PlannedCheckOut,PricePerNight, Status.Value, Notes, ref e);
             if (e != null)
             {
                 ClsUtil.ClsLogger.LogError("Falied To Update This Reservation",e);
@@ -196,16 +201,34 @@ namespace HMS_Business
             return false;
         }
 
-        public bool Save()
+        public static bool IsRoomAvaible(int roomID, DateTime checkIn, DateTime checkOut,ref bool ErrorOccoured, int? RoomID = null)
         {
+            Exception e = null;
+            bool Available = ClsReservationData.IsRoomAvaibleForReservation(roomID, checkIn, checkOut, ref e);
+            if (e != null)
+            {
+                ErrorOccoured = true;
+                ClsUtil.ClsLogger.LogError("Failed To Check Room Availability!", e);
+                return false;
+            }
+            else if (!Available)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool Save()
+         {
             switch(Mode)
             {
                 case EnMode.AddNew:
                 {
-                    bool added= AddNewReseration()!=null;
-                        if (added)
+                    int? ID= AddNewReseration();
+                        if (ID!=null)
                         {
                             Mode = EnMode.Update;
+                            ReservationID = ID;
                             return true;
                         }
                         return false;

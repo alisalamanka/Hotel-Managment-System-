@@ -25,7 +25,7 @@ namespace HMS.Reservations.Controls
             lblResID.Text = ReservationInfo.ReservationID.ToString();
             lblUserID.Text = ReservationInfo.UserID.ToString();
             lblGuestID.Text = ReservationInfo.GuestID.ToString();
-            lblRoomID.Text = ReservationInfo.RoomID.ToString();
+            lblRoomNumber.Text = ReservationInfo.RoomInfo.RoomNumber.ToString();
             lblGuestType.Text =ClsGuestType.Find(ReservationInfo.GuestTypeID.Value).GuestTypeName;
             lblNotes.Text = ReservationInfo.Notes;
             lblNumberOfGuests.Text = ReservationInfo.NumberOfGuests.ToString();
@@ -49,7 +49,7 @@ namespace HMS.Reservations.Controls
             lblPricePerNight.Text = "[????]";
             lblReservationDate.Text = "[????]";
             lblResID.Text = "[????]";
-            lblRoomID.Text = "[????]";
+            lblRoomNumber.Text = "[????]";
             lblStatus.Text = "[????]";
             lblTotalAmount.Text = "[????]";
             lblUserID.Text = "[????]";

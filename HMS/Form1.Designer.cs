@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrlGuestDetails1 = new HMS.Guests.Controls.ctrlGuestDetails();
+            this.ctrlReservationInfo1 = new HMS.Reservations.Controls.ctrlReservationInfo();
             this.SuspendLayout();
             // 
-            // ctrlGuestDetails1
+            // ctrlReservationInfo1
             // 
-            this.ctrlGuestDetails1.BackColor = System.Drawing.Color.Gainsboro;
-            this.ctrlGuestDetails1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrlGuestDetails1.Location = new System.Drawing.Point(78, 36);
-            this.ctrlGuestDetails1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ctrlGuestDetails1.Name = "ctrlGuestDetails1";
-            this.ctrlGuestDetails1.Size = new System.Drawing.Size(1016, 546);
-            this.ctrlGuestDetails1.TabIndex = 0;
+            this.ctrlReservationInfo1.BackColor = System.Drawing.Color.Silver;
+            this.ctrlReservationInfo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrlReservationInfo1.Location = new System.Drawing.Point(144, 95);
+            this.ctrlReservationInfo1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ctrlReservationInfo1.Name = "ctrlReservationInfo1";
+            this.ctrlReservationInfo1.Size = new System.Drawing.Size(994, 512);
+            this.ctrlReservationInfo1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1247, 1061);
-            this.Controls.Add(this.ctrlGuestDetails1);
+            this.Controls.Add(this.ctrlReservationInfo1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -56,6 +56,6 @@
 
         #endregion
 
-        private Guests.Controls.ctrlGuestDetails ctrlGuestDetails1;
+        private Reservations.Controls.ctrlReservationInfo ctrlReservationInfo1;
     }
 }
