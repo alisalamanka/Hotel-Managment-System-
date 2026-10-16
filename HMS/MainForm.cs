@@ -1,7 +1,7 @@
 ﻿using Guna.UI2.WinForms;
 using HMS.Employees;
 using HMS.People;
-using GlobalClasses;
+using ClsGlobalClasses;
 using HMS.Users;
 using System;
 using System.Collections.Generic;

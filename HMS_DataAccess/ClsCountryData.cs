@@ -1,4 +1,4 @@
-﻿using GlobalClasses;
+﻿using ClsGlobalClasses;
 using System;
 using System.Collections.Generic;
 using System.Configuration;

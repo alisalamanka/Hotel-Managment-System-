@@ -1,4 +1,4 @@
-﻿using GlobalClasses;
+﻿using ClsGlobalClasses;
 using HMS_DataAccess;
 using System;
 using System.Collections.Generic;

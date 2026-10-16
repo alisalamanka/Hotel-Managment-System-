@@ -36,15 +36,15 @@
             this.CBstatus = new Guna.UI2.WinForms.Guna2ComboBox();
             this.DGVlistRooms = new Guna.UI2.WinForms.Guna2DataGridView();
             this.CMSrooms = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.TSMIaddNewRoom = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMIshowdetails = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMIeditRoomInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.txtFilterByValue = new Guna.UI2.WinForms.Guna2TextBox();
             this.CBfilterBy = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddNewRoom = new Guna.UI2.WinForms.Guna2Button();
-            this.TSMIaddNewRoom = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMIshowdetails = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMIeditRoomInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGVlistRooms)).BeginInit();
             this.CMSrooms.SuspendLayout();
@@ -157,7 +157,34 @@
             this.CMSrooms.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.CMSrooms.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.CMSrooms.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.CMSrooms.Size = new System.Drawing.Size(257, 134);
+            this.CMSrooms.Size = new System.Drawing.Size(257, 112);
+            // 
+            // TSMIaddNewRoom
+            // 
+            this.TSMIaddNewRoom.Image = global::HMS.Properties.Resources.plus;
+            this.TSMIaddNewRoom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TSMIaddNewRoom.Name = "TSMIaddNewRoom";
+            this.TSMIaddNewRoom.Size = new System.Drawing.Size(256, 36);
+            this.TSMIaddNewRoom.Text = "Add New Room";
+            this.TSMIaddNewRoom.Click += new System.EventHandler(this.TSMIaddNewRoom_Click);
+            // 
+            // TSMIshowdetails
+            // 
+            this.TSMIshowdetails.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TSMIshowdetails.Image = global::HMS.Properties.Resources.info1;
+            this.TSMIshowdetails.Name = "TSMIshowdetails";
+            this.TSMIshowdetails.Size = new System.Drawing.Size(256, 36);
+            this.TSMIshowdetails.Text = "Show Details";
+            this.TSMIshowdetails.Click += new System.EventHandler(this.TSMIshowdetails_Click);
+            // 
+            // TSMIeditRoomInfo
+            // 
+            this.TSMIeditRoomInfo.Image = global::HMS.Properties.Resources.pencil;
+            this.TSMIeditRoomInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TSMIeditRoomInfo.Name = "TSMIeditRoomInfo";
+            this.TSMIeditRoomInfo.Size = new System.Drawing.Size(256, 36);
+            this.TSMIeditRoomInfo.Text = "Edit Info";
+            this.TSMIeditRoomInfo.Click += new System.EventHandler(this.TSMIeditRoomInfo_Click);
             // 
             // txtFilterByValue
             // 
@@ -262,33 +289,6 @@
             this.btnAddNewRoom.TabIndex = 28;
             this.btnAddNewRoom.Text = "Add Room";
             this.btnAddNewRoom.Click += new System.EventHandler(this.btnAddNewRoom_Click);
-            // 
-            // TSMIaddNewRoom
-            // 
-            this.TSMIaddNewRoom.Image = global::HMS.Properties.Resources.plus;
-            this.TSMIaddNewRoom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TSMIaddNewRoom.Name = "TSMIaddNewRoom";
-            this.TSMIaddNewRoom.Size = new System.Drawing.Size(256, 36);
-            this.TSMIaddNewRoom.Text = "Add New Room";
-            this.TSMIaddNewRoom.Click += new System.EventHandler(this.TSMIaddNewRoom_Click);
-            // 
-            // TSMIshowdetails
-            // 
-            this.TSMIshowdetails.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TSMIshowdetails.Image = global::HMS.Properties.Resources.info1;
-            this.TSMIshowdetails.Name = "TSMIshowdetails";
-            this.TSMIshowdetails.Size = new System.Drawing.Size(256, 36);
-            this.TSMIshowdetails.Text = "Show Details";
-            this.TSMIshowdetails.Click += new System.EventHandler(this.TSMIshowdetails_Click);
-            // 
-            // TSMIeditRoomInfo
-            // 
-            this.TSMIeditRoomInfo.Image = global::HMS.Properties.Resources.pencil;
-            this.TSMIeditRoomInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TSMIeditRoomInfo.Name = "TSMIeditRoomInfo";
-            this.TSMIeditRoomInfo.Size = new System.Drawing.Size(256, 36);
-            this.TSMIeditRoomInfo.Text = "Edit Info";
-            this.TSMIeditRoomInfo.Click += new System.EventHandler(this.TSMIeditRoomInfo_Click);
             // 
             // guna2CirclePictureBox1
             // 

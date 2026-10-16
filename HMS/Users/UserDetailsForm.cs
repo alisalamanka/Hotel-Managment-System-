@@ -8,7 +8,7 @@ using System.Text;
 using Guna.UI2.WinForms;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GlobalClasses;
+using ClsGlobalClasses;
 
 namespace HMS.Users
 {

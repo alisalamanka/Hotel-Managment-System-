@@ -23,7 +23,7 @@ namespace HMS.Rooms
            "RoomNumber",
            "RoomTypeName",
            "PricePerNight",
-           "Status"
+           "DisplayStatus"
        );
 
         public FrmManageRooms()
@@ -41,7 +41,7 @@ namespace HMS.Rooms
                 "RoomNumber",
                 "RoomTypeName",
                 "PricePerNight",
-                "Status"
+                "DisplayStatus"
             );
 
             DGVlistRooms.DataSource = _RoomsTable;

@@ -31,9 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GlobalClsLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\DVLD\GlobalClsLib\bin\Debug\GlobalClsLib.dll</HintPath>
+    <Reference Include="ClsGlobalClasses">
+      <HintPath>..\..\ClsGlobalClasses-main\bin\Debug\net48\ClsGlobalClasses.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

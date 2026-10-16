@@ -5,7 +5,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-using GlobalClasses;
+using ClsGlobalClasses;
 using HMS_DataAccess;
 
 namespace HMS_Business

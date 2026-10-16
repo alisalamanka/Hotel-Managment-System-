@@ -1,4 +1,4 @@
-﻿using GlobalClasses;
+﻿using ClsGlobalClasses;
 using HMS_Business;
 using System;
 using System.Collections.Generic;
@@ -132,7 +132,7 @@ namespace HMS.People
 
                 if (!string.IsNullOrEmpty(pbPersonImage.ImageLocation))
                 {
-                    return _CopyAndSetNewPersonImage(imagesFolder);
+                    return _CopyAndSetNewPersonImage();
                 }
             }
 
@@ -181,11 +181,11 @@ namespace HMS.People
             }
         }
 
-        private bool _CopyAndSetNewPersonImage(string targetFolder)
+        private bool _CopyAndSetNewPersonImage()
         {
             string sourceFile = pbPersonImage.ImageLocation;
 
-            if (ClsUtil.CopyImageToFolder(ref sourceFile, targetFolder))
+            if (ClsUtil.CopyImageToProjectFolder(ref sourceFile))
             {
                 pbPersonImage.ImageLocation=sourceFile;
                 return true;

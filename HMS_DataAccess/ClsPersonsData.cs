@@ -1,5 +1,6 @@
-﻿using GlobalClasses;
+﻿
 using System;
+using ClsGlobalClasses;
 using System.Collections.Generic;
 using System.Linq;
 using System.Configuration;

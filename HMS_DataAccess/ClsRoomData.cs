@@ -38,7 +38,7 @@ namespace HMS_DataAccess
                             RoomTypeID = (int)dr["RoomTypeID"];
                             PricePerNight = (decimal)dr["PricePerNight"];
                             RoomNumber = (int)dr["RoomNumber"];
-                            Status = Convert.ToInt16(dr["Status"]);
+                            Status = Convert.ToInt16(dr["DisplayStatus"]);
 
                             return true;
                         }
@@ -86,7 +86,7 @@ namespace HMS_DataAccess
                             GuestRoomID = (int)dr["GuestRoomID"];
                             RoomTypeID = (int)dr["RoomTypeID"];
                             PricePerNight = (decimal)dr["PricePerNight"];
-                            Status = Convert.ToInt16(dr["Status"]);
+                            Status = Convert.ToInt16(dr["DisplayStatus"]);
 
                             return true;
                         }

@@ -1,4 +1,4 @@
-﻿using GlobalClasses;
+﻿using ClsGlobalClasses;
 using HMS.Properties;
 using HMS_Business;
 using System;
