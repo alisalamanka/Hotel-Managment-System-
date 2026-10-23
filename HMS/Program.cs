@@ -22,7 +22,7 @@ namespace HMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmAddEditReservation(6));
+            Application.Run(new FrmRoomDetails(1));
         }
     }
 }
