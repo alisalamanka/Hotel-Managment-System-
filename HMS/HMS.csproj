@@ -199,6 +199,12 @@
     <Compile Include="Reservations\FrmReservationDetails.Designer.cs">
       <DependentUpon>FrmReservationDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reservations\FrmReservationsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservations\FrmReservationsList.Designer.cs">
+      <DependentUpon>FrmReservationsList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Rooms\Controls\ctrlRoomInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -323,6 +329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reservations\FrmReservationDetails.resx">
       <DependentUpon>FrmReservationDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservations\FrmReservationsList.resx">
+      <DependentUpon>FrmReservationsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rooms\Controls\ctrlRoomInfo.resx">
       <DependentUpon>ctrlRoomInfo.cs</DependentUpon>
@@ -802,6 +811,7 @@
     <Content Include="packages\Guna.UI2.WinForms.2.0.4.8\lib\net7.0-windows7.0\Guna.UI2.dll" />
     <Content Include="packages\Guna.UI2.WinForms.2.0.4.8\lib\netcoreapp3.1\Guna.UI2.dll" />
     <Content Include="packages\Guna.UI2.WinForms.2.0.4.8\LICENSE.txt" />
+    <None Include="Resources\Reservationss.png" />
     <None Include="Resources\notes.png" />
     <None Include="Resources\loading.png" />
     <None Include="Resources\customer-behavior.png" />
