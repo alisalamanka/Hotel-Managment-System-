@@ -157,7 +157,27 @@
             this.CMSemployees.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.CMSemployees.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.CMSemployees.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.CMSemployees.Size = new System.Drawing.Size(294, 148);
+            this.CMSemployees.Size = new System.Drawing.Size(74, 92);
+            // 
+            // TSMIaddNewEmployee
+            // 
+            this.TSMIaddNewEmployee.Name = "TSMIaddNewEmployee";
+            this.TSMIaddNewEmployee.Size = new System.Drawing.Size(73, 22);
+            // 
+            // TSMIshowdetails
+            // 
+            this.TSMIshowdetails.Name = "TSMIshowdetails";
+            this.TSMIshowdetails.Size = new System.Drawing.Size(73, 22);
+            // 
+            // TSMIeditinfo
+            // 
+            this.TSMIeditinfo.Name = "TSMIeditinfo";
+            this.TSMIeditinfo.Size = new System.Drawing.Size(73, 22);
+            // 
+            // TSMIdelete
+            // 
+            this.TSMIdelete.Name = "TSMIdelete";
+            this.TSMIdelete.Size = new System.Drawing.Size(73, 22);
             // 
             // txtFilterByValue
             // 
@@ -219,10 +239,10 @@
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Stencil", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(601, 263);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(378, 46);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(350, 44);
             this.guna2HtmlLabel1.TabIndex = 13;
             this.guna2HtmlLabel1.Text = "Manage Employees";
             // 

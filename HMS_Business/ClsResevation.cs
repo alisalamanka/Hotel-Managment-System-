@@ -162,6 +162,20 @@ namespace HMS_Business
             return dt;
         }
 
+        public static DataTable ReservationListByPage(int PageNumber,int PageSize)
+        {
+            Exception e = null;
+            DataTable dt = new DataTable();
+            dt = ClsReservationData.GetReservationsListByPage(PageNumber,PageSize,ref e);
+            if (e != null)
+            {
+                ClsUtil.ClsLogger.LogError("Failed To get ReservationsList", e);
+                return null;
+            }
+            return dt;
+        }
+
+
         public static ClsResevation Find(int reservationID)
         {
             int UserID=-1, GuestID=-1, RoomID=-1,numberOfGuests=-1, GuestTypeID=-1, Status=-1;

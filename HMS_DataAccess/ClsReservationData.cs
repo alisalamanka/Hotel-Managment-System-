@@ -284,5 +284,41 @@ namespace HMS_DataAccess
                 return false;
             }
         }
+
+        public static DataTable GetReservationsListByPage(int PageNumber,int PageSize,
+        ref Exception ErrorOccurred)
+        {
+            string conn =
+                ConfigurationManager.AppSettings["ConnectionString"];
+
+            try
+            {
+                using (SqlConnection cnn = new SqlConnection(conn))
+                using (SqlCommand cmd = new SqlCommand(
+                    "SP_GetReservarionsListPerPage", cnn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@PageNumber", PageNumber);
+                    cmd.Parameters.AddWithValue("@PageSize", PageSize);
+
+                    cnn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        DataTable dt = new DataTable();
+
+                        dt.Load(dr);
+
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                ErrorOccurred = e;
+                return null;
+            }
+        }
+
     }
 }

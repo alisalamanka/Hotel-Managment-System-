@@ -158,7 +158,7 @@
             this.CMSGuests.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.CMSGuests.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.CMSGuests.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.CMSGuests.Size = new System.Drawing.Size(255, 170);
+            this.CMSGuests.Size = new System.Drawing.Size(255, 148);
             // 
             // TSMIaddNewGuest
             // 
@@ -253,10 +253,10 @@
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Stencil", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(521, 247);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(304, 46);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(281, 44);
             this.guna2HtmlLabel1.TabIndex = 13;
             this.guna2HtmlLabel1.Text = "Manage Guests";
             // 
