@@ -840,6 +840,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\Release\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

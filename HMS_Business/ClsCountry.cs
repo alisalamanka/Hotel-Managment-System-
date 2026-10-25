@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using HMS_DataAccess;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +27,7 @@ namespace HMS_Business
         public static ClsCountry GetCountryInfoByID(int id)
         {
             string CountryName = "";
-            if (HMS_DataAccess.ClsCountryData.GetCountryInfoByID(id, ref CountryName))
+            if (clsc.GetCountryInfoByID(id, ref CountryName))
             {
                 return new ClsCountry(id, CountryName);
             }
@@ -50,7 +51,7 @@ namespace HMS_Business
 
         public static DataTable GetAllCountries()
         {
-            return HMS_DataAccess.ClsCountryData.GetAllCountries();
+            return clsc.GetAllCountries();
         }
 
     }

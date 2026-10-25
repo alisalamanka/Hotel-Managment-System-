@@ -458,6 +458,7 @@
             this.btnReservations.Size = new System.Drawing.Size(275, 57);
             this.btnReservations.TabIndex = 5;
             this.btnReservations.Text = "Reservations";
+            this.btnReservations.Click += new System.EventHandler(this.btnReservations_Click);
             this.btnReservations.MouseLeave += new System.EventHandler(this.btnexit);
             this.btnReservations.MouseHover += new System.EventHandler(this.btnHover);
             // 
@@ -549,11 +550,11 @@
             // 
             this.lbusername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbusername.BackColor = System.Drawing.Color.Transparent;
-            this.lbusername.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbusername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbusername.ForeColor = System.Drawing.Color.White;
             this.lbusername.Location = new System.Drawing.Point(116, 147);
             this.lbusername.Name = "lbusername";
-            this.lbusername.Size = new System.Drawing.Size(110, 24);
+            this.lbusername.Size = new System.Drawing.Size(101, 26);
             this.lbusername.TabIndex = 1;
             this.lbusername.Text = "UserName";
             // 
@@ -613,22 +614,22 @@
             // lblEmail
             // 
             this.lblEmail.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmail.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.White;
             this.lblEmail.Location = new System.Drawing.Point(119, 195);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(55, 21);
+            this.lblEmail.Size = new System.Drawing.Size(47, 22);
             this.lblEmail.TabIndex = 2;
             this.lblEmail.Text = "Email";
             // 
             // lblUserName
             // 
             this.lblUserName.BackColor = System.Drawing.Color.Transparent;
-            this.lblUserName.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserName.ForeColor = System.Drawing.Color.White;
             this.lblUserName.Location = new System.Drawing.Point(102, 147);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(94, 21);
+            this.lblUserName.Size = new System.Drawing.Size(87, 22);
             this.lblUserName.TabIndex = 1;
             this.lblUserName.Text = "UserName";
             // 
