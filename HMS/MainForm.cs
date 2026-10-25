@@ -15,6 +15,7 @@ using System.Windows.Forms;
 using HMS_Business;
 using HMS.Guests;
 using HMS.Rooms;
+using HMS.Reservations;
 
 namespace HMS
 {
@@ -106,6 +107,12 @@ namespace HMS
         private void btnRooms_Click(object sender, EventArgs e)
         {
             FrmManageRooms frm =new FrmManageRooms();
+            frm.ShowDialog();
+        }
+
+        private void btnReservations_Click(object sender, EventArgs e)
+        {
+            FrmReservationsList frm =new FrmReservationsList();
             frm.ShowDialog();
         }
     }
