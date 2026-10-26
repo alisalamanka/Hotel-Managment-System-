@@ -13,7 +13,7 @@ namespace HMS_DataAccess
 {
     public class ClsServicesData
     {
-        public static bool GetServiceInfoByID(int serviceID, ref string serviceName, ref bool status)
+        public static bool GetServiceInfoByID(int serviceID, ref string serviceName, ref string status)
         {
             bool isFound = false;
             try
@@ -33,7 +33,7 @@ namespace HMS_DataAccess
                             {
                                 isFound = true;
                                 serviceName = dr["ServiceName"].ToString();
-                                status = Convert.ToBoolean(dr["Status"]);
+                                status = dr["Status"].ToString();
                             }
                         }
                     }
@@ -76,7 +76,7 @@ namespace HMS_DataAccess
             return dt;
         }
 
-        public static int? AddNewService(string serviceName, bool status)
+        public static int? AddNewService(string serviceName, string status)
         {
             int? serviceID = null;
             try
@@ -104,7 +104,7 @@ namespace HMS_DataAccess
             return serviceID;
         }
 
-        public static bool UpdateService(int serviceID, string serviceName, bool status)
+        public static bool UpdateService(int serviceID, string serviceName, string status)
         {
             bool isUpdated = false;
             try
@@ -120,7 +120,7 @@ namespace HMS_DataAccess
                         cmd.Parameters.AddWithValue("@Status", status);
 
                         conn.Open();
-                        isUpdated = cmd.ExecuteNonQuery() > 0;
+                        isUpdated =Convert.ToInt16(cmd.ExecuteScalar())  == 1;
                     }
                 }
             }

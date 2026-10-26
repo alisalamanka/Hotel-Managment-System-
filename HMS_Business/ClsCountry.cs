@@ -27,7 +27,7 @@ namespace HMS_Business
         public static ClsCountry GetCountryInfoByID(int id)
         {
             string CountryName = "";
-            if (clsc.GetCountryInfoByID(id, ref CountryName))
+            if (ClsCountryData.GetCountryInfoByID(id, ref CountryName))
             {
                 return new ClsCountry(id, CountryName);
             }
@@ -39,7 +39,7 @@ namespace HMS_Business
         public static ClsCountry GetCountryInfoByName(string Name)
         {
             int CountryID =-1;
-            if (HMS_DataAccess.ClsCountryData.GetCountryInfoByName(Name, ref CountryID))
+            if (ClsCountryData.GetCountryInfoByName(Name, ref CountryID))
             {
                 return new ClsCountry(CountryID, Name);
             }
@@ -51,7 +51,7 @@ namespace HMS_Business
 
         public static DataTable GetAllCountries()
         {
-            return clsc.GetAllCountries();
+            return ClsCountryData.GetAllCountries();
         }
 
     }

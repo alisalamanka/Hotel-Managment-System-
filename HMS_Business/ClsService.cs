@@ -9,7 +9,7 @@ namespace HMS_Business
     {
         public int? ServiceID { get; set; }
         public string ServiceName { get; set; }
-        public bool Status { get; set; }
+        public string Status { get; set; }
 
         public enum EnMode
         {
@@ -23,11 +23,11 @@ namespace HMS_Business
         {
             ServiceID = null;
             ServiceName = string.Empty;
-            Status = true; 
+            Status = ""; 
             Mode = EnMode.AddNew;
         }
 
-        public ClsService(int serviceID, string serviceName, bool status)
+        public ClsService(int serviceID, string serviceName, string status)
         {
             ServiceID = serviceID;
             ServiceName = serviceName;
@@ -35,10 +35,14 @@ namespace HMS_Business
             Mode = EnMode.Update;
         }
 
+        public enum EnStatus
+        {
+            Active=0,InActive=1
+        }
         public static ClsService Find(int serviceID)
         {
             string serviceName = string.Empty;
-            bool status = false;
+            string status = "";
 
             bool found = ClsServicesData.GetServiceInfoByID(serviceID, ref serviceName, ref status);
 

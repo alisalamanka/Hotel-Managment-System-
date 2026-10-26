@@ -3,6 +3,7 @@ using HMS.Guests;
 using HMS.People;
 using HMS.Reservations;
 using HMS.Rooms;
+using HMS.Services;
 using HMS.Users;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace HMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmReservationsList());
+            Application.Run(new FrmAddEdditServiceInfo(1));
         }
     }
 }

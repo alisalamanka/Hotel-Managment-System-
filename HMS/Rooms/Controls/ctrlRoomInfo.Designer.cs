@@ -263,7 +263,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ctrlRoomInfo";
             this.Size = new System.Drawing.Size(1032, 338);
-            this.Load += new System.EventHandler(this.ctrlRoomInfo_Load);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).EndInit();

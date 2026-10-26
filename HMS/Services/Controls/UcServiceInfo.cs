@@ -31,7 +31,7 @@ namespace HMS.Services
         {
             lblServiceID.Text = _ServiceInfo.ServiceID.ToString();
             lblServiceName.Text = _ServiceInfo.ServiceName.ToString();
-            lblStatus.Text = _ServiceInfo.Status == true ?"Avaible":"Not Avaible";
+            lblStatus.Text = _ServiceInfo.Status == "Active" ?"Avaible":"Not Avaible";
 
         }
 
