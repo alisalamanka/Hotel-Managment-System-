@@ -229,6 +229,12 @@
     <Compile Include="Rooms\FrmRooDetails.Designer.cs">
       <DependentUpon>FrmRooDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\UcServiceInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Services\UcServiceInfo.Designer.cs">
+      <DependentUpon>UcServiceInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\FRMaddNewUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -344,6 +350,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Rooms\FrmRooDetails.resx">
       <DependentUpon>FrmRooDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\UcServiceInfo.resx">
+      <DependentUpon>UcServiceInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\FRMaddNewUser.resx">
       <DependentUpon>FRMaddNewUser.cs</DependentUpon>
@@ -840,7 +849,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\Release\" />
-    <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
