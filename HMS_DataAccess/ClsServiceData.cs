@@ -153,7 +153,7 @@ namespace HMS_DataAccess
                 }
             }
             catch (Exception ex)
-            {
+    {
                 Deleted = false;
                 ClsUtil.ClsLogger.LogError($"Failed to Delete service with id = {serviceID}", ex);
             }

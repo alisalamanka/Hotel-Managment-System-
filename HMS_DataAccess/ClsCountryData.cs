@@ -6,89 +6,52 @@ using System.Data.SqlClient;
 
 namespace HMS_DataAccess
 {
-    public class ClsCountryData
+    public class ClsServicesData
     {
-        public static bool GetCountryInfoByID(int countryID, ref string CountryName)
+        public static bool GetServiceInfoByID(int serviceID, ref string serviceName, ref bool status)
         {
-            bool Isfound = false;
+            bool isFound = false;
             try
             {
-                string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
-                using (SqlConnection conn = new SqlConnection(ConnString))
+                string connString = ConfigurationManager.AppSettings["ConnectionString"];
+                using (SqlConnection conn = new SqlConnection(connString))
                 {
-                    using (SqlCommand cmd = new SqlCommand("SP_GetCountryInfoByID", conn))
+                    using (SqlCommand cmd = new SqlCommand("SP_FindServiceByID", conn))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@CountryID", countryID);
+                        cmd.Parameters.AddWithValue("@ServiceID", serviceID);
                         conn.Open();
 
                         using (SqlDataReader dr = cmd.ExecuteReader())
                         {
                             if (dr.Read())
                             {
-                                Isfound = true;
-                                CountryName = dr["CountryName"].ToString();
+                                isFound = true;
+                                serviceName = dr["ServiceName"].ToString();
+                                status = Convert.ToBoolean(dr["Status"]);
                             }
                         }
-
                     }
-
                 }
             }
             catch (Exception ex)
             {
-                Isfound = false;
-                ClsUtil.ClsLogger.LogError($"Failed to get country with id = {countryID}", ex);
+                isFound = false;
+                ClsUtil.ClsLogger.LogError($"Failed to get service with id = {serviceID}", ex);
             }
 
-            return Isfound;
+            return isFound;
         }
 
-        public static bool GetCountryInfoByName(string CountryNAme, ref int CountryID)
-        {
-            bool Isfound = false;
-            try
-            {
-                string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
-                using (SqlConnection conn = new SqlConnection(ConnString))
-                {
-                    using (SqlCommand cmd = new SqlCommand("SP_GetCountryInfoByName", conn))
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@CountryName", CountryNAme);
-                        conn.Open();
-
-                        using (SqlDataReader dr = cmd.ExecuteReader())
-                        {
-                            if (dr.Read())
-                            {
-                                Isfound = true;
-                                CountryID = Convert.ToInt16(dr["CountryID"]);
-                            }
-                        }
-
-                    }
-
-                }
-            }
-            catch (Exception ex)
-            {
-                Isfound = false;
-                ClsUtil.ClsLogger.LogError($"Failed to get country with Name = {CountryNAme}", ex);
-            }
-
-            return Isfound;
-        }
-
-        public static DataTable GetAllCountries()
+        public static DataTable GetAllServices()
         {
             DataTable dt = new DataTable();
             try
             {
-                string ConnString = ConfigurationManager.AppSettings["ConnectionString"];
-                using (SqlConnection conn = new SqlConnection(ConnString))
+                string connString = ConfigurationManager.AppSettings["ConnectionString"];
+                using (SqlConnection conn = new SqlConnection(connString))
                 {
-                    using (SqlCommand cmd = new SqlCommand("SP_GetAllCountries", conn))
+                    using (SqlCommand cmd = new SqlCommand("SP_GetAllServices", conn))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         conn.Open();
@@ -97,18 +60,101 @@ namespace HMS_DataAccess
                         {
                             da.Fill(dt);
                         }
-
                     }
-
                 }
             }
             catch (Exception ex)
             {
-                ClsUtil.ClsLogger.LogError($"Failed to get all countries", ex);
+                ClsUtil.ClsLogger.LogError("Failed to get all services", ex);
             }
 
             return dt;
         }
 
+        public static int? AddNewService(string serviceName, bool status)
+        {
+            int? serviceID = null;
+            try
+            {
+                string connString = ConfigurationManager.AppSettings["ConnectionString"];
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    using (SqlCommand cmd = new SqlCommand("SP_AddNewService", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@ServiceName", serviceName);
+                        cmd.Parameters.AddWithValue("@Status", status);
+
+                        conn.Open();
+                        serviceID = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                serviceID = null;
+                ClsUtil.ClsLogger.LogError($"Failed to add new service = {serviceName}", ex);
+            }
+
+            return serviceID;
+        }
+
+        public static bool UpdateService(int serviceID, string serviceName, bool status)
+        {
+            bool isUpdated = false;
+            try
+            {
+                string connString = ConfigurationManager.AppSettings["ConnectionString"];
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    using (SqlCommand cmd = new SqlCommand("SP_UpdateService", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@ServiceID", serviceID);
+                        cmd.Parameters.AddWithValue("@ServiceName", serviceName);
+                        cmd.Parameters.AddWithValue("@Status", status);
+
+                        conn.Open();
+                        isUpdated = cmd.ExecuteNonQuery() > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                isUpdated = false;
+                ClsUtil.ClsLogger.LogError($"Failed to update service with id = {serviceID}", ex);
+            }
+
+            return isUpdated;
+        }
+
+        public static bool DeleteService(int serviceID)
+        {
+            bool Deleted = false;
+            try
+            {
+                string connString = ConfigurationManager.AppSettings["ConnectionString"];
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    using (SqlCommand cmd = new SqlCommand("SP_DeleteService", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@ServiceID", serviceID);
+                     
+
+                        conn.Open();
+                        Deleted = cmd.ExecuteNonQuery() > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Deleted = false;
+                ClsUtil.ClsLogger.LogError($"Failed to Delete service with id = {serviceID}", ex);
+            }
+
+            return Deleted;
+
+        }
     }
 }
