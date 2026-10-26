@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace HMS_DataAccess
 {
-    public class ClsServicesData
+    public class CLsServicesData
     {
         public static bool GetServiceInfoByID(int serviceID, ref string serviceName, ref bool status)
         {
