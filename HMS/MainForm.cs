@@ -3,6 +3,7 @@ using HMS.Employees;
 using HMS.People;
 using ClsGlobalClasses;
 using HMS.Users;
+using HMS.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -113,6 +114,12 @@ namespace HMS
         private void btnReservations_Click(object sender, EventArgs e)
         {
             FrmReservationsList frm =new FrmReservationsList();
+            frm.ShowDialog();
+        }
+
+        private void btnServices_Click(object sender, EventArgs e)
+        {
+            FrmManageServices frm = new FrmManageServices();
             frm.ShowDialog();
         }
     }

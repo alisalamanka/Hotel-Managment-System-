@@ -361,6 +361,7 @@
             this.btnServices.Size = new System.Drawing.Size(275, 57);
             this.btnServices.TabIndex = 9;
             this.btnServices.Text = "Services";
+            this.btnServices.Click += new System.EventHandler(this.btnServices_Click);
             this.btnServices.MouseLeave += new System.EventHandler(this.btnexit);
             this.btnServices.MouseHover += new System.EventHandler(this.btnHover);
             // 
