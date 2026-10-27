@@ -241,6 +241,12 @@
     <Compile Include="Services\FrmAddEdditServiceInfo.Designer.cs">
       <DependentUpon>FrmAddEdditServiceInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\FrmServiceDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\FrmServiceDetails.Designer.cs">
+      <DependentUpon>FrmServiceDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\FRMaddNewUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -362,6 +368,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Services\FrmAddEdditServiceInfo.resx">
       <DependentUpon>FrmAddEdditServiceInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\FrmServiceDetails.resx">
+      <DependentUpon>FrmServiceDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\FRMaddNewUser.resx">
       <DependentUpon>FRMaddNewUser.cs</DependentUpon>
@@ -829,6 +838,7 @@
     <Content Include="packages\Guna.UI2.WinForms.2.0.4.8\lib\net7.0-windows7.0\Guna.UI2.dll" />
     <Content Include="packages\Guna.UI2.WinForms.2.0.4.8\lib\netcoreapp3.1\Guna.UI2.dll" />
     <Content Include="packages\Guna.UI2.WinForms.2.0.4.8\LICENSE.txt" />
+    <None Include="Resources\responsible.png" />
     <None Include="Resources\Reservationss.png" />
     <None Include="Resources\notes.png" />
     <None Include="Resources\loading.png" />
