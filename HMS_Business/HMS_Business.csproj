@@ -50,6 +50,7 @@
     <Compile Include="ClsGuest.cs" />
     <Compile Include="ClsGuestType.cs" />
     <Compile Include="ClsOrder.cs" />
+    <Compile Include="ClsOrderType.cs" />
     <Compile Include="ClsPerson.cs" />
     <Compile Include="ClsCountry.cs" />
     <Compile Include="ClsResevation.cs" />

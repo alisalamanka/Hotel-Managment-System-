@@ -51,6 +51,7 @@
     <Compile Include="ClsGuestData.cs" />
     <Compile Include="ClsGuestTypeData.cs" />
     <Compile Include="ClsOrderData.cs" />
+    <Compile Include="ClsOrderTypeData.cs" />
     <Compile Include="ClsPersonsData.cs" />
     <Compile Include="ClsReservationData.cs" />
     <Compile Include="ClsRoomData.cs" />
