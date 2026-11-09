@@ -48,7 +48,7 @@
             this.btnReport = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdministrations = new Guna.UI2.WinForms.Guna2Button();
             this.btnServices = new Guna.UI2.WinForms.Guna2Button();
-            this.btnApplications = new Guna.UI2.WinForms.Guna2Button();
+            this.btnOders = new Guna.UI2.WinForms.Guna2Button();
             this.btnStays = new Guna.UI2.WinForms.Guna2Button();
             this.btnRooms = new Guna.UI2.WinForms.Guna2Button();
             this.btnReservations = new Guna.UI2.WinForms.Guna2Button();
@@ -191,7 +191,7 @@
             this.guna2CustomGradientPanel4.Controls.Add(this.btnReport);
             this.guna2CustomGradientPanel4.Controls.Add(this.btnAdministrations);
             this.guna2CustomGradientPanel4.Controls.Add(this.btnServices);
-            this.guna2CustomGradientPanel4.Controls.Add(this.btnApplications);
+            this.guna2CustomGradientPanel4.Controls.Add(this.btnOders);
             this.guna2CustomGradientPanel4.Controls.Add(this.btnStays);
             this.guna2CustomGradientPanel4.Controls.Add(this.btnRooms);
             this.guna2CustomGradientPanel4.Controls.Add(this.btnReservations);
@@ -365,29 +365,29 @@
             this.btnServices.MouseLeave += new System.EventHandler(this.btnexit);
             this.btnServices.MouseHover += new System.EventHandler(this.btnHover);
             // 
-            // btnApplications
+            // btnOders
             // 
-            this.btnApplications.BackColor = System.Drawing.Color.Transparent;
-            this.btnApplications.BorderRadius = 15;
-            this.btnApplications.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnApplications.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnApplications.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnApplications.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnApplications.FillColor = System.Drawing.Color.Transparent;
-            this.btnApplications.FocusedColor = System.Drawing.Color.CornflowerBlue;
-            this.btnApplications.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApplications.ForeColor = System.Drawing.Color.White;
-            this.btnApplications.Image = global::HMS.Properties.Resources.Applications;
-            this.btnApplications.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnApplications.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnApplications.Location = new System.Drawing.Point(34, 550);
-            this.btnApplications.Name = "btnApplications";
-            this.btnApplications.PressedColor = System.Drawing.Color.Blue;
-            this.btnApplications.Size = new System.Drawing.Size(275, 57);
-            this.btnApplications.TabIndex = 8;
-            this.btnApplications.Text = "Applications";
-            this.btnApplications.MouseLeave += new System.EventHandler(this.btnexit);
-            this.btnApplications.MouseHover += new System.EventHandler(this.btnHover);
+            this.btnOders.BackColor = System.Drawing.Color.Transparent;
+            this.btnOders.BorderRadius = 15;
+            this.btnOders.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnOders.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnOders.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnOders.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnOders.FillColor = System.Drawing.Color.Transparent;
+            this.btnOders.FocusedColor = System.Drawing.Color.CornflowerBlue;
+            this.btnOders.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOders.ForeColor = System.Drawing.Color.White;
+            this.btnOders.Image = global::HMS.Properties.Resources.Applications;
+            this.btnOders.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnOders.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnOders.Location = new System.Drawing.Point(34, 550);
+            this.btnOders.Name = "btnOders";
+            this.btnOders.PressedColor = System.Drawing.Color.Blue;
+            this.btnOders.Size = new System.Drawing.Size(275, 57);
+            this.btnOders.TabIndex = 8;
+            this.btnOders.Text = "Orders";
+            this.btnOders.MouseLeave += new System.EventHandler(this.btnexit);
+            this.btnOders.MouseHover += new System.EventHandler(this.btnHover);
             // 
             // btnStays
             // 
@@ -690,7 +690,7 @@
         private Guna.UI2.WinForms.Guna2Button btnReport;
         private Guna.UI2.WinForms.Guna2Button btnAdministrations;
         private Guna.UI2.WinForms.Guna2Button btnServices;
-        private Guna.UI2.WinForms.Guna2Button btnApplications;
+        private Guna.UI2.WinForms.Guna2Button btnOders;
         private Guna.UI2.WinForms.Guna2Button btnStays;
         private Guna.UI2.WinForms.Guna2Button btnRooms;
         private Guna.UI2.WinForms.Guna2Button btnReservations;

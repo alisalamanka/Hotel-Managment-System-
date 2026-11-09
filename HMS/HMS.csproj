@@ -143,6 +143,12 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
+    <Compile Include="Order\Controls\ctrlOrderInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\Controls\ctrlOrderInfo.Designer.cs">
+      <DependentUpon>ctrlOrderInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="People\FindPerson.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -321,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\Controls\ctrlOrderInfo.resx">
+      <DependentUpon>ctrlOrderInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="People\FindPerson.resx">
       <DependentUpon>FindPerson.cs</DependentUpon>
