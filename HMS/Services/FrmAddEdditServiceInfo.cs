@@ -3,18 +3,13 @@ using HMS_Business;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HMS.Services
 {
     public partial class FrmAddEdditServiceInfo : Form
     {
-       
+
 
         private void FrmAddEdditServiceInfo_Load(object sender, EventArgs e)
         {
@@ -22,8 +17,8 @@ namespace HMS.Services
         }
         private EnMode _Mode;
 
-        private ClsService _CurrentService=new ClsService();
-            
+        private ClsService _CurrentService = new ClsService();
+
         private int _ServiceID;
         public FrmAddEdditServiceInfo()
         {
@@ -52,22 +47,22 @@ namespace HMS.Services
             }
         }
 
-      
+
         private void _FillServicesComboBox()
         {
-                  List<string> _Services = new List<string>
+            List<string> _Services = new List<string>
                    {
                        "Active",
                        "InActive"
                    };
-           CBstatus.DataSource = _Services;
+            CBstatus.DataSource = _Services;
         }
-        
+
         private void _FillInputs()
         {
             txtServiceName.Text = _CurrentService.ServiceName.ToString();
             lblServiceId.Text = _CurrentService.ServiceID.ToString();
-            CBstatus.SelectedIndex=_CurrentService.Status== "Active" ? 0 : 1;
+            CBstatus.SelectedIndex = _CurrentService.Status == "Active" ? 0 : 1;
         }
 
         private void _Reset()
@@ -81,8 +76,8 @@ namespace HMS.Services
 
         private void _ReadInputs()
         {
-          _CurrentService.ServiceName = txtServiceName.Text;
-          _CurrentService.Status=CBstatus.SelectedIndex==0? "Active" : "InActive";
+            _CurrentService.ServiceName = txtServiceName.Text;
+            _CurrentService.Status = CBstatus.SelectedIndex == 0 ? "Active" : "InActive";
 
         }
 
@@ -99,7 +94,7 @@ namespace HMS.Services
                     return;
                 }
 
-                lblServiceId.Text =_CurrentService.ServiceID.ToString();
+                lblServiceId.Text = _CurrentService.ServiceID.ToString();
                 lblTitle.Text = "Update Service";
                 _FillInputs();
             }
@@ -112,11 +107,11 @@ namespace HMS.Services
 
 
 
-      
+
 
         private void FrmAddEditRoom_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void txtServiceName_Validating(object sender, CancelEventArgs e)
@@ -124,7 +119,7 @@ namespace HMS.Services
             if (string.IsNullOrEmpty(txtServiceName.Text))
             {
                 EPinputs.SetError(txtServiceName, "Please enter the service neme!");
-                e.Cancel=true;
+                e.Cancel = true;
             }
             else
             {

@@ -149,6 +149,12 @@
     <Compile Include="Order\Controls\ctrlOrderInfo.Designer.cs">
       <DependentUpon>ctrlOrderInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Order\FrmAddEditOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\FrmAddEditOrder.Designer.cs">
+      <DependentUpon>FrmAddEditOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="People\FindPerson.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Order\Controls\ctrlOrderInfo.resx">
       <DependentUpon>ctrlOrderInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\FrmAddEditOrder.resx">
+      <DependentUpon>FrmAddEditOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="People\FindPerson.resx">
       <DependentUpon>FindPerson.cs</DependentUpon>
