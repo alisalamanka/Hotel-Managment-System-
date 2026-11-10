@@ -155,6 +155,12 @@
     <Compile Include="Order\FrmAddEditOrder.Designer.cs">
       <DependentUpon>FrmAddEditOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Order\FrmShowOrderInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\FrmShowOrderInfo.Designer.cs">
+      <DependentUpon>FrmShowOrderInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="People\FindPerson.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -339,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Order\FrmAddEditOrder.resx">
       <DependentUpon>FrmAddEditOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\FrmShowOrderInfo.resx">
+      <DependentUpon>FrmShowOrderInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="People\FindPerson.resx">
       <DependentUpon>FindPerson.cs</DependentUpon>
