@@ -10,6 +10,7 @@ namespace HMS_Business
     {
         public int? OrderID { get; set; }
         public int? OrderTypeID { get; set; }
+        public ClsOrderType orderTypeInfo { get; set; }
         public int? UserID { get; set; }
         public DateTime OrderDate { get; set; }
         public short Status { get; set; }
@@ -45,24 +46,6 @@ namespace HMS_Business
             Mode = EnMode.AddNew;
         }
 
-        public static string GetOrderTypeString(int OrderTypeID)
-        {
-            switch (OrderTypeID)
-            {
-                case 1:
-                    return "Service";
-                case 2:
-                    return "StayExtension";
-                case 3:
-                    return "RoomChange";
-                case 4:
-                    return "Complaint";
-                default:
-                    return "Service";
-
-            }
-        }
-
         public static string GetStatusString(int StatusNumber)
         {
             switch (StatusNumber)
@@ -88,6 +71,7 @@ namespace HMS_Business
         {
             this.OrderID = OrderID;
             this.OrderTypeID = OrderTypeID;
+            orderTypeInfo = ClsOrderType.Find(OrderTypeID);
             this.UserID = UserID;
             this.OrderDate = OrderDate;
             this.Status = Status;
