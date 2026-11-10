@@ -17,8 +17,7 @@ namespace HMS.Order.Controls
         {
             lblOrderID.Text = _CurrentOrder.OrderID.ToString();
 
-            lblOrderType.Text = ClsOrder.GetOrderTypeString(
-                _CurrentOrder.OrderTypeID.Value);
+            lblOrderType.Text = _CurrentOrder.orderTypeInfo.OrderTypeName;
 
             lblUserID.Text = _CurrentOrder.UserID.ToString();
 

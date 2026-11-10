@@ -49,6 +49,7 @@ namespace HMS_DataAccess
         public static bool UpdateOrder(
             int OrderID,
             int OrderTypeID,
+            short status,
             int UserID,
             ref Exception ErrorOccurred)
         {
@@ -71,6 +72,7 @@ namespace HMS_DataAccess
 
                     cmd.Parameters.AddWithValue(
                         "@UserID", UserID);
+                    cmd.Parameters.AddWithValue("@Status", status);
 
                     SqlParameter RowsAffectedParam =
                         new SqlParameter(

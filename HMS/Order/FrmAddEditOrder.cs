@@ -1,13 +1,7 @@
 ﻿using ClsGlobalClasses;
 using HMS_Business;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HMS.Order
@@ -28,14 +22,12 @@ namespace HMS.Order
 
         private void _LoadDefaultValues()
         {
-            // Order Types
-            CBorderType.DataSource = ClsOrderType.GetAllOrderTypes();
+            CBorderType.DataSource = ClsOrderType.OrderTypesList();
             CBorderType.DisplayMember = "OrderTypeName";
             CBorderType.ValueMember = "OrderTypeID";
 
-            // Status
             CBstatus.DataSource =
-                Enum.GetValues(typeof(ClsOrder.EnStatus));
+                Enum.GetValues(typeof(ClsOrder.EnOrderStatus));
 
             DTPorderDate.Enabled = false;
 
@@ -45,15 +37,15 @@ namespace HMS.Order
                     {
                         lblTitle.Text = "Add New Order";
 
-                        lblReservationID.Text = "";
+                        lblOrderID.Text = "[????]";
 
-                        txtUserID.Text = "2";
+                        txtUserID.Text = "1";
                         txtUserID.Enabled = false;
 
                         CBorderType.SelectedIndex = 0;
 
                         CBstatus.SelectedItem =
-                            ClsOrder.EnStatus.Pending;
+                            ClsOrder.EnOrderStatus.Pending;
 
                         DTPorderDate.Value = DateTime.Now;
 
@@ -66,7 +58,7 @@ namespace HMS.Order
                         {
                             lblTitle.Text = "Update Order";
 
-                            lblReservationID.Text =
+                            lblOrderID.Text =
                                 _orderInfo.OrderID.ToString();
 
                             txtUserID.Text =
@@ -78,7 +70,7 @@ namespace HMS.Order
                                 _orderInfo.OrderTypeID;
 
                             CBstatus.SelectedItem =
-                                (ClsOrder.EnStatus)_orderInfo.Status;
+                                (ClsOrder.EnOrderStatus)_orderInfo.Status;
 
                             DTPorderDate.Value =
                                 _orderInfo.OrderDate;
@@ -87,6 +79,25 @@ namespace HMS.Order
                     break;
             }
 
+        }
+
+        private void _FillNewInfo()
+        {
+            _orderInfo.OrderTypeID =
+                (int)CBorderType.SelectedValue;
+
+            if (int.TryParse(txtUserID.Text, out int ID))
+            {
+                _orderInfo.UserID = ID;
+            }
+
+
+            _orderInfo.OrderDate =
+                DTPorderDate.Value;
+
+            _orderInfo.Status = (short)(ClsOrder.EnOrderStatus)CBstatus.SelectedItem;
+
+        }
 
         public FrmAddEditOrder()
         {
@@ -111,8 +122,130 @@ namespace HMS.Order
             }
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
+        private void FrmAddEditOrder_Load(object sender, EventArgs e)
+        {
+            _LoadDefaultValues();
+        }
 
+        private void txtUserID_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtUserID.Text))
+            {
+                InputsEP.SetError(
+                    txtUserID,
+                    "User ID Cannot Be Empty!");
 
+                e.Cancel = true;
+            }
+            else if (!ClsValidation.IsNumber(txtUserID.Text))
+            {
+                InputsEP.SetError(
+                    txtUserID,
+                    "Please enter a valid ID!");
+
+                e.Cancel = true;
+            }
+            else if (Clsuser.Find(int.Parse(txtUserID.Text)) == null)
+            {
+                InputsEP.SetError(
+                    txtUserID,
+                    $"No User With ID = {txtUserID.Text}");
+
+                e.Cancel = true;
+            }
+            else
+            {
+                InputsEP.SetError(txtUserID, "");
+            }
+        }
+
+        private void CBorderType_Validating(object sender, CancelEventArgs e)
+        {
+            if (CBorderType.SelectedIndex == -1)
+            {
+                InputsEP.SetError(
+                    CBorderType,
+                    "Please Select an Order Type!");
+
+                e.Cancel = true;
+            }
+            else
+            {
+                InputsEP.SetError(CBorderType, "");
+            }
+        }
+
+        private void CBstatus_Validating(object sender, CancelEventArgs e)
+        {
+            if (_mode == EnMode.Add)
+            {
+                ClsOrder.EnOrderStatus SelectedStatus =
+                    (ClsOrder.EnOrderStatus)CBstatus.SelectedItem;
+
+                if (SelectedStatus != ClsOrder.EnOrderStatus.Pending)
+                {
+                    InputsEP.SetError(
+                        CBstatus,
+                        "Wrong Status For New Order!");
+
+                    e.Cancel = true;
+                }
+                else
+                {
+                    InputsEP.SetError(CBstatus, "");
+                }
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (!this.ValidateChildren())
+            {
+                ClsUtil.ShowErrorMessage(
+                    "Please Fix The Errors Before Save!");
+
+                return;
+            }
+
+            _FillNewInfo();
+
+            if (_orderInfo.Save())
+            {
+                _mode = EnMode.Update;
+
+                _OrderID = _orderInfo.OrderID;
+
+                _orderInfo = ClsOrder.Find(_OrderID.Value);
+
+                ClsUtil.ShowSuccessMessage(
+                    "Order Saved Successfully!");
+
+                lblOrderID.Text =
+                    _orderInfo.OrderID.ToString();
+
+                lblTitle.Text = "Update Order";
+
+                _orderInfo.Mode = ClsOrder.EnMode.Update;
+            }
+            else
+            {
+                ClsUtil.ShowErrorMessage(
+                    "Failed To Save Order!");
+
+                return;
+            }
+        }
+
+        private void DTPorderDate_Validated(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+
+

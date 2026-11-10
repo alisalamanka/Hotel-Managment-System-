@@ -1,14 +1,5 @@
-﻿using HMS.Employees;
-using HMS.Guests;
-using HMS.People;
-using HMS.Reservations;
-using HMS.Rooms;
-using HMS.Services;
-using HMS.Users;
+﻿using HMS.Order;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HMS
@@ -23,7 +14,7 @@ namespace HMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmManageServices());
+            Application.Run(new FrmAddEditOrder(1));
         }
     }
 }

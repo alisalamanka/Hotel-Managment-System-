@@ -32,6 +32,7 @@
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.CBorderType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2CirclePictureBox13 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.CBstatus = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -44,10 +45,9 @@
             this.txtUserID = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblReservationID = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblOrderID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.CBorderType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.InputsEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox13)).BeginInit();
@@ -76,6 +76,7 @@
             this.btnClose.Size = new System.Drawing.Size(180, 51);
             this.btnClose.TabIndex = 15;
             this.btnClose.Text = "Close";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSave
             // 
@@ -95,6 +96,7 @@
             this.btnSave.Size = new System.Drawing.Size(180, 51);
             this.btnSave.TabIndex = 14;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // guna2CustomGradientPanel1
             // 
@@ -113,7 +115,7 @@
             this.guna2CustomGradientPanel1.Controls.Add(this.txtUserID);
             this.guna2CustomGradientPanel1.Controls.Add(this.guna2HtmlLabel5);
             this.guna2CustomGradientPanel1.Controls.Add(this.guna2HtmlLabel2);
-            this.guna2CustomGradientPanel1.Controls.Add(this.lblReservationID);
+            this.guna2CustomGradientPanel1.Controls.Add(this.lblOrderID);
             this.guna2CustomGradientPanel1.Controls.Add(this.guna2HtmlLabel1);
             this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.Gainsboro;
             this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.Gainsboro;
@@ -123,6 +125,23 @@
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1178, 237);
             this.guna2CustomGradientPanel1.TabIndex = 13;
+            // 
+            // CBorderType
+            // 
+            this.CBorderType.BackColor = System.Drawing.Color.Transparent;
+            this.CBorderType.BorderRadius = 17;
+            this.CBorderType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CBorderType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBorderType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CBorderType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CBorderType.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBorderType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.CBorderType.ItemHeight = 30;
+            this.CBorderType.Location = new System.Drawing.Point(271, 118);
+            this.CBorderType.Name = "CBorderType";
+            this.CBorderType.Size = new System.Drawing.Size(217, 36);
+            this.CBorderType.TabIndex = 80;
+            this.CBorderType.Validating += new System.ComponentModel.CancelEventHandler(this.CBorderType_Validating);
             // 
             // guna2CirclePictureBox13
             // 
@@ -151,6 +170,7 @@
             this.CBstatus.Name = "CBstatus";
             this.CBstatus.Size = new System.Drawing.Size(217, 36);
             this.CBstatus.TabIndex = 76;
+            this.CBstatus.Validating += new System.ComponentModel.CancelEventHandler(this.CBstatus_Validating);
             // 
             // guna2HtmlLabel8
             // 
@@ -226,6 +246,7 @@
             this.DTPorderDate.Size = new System.Drawing.Size(256, 36);
             this.DTPorderDate.TabIndex = 53;
             this.DTPorderDate.Value = new System.DateTime(2026, 10, 10, 21, 24, 46, 604);
+            this.DTPorderDate.Validated += new System.EventHandler(this.DTPorderDate_Validated);
             // 
             // guna2HtmlLabel4
             // 
@@ -259,6 +280,7 @@
             this.txtUserID.SelectedText = "";
             this.txtUserID.Size = new System.Drawing.Size(149, 41);
             this.txtUserID.TabIndex = 44;
+            this.txtUserID.Validating += new System.ComponentModel.CancelEventHandler(this.txtUserID_Validating);
             // 
             // guna2HtmlLabel5
             // 
@@ -282,16 +304,16 @@
             this.guna2HtmlLabel2.TabIndex = 39;
             this.guna2HtmlLabel2.Text = "User ID:";
             // 
-            // lblReservationID
+            // LBMorderID
             // 
-            this.lblReservationID.BackColor = System.Drawing.Color.Transparent;
-            this.lblReservationID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReservationID.ForeColor = System.Drawing.Color.DimGray;
-            this.lblReservationID.Location = new System.Drawing.Point(271, 17);
-            this.lblReservationID.Name = "lblReservationID";
-            this.lblReservationID.Size = new System.Drawing.Size(59, 26);
-            this.lblReservationID.TabIndex = 38;
-            this.lblReservationID.Text = "[????]";
+            this.lblOrderID.BackColor = System.Drawing.Color.Transparent;
+            this.lblOrderID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderID.ForeColor = System.Drawing.Color.DimGray;
+            this.lblOrderID.Location = new System.Drawing.Point(271, 17);
+            this.lblOrderID.Name = "LBMorderID";
+            this.lblOrderID.Size = new System.Drawing.Size(59, 26);
+            this.lblOrderID.TabIndex = 38;
+            this.lblOrderID.Text = "[????]";
             // 
             // guna2HtmlLabel1
             // 
@@ -315,22 +337,6 @@
             this.lblTitle.TabIndex = 12;
             this.lblTitle.Text = "Add New Order";
             // 
-            // CBorderType
-            // 
-            this.CBorderType.BackColor = System.Drawing.Color.Transparent;
-            this.CBorderType.BorderRadius = 17;
-            this.CBorderType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CBorderType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBorderType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CBorderType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CBorderType.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBorderType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.CBorderType.ItemHeight = 30;
-            this.CBorderType.Location = new System.Drawing.Point(271, 118);
-            this.CBorderType.Name = "CBorderType";
-            this.CBorderType.Size = new System.Drawing.Size(217, 36);
-            this.CBorderType.TabIndex = 80;
-            // 
             // InputsEP
             // 
             this.InputsEP.ContainerControl = this;
@@ -348,6 +354,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmAddEditOrder";
             this.Text = "FrmAddEditOrder";
+            this.Load += new System.EventHandler(this.FrmAddEditOrder_Load);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox13)).EndInit();
@@ -378,7 +385,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtUserID;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblReservationID;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblOrderID;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTitle;
         private Guna.UI2.WinForms.Guna2ComboBox CBorderType;

@@ -194,6 +194,7 @@ namespace HMS_Business
                 ClsOrderData.UpdateOrder(
                     OrderID.Value,
                     OrderTypeID.Value,
+                    Status,
                     UserID.Value,
                     ref error);
 
