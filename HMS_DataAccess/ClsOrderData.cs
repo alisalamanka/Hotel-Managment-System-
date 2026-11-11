@@ -236,6 +236,39 @@ namespace HMS_DataAccess
             }
         }
 
+        public static DataTable GetOrdersListPerPage(short PageNumber, short PageSize, ref Exception ex)
+        {
+            string conn =
+                ConfigurationManager.AppSettings["ConnectionString"];
 
+            try
+            {
+                using (SqlConnection cnn = new SqlConnection(conn))
+                using (SqlCommand cmd = new SqlCommand(
+                    "SP_GetOrdersListPerPage", cnn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@PageNumber", PageNumber);
+                    cmd.Parameters.AddWithValue("@PageSize", PageSize);
+
+
+                    cnn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        DataTable dt = new DataTable();
+
+                        dt.Load(dr);
+
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                ex = e;
+                return null;
+            }
+        }
     }
 }

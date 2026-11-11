@@ -1,14 +1,7 @@
 ﻿using ClsGlobalClasses;
 using HMS_Business;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HMS.Reservations
@@ -32,12 +25,12 @@ namespace HMS.Reservations
 
         private void _LoadCurrentPage()
         {
-           
+
             _dtCurrentPage.Rows.Clear();
             _dtCurrentPage = ClsResevation.ReservationListByPage(CurrentPage, PageSize);
             DGVReservations.DataSource = _dtCurrentPage;
             _ConfigureDGV();
-            lblCurrentPage.Text=CurrentPage.ToString();
+            lblCurrentPage.Text = CurrentPage.ToString();
             _UpdatePaginationButtons();
 
 
@@ -125,14 +118,14 @@ namespace HMS.Reservations
             lblNumberOfReservations.Text =
                 _dtReservationList.Rows.Count.ToString();
 
-        
+
         }
 
         private void CBfilterBy_SelectedIndexChanged(object sender, EventArgs e)
         {
             CBreservationStatus.Visible = CBfilterBy.SelectedIndex == 4;
 
-            txtFilterByValue.Visible = (CBfilterBy.SelectedIndex != 0)&&CBreservationStatus.Visible==false;
+            txtFilterByValue.Visible = (CBfilterBy.SelectedIndex != 0) && CBreservationStatus.Visible == false;
 
             if (txtFilterByValue.Visible)
             {
@@ -262,7 +255,7 @@ namespace HMS.Reservations
 
         private void btnAddNewReservation_Click(object sender, EventArgs e)
         {
-            FrmAddEditReservation frm=new FrmAddEditReservation();
+            FrmAddEditReservation frm = new FrmAddEditReservation();
             frm.ShowDialog();
         }
 
@@ -275,7 +268,7 @@ namespace HMS.Reservations
         private void TSMIshowReservationInfo_Click(object sender, EventArgs e)
         {
             int ResID = int.Parse(DGVReservations.CurrentRow.Cells[0].Value.ToString());
-            FrmReservationDetails drm =new FrmReservationDetails(ResID);
+            FrmReservationDetails drm = new FrmReservationDetails(ResID);
             drm.ShowDialog();
         }
 
@@ -289,8 +282,8 @@ namespace HMS.Reservations
         private void TSMCancel_Click(object sender, EventArgs e)
         {
             int ResID = int.Parse(DGVReservations.CurrentRow.Cells[0].Value.ToString());
-            ClsResevation res =ClsResevation.Find(ResID);
-            if (res!=null)
+            ClsResevation res = ClsResevation.Find(ResID);
+            if (res != null)
             {
                 if (MessageBox.Show("Are You Sure You Want To Cancel This Reservation?",
                     "Confirmation!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
@@ -299,7 +292,7 @@ namespace HMS.Reservations
                     {
                         ClsUtil.ShowSuccessMessage("Reservation Cancelled Successfully!");
                         _RefreshList();
-                }
+                    }
                     else
                     {
                         ClsUtil.ShowSuccessMessage("An Error Occoured !");
@@ -307,7 +300,7 @@ namespace HMS.Reservations
                     }
                 }
                 {
-                    
+
                 }
             }
             else
@@ -326,7 +319,7 @@ namespace HMS.Reservations
         private void btnPrevieus_Click(object sender, EventArgs e)
         {
             CurrentPage--;
-            _LoadCurrentPage() ;
+            _LoadCurrentPage();
             lblCurrentPage.Text = CurrentPage.ToString();
         }
     }

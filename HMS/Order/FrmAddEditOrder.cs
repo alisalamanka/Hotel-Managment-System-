@@ -22,9 +22,10 @@ namespace HMS.Order
 
         private void _LoadDefaultValues()
         {
-            CBorderType.DataSource = ClsOrderType.OrderTypesList();
-            CBorderType.DisplayMember = "OrderTypeName";
+
             CBorderType.ValueMember = "OrderTypeID";
+            CBorderType.DisplayMember = "OrderTypeName";
+            CBorderType.DataSource = ClsOrderType.OrderTypesList();
 
             CBstatus.DataSource =
                 Enum.GetValues(typeof(ClsOrder.EnOrderStatus));
@@ -39,7 +40,7 @@ namespace HMS.Order
 
                         lblOrderID.Text = "[????]";
 
-                        txtUserID.Text = "1";
+                        txtUserID.Text = "2";
                         txtUserID.Enabled = false;
 
                         CBorderType.SelectedIndex = 0;

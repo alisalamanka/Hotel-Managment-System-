@@ -157,6 +157,25 @@ namespace HMS_Business
             return dt;
         }
 
+        public static DataTable GetOrdersPerPage(short pageNumber, short PageSize)
+        {
+
+            Exception error = null;
+
+            DataTable dt =
+                ClsOrderData.GetOrdersListPerPage(pageNumber, PageSize, ref error);
+
+            if (error != null)
+            {
+                ClsUtil.ClsLogger.LogError(
+                    "Failed to get Orders List",
+                    error);
+
+                return null;
+            }
+
+            return dt;
+        }
 
         public bool AddNewOrder()
         {
