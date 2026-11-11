@@ -57,6 +57,7 @@
     <Compile Include="ClsRoomData.cs" />
     <Compile Include="ClsRoomTypeData.cs" />
     <Compile Include="ClsServiceData.cs" />
+    <Compile Include="ClsStayData.cs" />
     <Compile Include="ClsUserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
