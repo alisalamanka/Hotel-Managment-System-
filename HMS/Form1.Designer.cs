@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrlReservationInfo1 = new HMS.Reservations.Controls.ctrlReservationInfo();
+            this.ctrlReservationInfo1 = new HMS.Reservations.Controls.UCreservationDetails();
             this.SuspendLayout();
             // 
             // ctrlReservationInfo1
@@ -56,6 +56,6 @@
 
         #endregion
 
-        private Reservations.Controls.ctrlReservationInfo ctrlReservationInfo1;
+        private Reservations.Controls.UCreservationDetails ctrlReservationInfo1;
     }
 }

@@ -28,27 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrlReservationInfo1 = new HMS.Reservations.Controls.ctrlReservationInfo();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
-            // 
-            // ctrlReservationInfo1
-            // 
-            this.ctrlReservationInfo1.BackColor = System.Drawing.Color.Silver;
-            this.ctrlReservationInfo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrlReservationInfo1.Location = new System.Drawing.Point(41, 105);
-            this.ctrlReservationInfo1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ctrlReservationInfo1.Name = "ctrlReservationInfo1";
-            this.ctrlReservationInfo1.Size = new System.Drawing.Size(994, 512);
-            this.ctrlReservationInfo1.TabIndex = 0;
             // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Red;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(405, 41);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(372, 28);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(296, 39);
             this.guna2HtmlLabel1.TabIndex = 1;
@@ -74,6 +63,9 @@
             this.btnClose.Text = "Close";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // ctrlReservationInfo1
+            
+            // 
             // FrmReservationDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -82,7 +74,6 @@
             this.ClientSize = new System.Drawing.Size(1069, 714);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.guna2HtmlLabel1);
-            this.Controls.Add(this.ctrlReservationInfo1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -95,8 +86,6 @@
         }
 
         #endregion
-
-        private Controls.ctrlReservationInfo ctrlReservationInfo1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Button btnClose;
     }
