@@ -1,73 +1,100 @@
-﻿using ClsGlobalClasses;
-using HMS_Business;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace HMS.Reservations.Controls
 {
     public partial class ctrlReservationInfo : UserControl
     {
-        private int? ReservationID;
-        private ClsResevation ReservationInfo = new ClsResevation();
+        private ClsReservation _Reservation;
+
         public ctrlReservationInfo()
         {
             InitializeComponent();
         }
-        private void _FillReservationInfo()
-        {
-            lblResID.Text = ReservationInfo.ReservationID.ToString();
-            lblUserID.Text = ReservationInfo.UserID.ToString();
-            lblGuestID.Text = ReservationInfo.GuestID.ToString();
-            lblRoomNumber.Text = ReservationInfo.RoomInfo.RoomNumber.ToString();
-            lblGuestType.Text =ClsGuestType.Find(ReservationInfo.GuestTypeID.Value).GuestTypeName;
-            lblNotes.Text = ReservationInfo.Notes;
-            lblNumberOfGuests.Text = ReservationInfo.NumberOfGuests.ToString();
-            lblReservationDate.Text = ReservationInfo.ReservationDate.ToShortDateString();
-            lblPlannedCheckIn.Text = ReservationInfo.PlannedCheckin.ToShortDateString();
-            lblPlannedCheckOut.Text = ReservationInfo.PlannedCheckOut.ToShortDateString();
-            lblPricePerNight.Text = ReservationInfo.PricePerNight.ToString("C");
-            lblTotalAmount.Text = ReservationInfo.TotalAmount.ToString("C");
-            lblStatus.Text=ReservationInfo.GetStatusString();
 
-        }
-
-        public void Clear()
+        public void LoadReservationInfo(int reservationID)
         {
-            lblGuestID.Text = "[????]";
-            lblGuestType.Text = "[????]";
-            lblNotes.Text = "[????]";
-            lblNumberOfGuests.Text = "[????]";
-            lblPlannedCheckIn.Text = "[????]";
-            lblPlannedCheckOut.Text = "[????]";
-            lblPricePerNight.Text = "[????]";
-            lblReservationDate.Text = "[????]";
-            lblResID.Text = "[????]";
-            lblRoomNumber.Text = "[????]";
-            lblStatus.Text = "[????]";
-            lblTotalAmount.Text = "[????]";
-            lblUserID.Text = "[????]";
-        }
+            _Reservation = ClsReservation.Find(reservationID);
 
-        public void LoadReservationInfo(int ReservationID)
-        {
-            this.ReservationID = ReservationID;
-            ReservationInfo =  ClsResevation.Find(ReservationID);
-            if (ReservationInfo!=null)
+            if (_Reservation == null)
             {
-                _FillReservationInfo();
-            }
-            else
-            {
-                ClsUtil.ShowErrorMessage($"No Reservation With ID {ReservationID}");
+                ResetReservationInfo();
+
+                MessageBox.Show(
+                    "No Reservation Found With ID = " + reservationID,
+                    "Reservation Not Found",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
                 return;
             }
+
+            DisplayReservationInfo();
+        }
+
+        private void DisplayReservationInfo()
+        {
+            lblStayID.Text = _Reservation.ReservationID.ToString();
+
+            lblGuestID.Text = _Reservation.GuestID.ToString();
+
+            lblGuestRoomID.Text = _Reservation.RoomID.ToString();
+
+            lblUserID.Text = _Reservation.UserID.ToString();
+
+            lblReservationID.Text = _Reservation.ReservationID.ToString();
+
+            lblGuestType.Text = _Reservation.GuestType.ToString();
+
+            lblReservationDate.Text =
+                _Reservation.ReservationDate.ToString("dd/MM/yyyy");
+
+            lblPlannedCheckInDate.Text =
+                _Reservation.PlannedCheckInDate.ToString("dd/MM/yyyy");
+
+            lblPlannedCheckoutDate.Text =
+                _Reservation.PlannedCheckOutDate.ToString("dd/MM/yyyy");
+
+            lblPricePerNight.Text =
+                _Reservation.PricePerNight.ToString("N2");
+
+            lblTotalAMount.Text =
+                _Reservation.TotalAmount.ToString("N2");
+
+            lblStatus.Text = _Reservation.Status.ToString();
+
+            lblNotes.Text =
+                string.IsNullOrWhiteSpace(_Reservation.Notes)
+                ? "No Notes"
+                : _Reservation.Notes;
+
+            // Number of guests
+            guna2HtmlLabel3.Text =
+                _Reservation.NumberOfGuests.ToString();
+        }
+
+        private void ResetReservationInfo()
+        {
+            lblStayID.Text = "????";
+            lblGuestID.Text = "????";
+            lblGuestRoomID.Text = "????";
+            lblUserID.Text = "????";
+            lblReservationID.Text = "????";
+
+            lblGuestType.Text = "????";
+            lblReservationDate.Text = "????";
+
+            lblPlannedCheckInDate.Text = "????";
+            lblPlannedCheckoutDate.Text = "????";
+
+            lblPricePerNight.Text = "????";
+            lblTotalAMount.Text = "????";
+
+            lblStatus.Text = "????";
+            lblNotes.Text = "????";
+
+            guna2HtmlLabel3.Text = "????";
+
+            _Reservation = null;
         }
     }
 }
