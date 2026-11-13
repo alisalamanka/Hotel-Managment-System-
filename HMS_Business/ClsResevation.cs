@@ -1,17 +1,13 @@
 ﻿using ClsGlobalClasses;
 using HMS_DataAccess;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HMS_Business
 {
     public class ClsResevation
     {
-       public int? ReservationID { get; set; }
+        public int? ReservationID { get; set; }
         public int? UserID { get; set; }
 
         public Clsuser UserInfo;
@@ -32,15 +28,15 @@ namespace HMS_Business
         public string Notes { get; set; }
         public enum EnMode
         {
-            AddNew=0,Update=1
+            AddNew = 0, Update = 1
         }
         public EnMode Mode { get; set; }
 
         public enum EnStatus
         {
-            Pending=1,Confirmed=2,
-            Cancelled=3,CheckedIn=4,
-            CheckedOut=5, NoShow = 6
+            Pending = 1, Confirmed = 2,
+            Cancelled = 3, CheckedIn = 4,
+            CheckedOut = 5, NoShow = 6
         }
 
         public ClsResevation()
@@ -101,9 +97,9 @@ namespace HMS_Business
 
         }
 
-        public  string GetStatusString()
+        public string GetStatusString()
         {
-            switch(Status)
+            switch (Status)
             {
                 case (int)EnStatus.Pending:
                     return "Pending";
@@ -124,26 +120,26 @@ namespace HMS_Business
         public int? AddNewReseration()
         {
             Exception e = null;
-            int?ID = ClsReservationData.AddNewReservation(UserID.Value,GuestID.Value,RoomID.Value,GuestTypeID.Value,NumberOfGuests,PlannedCheckin,
-               PlannedCheckOut,PricePerNight,Status.Value,Notes,ref e);
-              if (e != null)
+            int? ID = ClsReservationData.AddNewReservation(UserID.Value, GuestID.Value, RoomID.Value, GuestTypeID.Value, NumberOfGuests, PlannedCheckin,
+               PlannedCheckOut, PricePerNight, Status.Value, Notes, ref e);
+            if (e != null)
             {
-                ClsUtil.ClsLogger.LogError("Falied To Add This Reservation",e);
+                ClsUtil.ClsLogger.LogError("Falied To Add This Reservation", e);
                 return null;
             }
-           
-           
-           return ID;
+
+
+            return ID;
         }
 
         public bool UpdateReservation()
         {
             Exception e = null;
-            bool Updated = ClsReservationData.UpdateReservation(ReservationID.Value,UserID.Value,GuestID.Value, RoomID.Value, GuestTypeID.Value, NumberOfGuests, PlannedCheckin,
-               PlannedCheckOut,PricePerNight, Status.Value, Notes, ref e);
+            bool Updated = ClsReservationData.UpdateReservation(ReservationID.Value, UserID.Value, GuestID.Value, RoomID.Value, GuestTypeID.Value, NumberOfGuests, PlannedCheckin,
+               PlannedCheckOut, PricePerNight, Status.Value, Notes, ref e);
             if (e != null)
             {
-                ClsUtil.ClsLogger.LogError("Falied To Update This Reservation",e);
+                ClsUtil.ClsLogger.LogError("Falied To Update This Reservation", e);
                 return false;
             }
             return Updated;
@@ -154,7 +150,7 @@ namespace HMS_Business
             Exception e = null;
             DataTable dt = new DataTable();
             dt = ClsReservationData.GetReservationsList(ref e);
-            if (e!=null)
+            if (e != null)
             {
                 ClsUtil.ClsLogger.LogError("Failed To get ReservationsList", e);
                 return null;
@@ -162,11 +158,11 @@ namespace HMS_Business
             return dt;
         }
 
-        public static DataTable ReservationListByPage(int PageNumber,int PageSize)
+        public static DataTable ReservationListByPage(int PageNumber, int PageSize)
         {
             Exception e = null;
             DataTable dt = new DataTable();
-            dt = ClsReservationData.GetReservationsListByPage(PageNumber,PageSize,ref e);
+            dt = ClsReservationData.GetReservationsListByPage(PageNumber, PageSize, ref e);
             if (e != null)
             {
                 ClsUtil.ClsLogger.LogError("Failed To get ReservationsList", e);
@@ -178,20 +174,20 @@ namespace HMS_Business
 
         public static ClsResevation Find(int reservationID)
         {
-            int UserID=-1, GuestID=-1, RoomID=-1,numberOfGuests=-1, GuestTypeID=-1, Status=-1;
-            string Notes="";
-            decimal PricePerNight=0, TotalAmount=0;
+            int UserID = -1, GuestID = -1, RoomID = -1, numberOfGuests = -1, GuestTypeID = -1, Status = -1;
+            string Notes = "";
+            decimal PricePerNight = 0, TotalAmount = 0;
             Exception e = null;
-            DateTime ReservationDate=DateTime.Now, PlannedCheckin=DateTime.Now, PlannedCheckOut = DateTime.Now;
-            bool Found=ClsReservationData.GetReservationInfoByID(reservationID,ref UserID, ref GuestID,
-                ref RoomID, ref GuestTypeID,ref numberOfGuests, 
-                 ref ReservationDate, ref PlannedCheckin, ref PlannedCheckOut, ref PricePerNight, ref TotalAmount, ref Status, ref Notes,ref e );
-            if (e!=null)
+            DateTime ReservationDate = DateTime.Now, PlannedCheckin = DateTime.Now, PlannedCheckOut = DateTime.Now;
+            bool Found = ClsReservationData.GetReservationInfoByID(reservationID, ref UserID, ref GuestID,
+                ref RoomID, ref GuestTypeID, ref numberOfGuests,
+                 ref ReservationDate, ref PlannedCheckin, ref PlannedCheckOut, ref PricePerNight, ref TotalAmount, ref Status, ref Notes, ref e);
+            if (e != null)
             {
                 ClsUtil.ClsLogger.LogError("An Error Occoured", e);
                 return null;
             }
-            else if(Found)
+            else if (Found)
             {
                 return new ClsResevation(reservationID, UserID, GuestID, RoomID, GuestTypeID, numberOfGuests, ReservationDate, PlannedCheckin, PlannedCheckOut, PricePerNight, TotalAmount, Status, Notes);
             }
@@ -202,20 +198,20 @@ namespace HMS_Business
         {
             Exception e = null;
             bool Canceled = false;
-            Canceled = ClsReservationData.CancelResrvation(ReservationID.Value,RoomID.Value, ref e);
-            if (e!=null)
+            Canceled = ClsReservationData.CancelResrvation(ReservationID.Value, RoomID.Value, ref e);
+            if (e != null)
             {
-                ClsUtil.ClsLogger.LogError("Failed To Cancel This Reservation!",e);
+                ClsUtil.ClsLogger.LogError("Failed To Cancel This Reservation!", e);
                 return false;
             }
-            else if(Canceled) 
+            else if (Canceled)
             {
                 return true;
             }
             return false;
         }
 
-        public static bool IsRoomAvaible(int roomID, DateTime checkIn, DateTime checkOut,ref bool ErrorOccoured, int? RoomID = null)
+        public static bool IsRoomAvaible(int roomID, DateTime checkIn, DateTime checkOut, ref bool ErrorOccoured, int? RoomID = null)
         {
             Exception e = null;
             bool Available = ClsReservationData.IsRoomAvaibleForReservation(roomID, checkIn, checkOut, ref e);
@@ -232,14 +228,29 @@ namespace HMS_Business
             return true;
         }
 
+        public static bool ReservationExistsByID(int ID)
+        {
+            Exception e = null;
+            bool Found = ClsReservationData.ReservationExistsByID(ID, ref e);
+            if (!Found)
+            {
+                if (e != null)
+                {
+                    ClsUtil.ClsLogger.LogError($"Failed To Found Reservation With ID = {ID}");
+                }
+                return false;
+            }
+            return true;
+        }
+
         public bool Save()
-         {
-            switch(Mode)
+        {
+            switch (Mode)
             {
                 case EnMode.AddNew:
-                {
-                    int? ID= AddNewReseration();
-                        if (ID!=null)
+                    {
+                        int? ID = AddNewReseration();
+                        if (ID != null)
                         {
                             Mode = EnMode.Update;
                             ReservationID = ID;
@@ -258,7 +269,7 @@ namespace HMS_Business
                         return false;
                     }
             }
-          
+
         }
 
 

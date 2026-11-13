@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace HMS_DataAccess
 {
@@ -53,7 +49,7 @@ namespace HMS_DataAccess
                             RoomID = (int)dr["RoomID"];
                             GuestTypeID = (int)dr["GuestTypeID"];
                             NumberOfGuests = (int)dr["NumberOfGuests"];
-                            ReservationDate=(DateTime)dr["ReservationDate"];
+                            ReservationDate = (DateTime)dr["ReservationDate"];
                             PlannedCheckin =
                                 (DateTime)dr["PlannedCheckIn"];
 
@@ -86,7 +82,7 @@ namespace HMS_DataAccess
             }
         }
 
-     public static bool CancelResrvation(int ReservationID,int RoomID,ref Exception ErrorOccurred)
+        public static bool CancelResrvation(int ReservationID, int RoomID, ref Exception ErrorOccurred)
         {
             string conn =
                 ConfigurationManager.AppSettings["ConnectionString"];
@@ -154,11 +150,11 @@ namespace HMS_DataAccess
                     cmd.Parameters.AddWithValue("@Notes", Notes);
 
                     SqlParameter NewID = cmd.Parameters.Add("@ResID", DbType.Int32);
-                    NewID.Direction= ParameterDirection.Output;
+                    NewID.Direction = ParameterDirection.Output;
 
                     cnn.Open();
                     cmd.ExecuteNonQuery();
-                    return Convert.ToInt32( NewID.Value);
+                    return Convert.ToInt32(NewID.Value);
                 }
             }
             catch (Exception e)
@@ -204,13 +200,13 @@ namespace HMS_DataAccess
                     cmd.Parameters.AddWithValue("@PricePerNight", PricePerNight);
                     cmd.Parameters.AddWithValue("@ReservationStatus", Status);
                     cmd.Parameters.AddWithValue("@Notes", Notes);
-                   SqlParameter RP= cmd.Parameters.Add("@RowsAffected", DbType.Int32);
+                    SqlParameter RP = cmd.Parameters.Add("@RowsAffected", DbType.Int32);
                     RP.Direction = ParameterDirection.Output;
 
                     cnn.Open();
                     cmd.ExecuteNonQuery();
 
-                    int RowsAffected =Convert.ToInt32( RP.Value);
+                    int RowsAffected = Convert.ToInt32(RP.Value);
 
                     return RowsAffected > 0;
                 }
@@ -218,6 +214,35 @@ namespace HMS_DataAccess
             catch (Exception e)
             {
                 ErrorOccurred = e;
+                return false;
+            }
+        }
+
+        public static bool ReservationExistsByID(int ID, ref Exception e)
+        {
+
+            string Connstring = ConfigurationManager.AppSettings["ConnectionString"];
+            try
+            {
+                using (SqlConnection cnn = new SqlConnection(Connstring))
+                {
+                    using (SqlCommand cmd = new SqlCommand("SP_ReservationExistByID", cnn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@ID", ID);
+                        SqlParameter PR = cmd.Parameters.Add("@Found", DbType.Binary);
+                        PR.Direction = ParameterDirection.Output;
+                        cnn.Open();
+                        cmd.ExecuteNonQuery();
+                        bool Found = Convert.ToBoolean(PR.Value);
+                        return Found;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                e = ex;
                 return false;
             }
         }
@@ -255,9 +280,9 @@ namespace HMS_DataAccess
             }
         }
 
-        public static bool IsRoomAvaibleForReservation(int RoomID,DateTime CheckIn,DateTime CheckOut,ref Exception e ,int? ResID=null)
+        public static bool IsRoomAvaibleForReservation(int RoomID, DateTime CheckIn, DateTime CheckOut, ref Exception e, int? ResID = null)
         {
-          string Connstring=ConfigurationManager.AppSettings["ConnectionString"];
+            string Connstring = ConfigurationManager.AppSettings["ConnectionString"];
             try
             {
                 using (SqlConnection cnn = new SqlConnection(Connstring))
@@ -285,7 +310,7 @@ namespace HMS_DataAccess
             }
         }
 
-        public static DataTable GetReservationsListByPage(int PageNumber,int PageSize,
+        public static DataTable GetReservationsListByPage(int PageNumber, int PageSize,
         ref Exception ErrorOccurred)
         {
             string conn =
