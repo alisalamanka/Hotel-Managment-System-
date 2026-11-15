@@ -1,4 +1,4 @@
-﻿using HMS.Order;
+﻿using HMS.Stays;
 using System;
 using System.Windows.Forms;
 
@@ -14,7 +14,7 @@ namespace HMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmManageOrders());
+            Application.Run(new FrmAddEditStayInfo(1));
         }
     }
 }

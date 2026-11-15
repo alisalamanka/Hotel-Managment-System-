@@ -154,7 +154,7 @@ namespace HMS_Business
             DateTime ActualCheckIn = DateTime.MinValue;
             DateTime ActualCheckOut = DateTime.MinValue;
 
-            string Status = string.Empty;
+            short Status = -1;
             string Notes = string.Empty;
 
             bool Found =
@@ -176,15 +176,15 @@ namespace HMS_Business
 
             switch (Status)
             {
-                case "Active":
+                case 1:
                     StatusNumber = (short)EnStayStatus.Active;
                     break;
 
-                case "Completed":
+                case 2:
                     StatusNumber = (short)EnStayStatus.Completed;
                     break;
 
-                case "Cancelled":
+                case 3:
                     StatusNumber = (short)EnStayStatus.Cancelled;
                     break;
             }

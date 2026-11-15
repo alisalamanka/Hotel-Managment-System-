@@ -283,6 +283,12 @@
     <Compile Include="Stays\Controls\ctrlStayInfo.Designer.cs">
       <DependentUpon>ctrlStayInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Stays\FrmAddEditStayInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stays\FrmAddEditStayInfo.Designer.cs">
+      <DependentUpon>FrmAddEditStayInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\FRMaddNewUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -425,6 +431,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Stays\Controls\ctrlStayInfo.resx">
       <DependentUpon>ctrlStayInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stays\FrmAddEditStayInfo.resx">
+      <DependentUpon>FrmAddEditStayInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\FRMaddNewUser.resx">
       <DependentUpon>FRMaddNewUser.cs</DependentUpon>

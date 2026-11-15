@@ -42,7 +42,7 @@ namespace HMS.Reservations.Controls
 
             lblReservationID.Text = _Reservation.ReservationID.ToString();
 
-            lblGuestType.Text = ClsGuestType.Find(GuestTypeID).GuestTypeName;
+            lblGuestType.Text = ClsGuestType.Find(_Reservation.GuestTypeID.Value).GuestTypeName;
 
             lblReservationDate.Text =
                 _Reservation.ReservationDate.ToString("dd/MM/yyyy");

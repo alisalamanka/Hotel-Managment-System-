@@ -17,7 +17,7 @@ namespace HMS_DataAccess
             ref int userID,
             ref DateTime actualCheckIn,
             ref DateTime actualCheckOut,
-            ref string status,
+            ref short status,
             ref string notes)
         {
             bool isFound = false;
@@ -54,7 +54,7 @@ namespace HMS_DataAccess
                                     ? DateTime.MinValue
                                     : Convert.ToDateTime(dr["ActualCheckOut"]);
 
-                                status = dr["Status"].ToString();
+                                status = Convert.ToInt16(dr["Status"]);
                                 notes = dr["Notes"].ToString();
                             }
                         }
@@ -199,7 +199,8 @@ namespace HMS_DataAccess
                         "SP_UpdateStay", conn))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-
+                        SqlParameter PR = new SqlParameter("@Updated", SqlDbType.Bit);
+                        PR.Direction = ParameterDirection.Output;
                         cmd.Parameters.AddWithValue("@StayID", stayID);
                         cmd.Parameters.AddWithValue("@GuestID", guestID);
                         cmd.Parameters.AddWithValue("@RoomID", roomID);
@@ -212,6 +213,7 @@ namespace HMS_DataAccess
                             actualCheckOut.HasValue
                                 ? (object)actualCheckOut.Value
                                 : DBNull.Value);
+                        cmd.Parameters.Add(PR);
 
                         cmd.Parameters.AddWithValue("@Status", status);
                         cmd.Parameters.AddWithValue("@Notes",
@@ -220,8 +222,9 @@ namespace HMS_DataAccess
                                 : notes);
 
                         conn.Open();
-
-                        isUpdated = cmd.ExecuteNonQuery() > 0;
+                        cmd.ExecuteNonQuery();
+                        int UpdatedBit = Convert.ToInt16(PR.Value);
+                        isUpdated = UpdatedBit == 1;
                     }
                 }
             }
