@@ -1,13 +1,7 @@
 ﻿using ClsGlobalClasses;
 using HMS_Business;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HMS.Guests
@@ -211,7 +205,7 @@ namespace HMS.Guests
 
         private void TSMIaddNewGuest_Click(object sender, EventArgs e)
         {
-           FrmAddEditGuestForm form = new FrmAddEditGuestForm();
+            FrmAddEditGuestForm form = new FrmAddEditGuestForm();
             form.ShowDialog();
             _RefreshPagination();
         }
@@ -236,7 +230,7 @@ namespace HMS.Guests
 
                     int GuestID = (int)DGVListGuests.CurrentRow.Cells[0].Value;
                     ClsGuest Guest = ClsGuest.Find(GuestID);
-                    if (Guest!=null)
+                    if (Guest != null)
                     {
                         if (Guest.DeleteGuest())
                         {
@@ -264,6 +258,6 @@ namespace HMS.Guests
                 _RefreshPagination();
             }
         }
-    } 
+    }
 }
 

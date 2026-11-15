@@ -211,12 +211,6 @@
     <Compile Include="Reservations\Controls\UCreservationDetails.Designer.cs">
       <DependentUpon>UCreservationDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Stays\Controls\ctrlStayInfo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Stays\Controls\ctrlStayInfo.Designer.cs">
-      <DependentUpon>ctrlStayInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reservations\FrmAddEditReservation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +276,12 @@
     </Compile>
     <Compile Include="Services\FrmServiceDetails.Designer.cs">
       <DependentUpon>FrmServiceDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stays\Controls\ctrlStayInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Stays\Controls\ctrlStayInfo.Designer.cs">
+      <DependentUpon>ctrlStayInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Users\FRMaddNewUser.cs">
       <SubType>Form</SubType>
@@ -390,9 +390,6 @@
     <EmbeddedResource Include="Reservations\Controls\UCreservationDetails.resx">
       <DependentUpon>UCreservationDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Stays\Controls\ctrlStayInfo.resx">
-      <DependentUpon>ctrlStayInfo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reservations\FrmAddEditReservation.resx">
       <DependentUpon>FrmAddEditReservation.cs</DependentUpon>
     </EmbeddedResource>
@@ -425,6 +422,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Services\FrmServiceDetails.resx">
       <DependentUpon>FrmServiceDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stays\Controls\ctrlStayInfo.resx">
+      <DependentUpon>ctrlStayInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\FRMaddNewUser.resx">
       <DependentUpon>FRMaddNewUser.cs</DependentUpon>
