@@ -205,11 +205,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reservations\Controls\ctrlReservationInfo.cs">
+    <Compile Include="Reservations\Controls\UCreservationDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Reservations\Controls\ctrlReservationInfo.Designer.cs">
-      <DependentUpon>ctrlReservationInfo.cs</DependentUpon>
+    <Compile Include="Reservations\Controls\UCreservationDetails.Designer.cs">
+      <DependentUpon>UCreservationDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Reservations\FrmAddEditReservation.cs">
       <SubType>Form</SubType>
@@ -276,6 +276,30 @@
     </Compile>
     <Compile Include="Services\FrmServiceDetails.Designer.cs">
       <DependentUpon>FrmServiceDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stays\Controls\ctrlStayInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Stays\Controls\ctrlStayInfo.Designer.cs">
+      <DependentUpon>ctrlStayInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stays\FrmAddEditStayInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stays\FrmAddEditStayInfo.Designer.cs">
+      <DependentUpon>FrmAddEditStayInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stays\FrmManageStays.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stays\FrmManageStays.Designer.cs">
+      <DependentUpon>FrmManageStays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stays\FRMshowStayInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stays\FRMshowStayInfo.Designer.cs">
+      <DependentUpon>FRMshowStayInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Users\FRMaddNewUser.cs">
       <SubType>Form</SubType>
@@ -381,8 +405,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reservations\Controls\ctrlReservationInfo.resx">
-      <DependentUpon>ctrlReservationInfo.cs</DependentUpon>
+    <EmbeddedResource Include="Reservations\Controls\UCreservationDetails.resx">
+      <DependentUpon>UCreservationDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reservations\FrmAddEditReservation.resx">
       <DependentUpon>FrmAddEditReservation.cs</DependentUpon>
@@ -416,6 +440,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Services\FrmServiceDetails.resx">
       <DependentUpon>FrmServiceDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stays\Controls\ctrlStayInfo.resx">
+      <DependentUpon>ctrlStayInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stays\FrmAddEditStayInfo.resx">
+      <DependentUpon>FrmAddEditStayInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stays\FrmManageStays.resx">
+      <DependentUpon>FrmManageStays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stays\FRMshowStayInfo.resx">
+      <DependentUpon>FRMshowStayInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\FRMaddNewUser.resx">
       <DependentUpon>FRMaddNewUser.cs</DependentUpon>
@@ -883,6 +919,7 @@
     <Content Include="packages\Guna.UI2.WinForms.2.0.4.8\lib\net7.0-windows7.0\Guna.UI2.dll" />
     <Content Include="packages\Guna.UI2.WinForms.2.0.4.8\lib\netcoreapp3.1\Guna.UI2.dll" />
     <Content Include="packages\Guna.UI2.WinForms.2.0.4.8\LICENSE.txt" />
+    <None Include="Resources\retention.png" />
     <None Include="Resources\Service264.png" />
     <None Include="Resources\responsible.png" />
     <None Include="Resources\Reservationss.png" />

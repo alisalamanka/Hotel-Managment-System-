@@ -1,13 +1,7 @@
 ﻿using ClsGlobalClasses;
 using HMS_Business;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HMS.Reservations
@@ -18,7 +12,7 @@ namespace HMS.Reservations
         private ClsResevation _reservationInfo = new ClsResevation();
         private enum EnMode
         {
-            Add=1,Update=2
+            Add = 1, Update = 2
         }
         private EnMode _mode;
         public FrmAddEditReservation()
@@ -46,10 +40,10 @@ namespace HMS.Reservations
             CBguestType.ValueMember = "GuestTypeID";
 
             CBstatus.DataSource = Enum.GetValues(typeof(ClsResevation.EnStatus));
-            
-           
+
+
             DTPreservationDate.Enabled = false;
-           
+
 
             switch (_mode)
             {
@@ -78,7 +72,7 @@ namespace HMS.Reservations
                     break;
                 case EnMode.Update:
                     {
-                        if (_reservationInfo!=null)
+                        if (_reservationInfo != null)
                         {
                             lblTitle.Text = "Update Reservation";
                             lblReservationID.Text = _reservationInfo.ReservationID.ToString();
@@ -103,16 +97,16 @@ namespace HMS.Reservations
 
         private void _FillNewInfo()
         {
-            _reservationInfo.NumberOfGuests= (int)NUDnumberOfGuests.Value;
+            _reservationInfo.NumberOfGuests = (int)NUDnumberOfGuests.Value;
             _reservationInfo.GuestID = int.Parse(txtGuestID.Text);
             _reservationInfo.RoomID = ClsRoom.FindByRoomNumber(int.Parse(txtRoomNumber.Text)).GuestRoomID;
             _reservationInfo.GuestTypeID = (int)CBguestType.SelectedValue;
             _reservationInfo.PlannedCheckin = DTPplannedcheckIn.Value;
-            _reservationInfo.PricePerNight=ClsRoom.Find(_reservationInfo.RoomID.Value).PricePerNight;
+            _reservationInfo.PricePerNight = ClsRoom.Find(_reservationInfo.RoomID.Value).PricePerNight;
             _reservationInfo.PlannedCheckOut = DTPPlannedCheckOut.Value;
-            _reservationInfo.Status=(int)(ClsResevation.EnStatus)CBstatus.SelectedItem;
-            _reservationInfo.UserID=int.Parse(txtUserID.Text);
-            _reservationInfo.Notes=txtNotes.Text;
+            _reservationInfo.Status = (int)(ClsResevation.EnStatus)CBstatus.SelectedItem;
+            _reservationInfo.UserID = int.Parse(txtUserID.Text);
+            _reservationInfo.Notes = txtNotes.Text;
 
         }
 
@@ -122,19 +116,19 @@ namespace HMS.Reservations
         }
 
         private void FrmAddEditReservation_Load(object sender, EventArgs e)
-         {
-          
+        {
+
             _LoadDefaultValues();
         }
 
         private void DTPplannedcheckIn_Validating(object sender, CancelEventArgs e)
         {
-            
+
         }
 
         private void DTPPlannedCheckOut_Validating(object sender, CancelEventArgs e)
         {
-            if (DTPPlannedCheckOut.Value<=DTPplannedcheckIn.Value)
+            if (DTPPlannedCheckOut.Value <= DTPplannedcheckIn.Value)
             {
                 InputsEP.SetError(DTPPlannedCheckOut, "Planned CheckOut must be After Planed CheckIn");
                 e.Cancel = true;
@@ -145,21 +139,21 @@ namespace HMS.Reservations
             }
         }
 
-      
+
 
         private void txtGuestID_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrEmpty(txtGuestID.Text))
             {
                 InputsEP.SetError(txtGuestID, "Guest ID Cannot Be Emplty!");
-                e.Cancel= true;
+                e.Cancel = true;
             }
-            else if(!ClsValidation.IsNumber(txtGuestID.Text))
+            else if (!ClsValidation.IsNumber(txtGuestID.Text))
             {
                 InputsEP.SetError(txtGuestID, "Please enter a valid ID!");
                 e.Cancel = true;
             }
-            else if(ClsGuest.Find((int.Parse(txtGuestID.Text))) == null)
+            else if (ClsGuest.Find((int.Parse(txtGuestID.Text))) == null)
             {
                 InputsEP.SetError(txtGuestID, $"No Guest With ID = {txtGuestID.Text}");
                 e.Cancel = true;
@@ -204,26 +198,26 @@ namespace HMS.Reservations
                 return;
             }
             _FillNewInfo();
-            bool ErrorOccourder =false;
+            bool ErrorOccourder = false;
 
-            ClsResevation.EnStatus Status =(ClsResevation.EnStatus)CBstatus.SelectedItem;
+            ClsResevation.EnStatus Status = (ClsResevation.EnStatus)CBstatus.SelectedItem;
 
-            bool PerformCheckAvailability = _mode == EnMode.Add||( _mode == EnMode.Update &&
+            bool PerformCheckAvailability = _mode == EnMode.Add || (_mode == EnMode.Update &&
                 (Status == ClsResevation.EnStatus.Pending || Status == ClsResevation.EnStatus.Confirmed));
 
             if (PerformCheckAvailability)
             {
-                 if (!ClsResevation.IsRoomAvaible(_reservationInfo.RoomID.Value,_reservationInfo.PlannedCheckin,
-                  _reservationInfo.PlannedCheckOut,ref ErrorOccourder,_reservationInfo.ReservationID))
-            {
-                if (ErrorOccourder)
+                if (!ClsResevation.IsRoomAvaible(_reservationInfo.RoomID.Value, _reservationInfo.PlannedCheckin,
+                 _reservationInfo.PlannedCheckOut, ref ErrorOccourder, _reservationInfo.ReservationID))
                 {
-                    ClsUtil.ShowErrorMessage("An Error Occoured Please Show the EventLog Now!");
+                    if (ErrorOccourder)
+                    {
+                        ClsUtil.ShowErrorMessage("An Error Occoured Please Show the EventLog Now!");
+                        return;
+                    }
+                    ClsUtil.ShowErrorMessage("The Room is Not Available For The Selected Dates!");
                     return;
                 }
-                ClsUtil.ShowErrorMessage("The Room is Not Available For The Selected Dates!");
-                return;
-            }
             }
 
             if (_reservationInfo.Save())
@@ -242,13 +236,13 @@ namespace HMS.Reservations
             else
             {
                 ClsUtil.ShowErrorMessage("Failed To save Reservation!");
-                return ;
+                return;
             }
         }
 
         private void CBguestType_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (CBguestType.SelectedIndex==4)
+            if (CBguestType.SelectedIndex == 4)
             {
                 NUDnumberOfGuests.Value = 1;
                 NUDnumberOfGuests.Enabled = false;
@@ -261,11 +255,11 @@ namespace HMS.Reservations
 
         private void CBstatus_Validating(object sender, CancelEventArgs e)
         {
-            if (_mode==EnMode.Add)
+            if (_mode == EnMode.Add)
             {
                 ClsResevation.EnStatus SelectedStatus = (ClsResevation.EnStatus)CBstatus.SelectedItem;
-                if (!(SelectedStatus==ClsResevation.EnStatus.Confirmed)&&
-                    !(SelectedStatus ==(ClsResevation.EnStatus.Pending)))
+                if (!(SelectedStatus == ClsResevation.EnStatus.Confirmed) &&
+                    !(SelectedStatus == (ClsResevation.EnStatus.Pending)))
                 {
                     InputsEP.SetError(CBstatus, "Wrong Status For New Reservation!");
                     e.Cancel = true;
