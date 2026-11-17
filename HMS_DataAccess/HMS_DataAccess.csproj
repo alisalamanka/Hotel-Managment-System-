@@ -50,6 +50,7 @@
     <Compile Include="ClsEmployeeData.cs" />
     <Compile Include="ClsGuestData.cs" />
     <Compile Include="ClsGuestTypeData.cs" />
+    <Compile Include="ClsInvoiceData.cs" />
     <Compile Include="ClsOrderData.cs" />
     <Compile Include="ClsOrderTypeData.cs" />
     <Compile Include="ClsPersonsData.cs" />
