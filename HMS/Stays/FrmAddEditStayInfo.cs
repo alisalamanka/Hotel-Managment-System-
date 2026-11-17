@@ -57,7 +57,7 @@ namespace HMS.Stays
                         txtRoomID.Text = "";
                         txtReservationID.Text = "";
 
-                        txtUserID.Text = "2";
+                        txtUserID.Text = CLSglobal.LoggedInUser.UserID.ToString();
                         txtUserID.Enabled = false;
 
                         DTPACtualCheckIn.Value = DateTime.Now;

@@ -386,6 +386,7 @@
             this.btnOders.Size = new System.Drawing.Size(275, 57);
             this.btnOders.TabIndex = 8;
             this.btnOders.Text = "Orders";
+            this.btnOders.Click += new System.EventHandler(this.btnOders_Click);
             this.btnOders.MouseLeave += new System.EventHandler(this.btnexit);
             this.btnOders.MouseHover += new System.EventHandler(this.btnHover);
             // 
@@ -410,6 +411,7 @@
             this.btnStays.Size = new System.Drawing.Size(275, 57);
             this.btnStays.TabIndex = 7;
             this.btnStays.Text = "Stays";
+            this.btnStays.Click += new System.EventHandler(this.btnStays_Click);
             this.btnStays.MouseLeave += new System.EventHandler(this.btnexit);
             this.btnStays.MouseHover += new System.EventHandler(this.btnHover);
             // 

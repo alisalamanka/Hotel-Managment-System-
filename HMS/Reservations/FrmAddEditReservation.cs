@@ -53,7 +53,7 @@ namespace HMS.Reservations
                         lblReservationID.Text = "";
                         txtGuestID.Text = "";
                         txtRoomNumber.Text = "";
-                        txtUserID.Text = 2.ToString();
+                        txtUserID.Text = CLSglobal.LoggedInUser.UserID.ToString();
                         txtUserID.Enabled = false;
                         lblTotalAMount.Text = "0";
                         CBguestType.SelectedIndex = 1;

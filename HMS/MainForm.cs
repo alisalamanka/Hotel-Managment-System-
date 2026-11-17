@@ -1,22 +1,17 @@
 ﻿using Guna.UI2.WinForms;
 using HMS.Employees;
-using HMS.People;
-using ClsGlobalClasses;
-using HMS.Users;
-using HMS.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using HMS_Business;
 using HMS.Guests;
-using HMS.Rooms;
+using HMS.Order;
+using HMS.People;
 using HMS.Reservations;
+using HMS.Rooms;
+using HMS.Services;
+using HMS.Stays;
+using HMS.Users;
+using HMS_Business;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace HMS
 {
@@ -48,12 +43,11 @@ namespace HMS
 
         }
 
-       
+
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             lbusername.Text = CLSglobal.LoggedInUser.Username;
-            PBuserpicture.Image = Image.FromFile(CLSglobal.LoggedInUser.PersonInfo.ImagePath);
         }
 
         private void TSMIpersons_Click(object sender, EventArgs e)
@@ -107,19 +101,31 @@ namespace HMS
 
         private void btnRooms_Click(object sender, EventArgs e)
         {
-            FrmManageRooms frm =new FrmManageRooms();
+            FrmManageRooms frm = new FrmManageRooms();
             frm.ShowDialog();
         }
 
         private void btnReservations_Click(object sender, EventArgs e)
         {
-            FrmReservationsList frm =new FrmReservationsList();
+            FrmReservationsList frm = new FrmReservationsList();
             frm.ShowDialog();
         }
 
         private void btnServices_Click(object sender, EventArgs e)
         {
             FrmManageServices frm = new FrmManageServices();
+            frm.ShowDialog();
+        }
+
+        private void btnOders_Click(object sender, EventArgs e)
+        {
+            FrmManageOrders frm = new FrmManageOrders();
+            frm.ShowDialog();
+        }
+
+        private void btnStays_Click(object sender, EventArgs e)
+        {
+            FrmManageStays frm = new FrmManageStays();
             frm.ShowDialog();
         }
     }

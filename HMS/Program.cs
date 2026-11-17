@@ -1,5 +1,4 @@
-﻿using HMS.Stays;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace HMS
@@ -14,7 +13,7 @@ namespace HMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmManageStays());
+            Application.Run(new FrmLogin());
         }
     }
 }

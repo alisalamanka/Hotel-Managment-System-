@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using ClsGlobalClasses;
+﻿using ClsGlobalClasses;
 using HMS_DataAccess;
+using System;
+using System.Data;
 
 namespace HMS_Business
 {
@@ -53,14 +48,14 @@ namespace HMS_Business
             bool isActive = false;
             Exception error = null;
 
-           bool Found= ClsUserData.GetUserInfoByID(userID, ref personID, ref username, ref password, ref isActive, ref error);
+            bool Found = ClsUserData.GetUserInfoByID(userID, ref personID, ref username, ref password, ref isActive, ref error);
 
             if (!Found)
             {
-            if (error != null)
-            {
-                ClsUtil.ClsLogger.LogError($"Failed to get User Info with ID {userID} ", error);
-            }
+                if (error != null)
+                {
+                    ClsUtil.ClsLogger.LogError($"Failed to get User Info with ID {userID} ", error);
+                }
                 return null;
 
 
@@ -80,10 +75,10 @@ namespace HMS_Business
 
             if (!UserFounded)
             {
-            if (error != null)
-            {
-                ClsUtil.ClsLogger.LogError($"Failed to get User Info  ", error);
-            }
+                if (error != null)
+                {
+                    ClsUtil.ClsLogger.LogError($"Failed to get User Info  ", error);
+                }
                 return null;
             }
 
@@ -107,11 +102,11 @@ namespace HMS_Business
         {
             Exception exception = null;
             int? NewUserID = ClsUserData.AddNewUser(Username, Password, PersonID, isActive, ref exception);
-            if (NewUserID==null)
+            if (NewUserID == null)
             {
-            if (exception != null)
-            {
-                ClsUtil.ClsLogger.LogError("Failed to Add New User", exception);
+                if (exception != null)
+                {
+                    ClsUtil.ClsLogger.LogError("Failed to Add New User", exception);
                 }
                 return false;
             }
@@ -123,7 +118,7 @@ namespace HMS_Business
 
         }
 
-        public bool PasswordChanged(string NewPassword,ref bool ErrorOccoured)
+        public bool PasswordChanged(string NewPassword, ref bool ErrorOccoured)
         {
             Exception exception = null;
             bool Changed = ClsUserData.PasswordChanged(UserID.Value, Password, ref exception);
@@ -143,7 +138,7 @@ namespace HMS_Business
         {
             Exception exception = null;
             bool Updated = ClsUserData.UpdateUserInfo(PersonInfo.Id.Value, PersonInfo.FirstName, PersonInfo.LastName, PersonInfo.NationalNumber, PersonInfo.DateOfBirth,
-                PersonInfo.Phone, PersonInfo.Email, PersonInfo.Gendor, PersonInfo.ImagePath, PersonInfo.CountryID, Username, Password, isActive,UserID.Value, ref exception);
+                PersonInfo.Phone, PersonInfo.Email, PersonInfo.Gendor, PersonInfo.ImagePath, PersonInfo.CountryID, Username, Password, isActive, UserID.Value, ref exception);
             if (exception != null)
             {
                 ClsUtil.ClsLogger.LogError("Failed to Update User Info", exception);
@@ -158,12 +153,12 @@ namespace HMS_Business
         public bool DeleteUserInfo()
         {
             Exception exception = null;
-           bool deleted= ClsUserData.DeleteUser(UserID.Value, ref exception);
+            bool deleted = ClsUserData.DeleteUser(UserID.Value, ref exception);
             if (!deleted)
             {
-            if (exception != null)
-            {
-                ClsUtil.ClsLogger.LogError($"Failed to Delete User with ID = {UserID.Value}", exception);
+                if (exception != null)
+                {
+                    ClsUtil.ClsLogger.LogError($"Failed to Delete User with ID = {UserID.Value}", exception);
                 }
                 return false;
             }
@@ -183,7 +178,7 @@ namespace HMS_Business
                         {
                             Password = ClsUtil.GetHashstring(Password);
                             Mode = EnMode.Update;
-                            return UserID!=null;
+                            return UserID != null;
                         }
                         else
                         {
@@ -199,17 +194,17 @@ namespace HMS_Business
                     return false;
 
             }
-            
+
         }
-        public static bool UserNameUsed(string UsernName,ref bool ErrorOccured)
+        public static bool UserNameUsed(string UsernName, ref bool ErrorOccured)
         {
-            Exception ex= null;
+            Exception ex = null;
             bool Used = ClsUserData.UserNameUsed(UsernName, ref ex);
-            if (ex!=null)
+            if (ex != null)
             {
                 ErrorOccured = true;
             }
-           return Used;
+            return Used;
 
         }
 
@@ -228,4 +223,3 @@ namespace HMS_Business
 
     }
 }
-    

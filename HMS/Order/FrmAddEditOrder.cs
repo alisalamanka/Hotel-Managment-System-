@@ -40,7 +40,7 @@ namespace HMS.Order
 
                         lblOrderID.Text = "[????]";
 
-                        txtUserID.Text = "2";
+                        txtUserID.Text = CLSglobal.LoggedInUser.UserID.ToString();
                         txtUserID.Enabled = false;
 
                         CBorderType.SelectedIndex = 0;
