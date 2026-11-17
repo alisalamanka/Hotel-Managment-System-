@@ -1,5 +1,6 @@
 ﻿
 using HMS_Business;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace HMS.Stays.Controls
@@ -15,6 +16,10 @@ namespace HMS.Stays.Controls
 
         public void LoadStayInfo(int stayID)
         {
+            if (LicenseManager.UsageMode == LicenseUsageMode.Designtime)
+            {
+                return;
+            }
             _Stay = ClsStay.Find(stayID);
 
             if (_Stay == null)

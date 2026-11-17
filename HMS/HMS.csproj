@@ -289,6 +289,18 @@
     <Compile Include="Stays\FrmAddEditStayInfo.Designer.cs">
       <DependentUpon>FrmAddEditStayInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Stays\FrmManageStays.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stays\FrmManageStays.Designer.cs">
+      <DependentUpon>FrmManageStays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stays\FRMshowStayInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stays\FRMshowStayInfo.Designer.cs">
+      <DependentUpon>FRMshowStayInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\FRMaddNewUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -434,6 +446,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Stays\FrmAddEditStayInfo.resx">
       <DependentUpon>FrmAddEditStayInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stays\FrmManageStays.resx">
+      <DependentUpon>FrmManageStays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stays\FRMshowStayInfo.resx">
+      <DependentUpon>FRMshowStayInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\FRMaddNewUser.resx">
       <DependentUpon>FRMaddNewUser.cs</DependentUpon>
@@ -901,6 +919,7 @@
     <Content Include="packages\Guna.UI2.WinForms.2.0.4.8\lib\net7.0-windows7.0\Guna.UI2.dll" />
     <Content Include="packages\Guna.UI2.WinForms.2.0.4.8\lib\netcoreapp3.1\Guna.UI2.dll" />
     <Content Include="packages\Guna.UI2.WinForms.2.0.4.8\LICENSE.txt" />
+    <None Include="Resources\retention.png" />
     <None Include="Resources\Service264.png" />
     <None Include="Resources\responsible.png" />
     <None Include="Resources\Reservationss.png" />

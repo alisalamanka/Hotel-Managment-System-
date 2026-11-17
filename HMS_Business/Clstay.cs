@@ -1,4 +1,5 @@
-﻿using HMS_DataAccess;
+﻿using ClsGlobalClasses;
+using HMS_DataAccess;
 using System;
 using System.Data;
 
@@ -258,6 +259,21 @@ namespace HMS_Business
             }
 
             return Deleted;
+        }
+
+        public bool CancelStay()
+        {
+            Exception e = null;
+            bool canceled = ClsStayData.CancelStay(StayID.Value, ref e);
+            if (!canceled)
+            {
+                if (e != null)
+                {
+                    ClsUtil.ClsLogger.LogError($"Falied To Cancel Stay with ID {StayID.Value}");
+                }
+                return false;
+            }
+            return true;
         }
 
 

@@ -273,5 +273,36 @@ namespace HMS_DataAccess
 
             return deleted;
         }
+
+        public static bool CancelStay(int StayID, ref Exception e)
+        {
+            bool Canceled = false;
+            try
+            {
+                string Connstring = ConfigurationManager.AppSettings["ConnectionString"];
+                using (SqlConnection cnn = new SqlConnection(Connstring))
+                {
+                    cnn.Open();
+                    using (SqlCommand cmd = new SqlCommand("SP_CancelStay", cnn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        SqlParameter PR = new SqlParameter("@Canceled", SqlDbType.Bit);
+                        PR.Direction = ParameterDirection.Output;
+                        cmd.Parameters.Add(PR);
+                        cmd.Parameters.AddWithValue("@StayID", StayID);
+
+                        cmd.ExecuteNonQuery();
+
+                        Canceled = Convert.ToByte(PR.Value) == 1;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                e = ex;
+                return false;
+            }
+            return Canceled;
+        }
     }
 }

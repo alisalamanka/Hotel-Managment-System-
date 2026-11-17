@@ -19,7 +19,6 @@ namespace HMS.Reservations
 
         private void FrmReservationDetails_Load(object sender, EventArgs e)
         {
-            ctrlReservationInfo1.LoadReservationInfo(_ResID.Value);
         }
     }
 }
