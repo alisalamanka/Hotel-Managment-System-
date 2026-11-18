@@ -136,11 +136,17 @@
     <Compile Include="Guests\FrmManageGuests.Designer.cs">
       <DependentUpon>FrmManageGuests.cs</DependentUpon>
     </Compile>
-    <Compile Include="Invoices\ctrlInvoiceInfo.cs">
+    <Compile Include="Invoices\Controls\ctrlInvoiceInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Invoices\ctrlInvoiceInfo.Designer.cs">
+    <Compile Include="Invoices\Controls\ctrlInvoiceInfo.Designer.cs">
       <DependentUpon>ctrlInvoiceInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoices\InvoiceDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoices\InvoiceDetailsForm.Designer.cs">
+      <DependentUpon>InvoiceDetailsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -373,8 +379,11 @@
     <EmbeddedResource Include="Guests\FrmManageGuests.resx">
       <DependentUpon>FrmManageGuests.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Invoices\ctrlInvoiceInfo.resx">
+    <EmbeddedResource Include="Invoices\Controls\ctrlInvoiceInfo.resx">
       <DependentUpon>ctrlInvoiceInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoices\InvoiceDetailsForm.resx">
+      <DependentUpon>InvoiceDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
