@@ -136,6 +136,12 @@
     <Compile Include="Guests\FrmManageGuests.Designer.cs">
       <DependentUpon>FrmManageGuests.cs</DependentUpon>
     </Compile>
+    <Compile Include="Invoices\ctrlInvoiceInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Invoices\ctrlInvoiceInfo.Designer.cs">
+      <DependentUpon>ctrlInvoiceInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -366,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Guests\FrmManageGuests.resx">
       <DependentUpon>FrmManageGuests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoices\ctrlInvoiceInfo.resx">
+      <DependentUpon>ctrlInvoiceInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

@@ -51,5 +51,10 @@ namespace HMS.Order.Controls
 
             _FillOrderInfo();
         }
+
+        private void guna2GroupBox1_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
