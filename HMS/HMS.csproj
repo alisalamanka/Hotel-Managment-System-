@@ -142,6 +142,12 @@
     <Compile Include="Invoices\Controls\ctrlInvoiceInfo.Designer.cs">
       <DependentUpon>ctrlInvoiceInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Invoices\frmAddEditInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoices\frmAddEditInvoice.Designer.cs">
+      <DependentUpon>frmAddEditInvoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Invoices\InvoiceDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -381,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Invoices\Controls\ctrlInvoiceInfo.resx">
       <DependentUpon>ctrlInvoiceInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoices\frmAddEditInvoice.resx">
+      <DependentUpon>frmAddEditInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Invoices\InvoiceDetailsForm.resx">
       <DependentUpon>InvoiceDetailsForm.cs</DependentUpon>
