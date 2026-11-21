@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HMS.Invoices;
+using System;
 using System.Windows.Forms;
 
 namespace HMS
@@ -13,7 +14,7 @@ namespace HMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLogin());
+            Application.Run(new FRMmanageInvoices());
         }
     }
 }
