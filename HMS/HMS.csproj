@@ -148,6 +148,12 @@
     <Compile Include="Invoices\frmAddEditInvoice.Designer.cs">
       <DependentUpon>frmAddEditInvoice.cs</DependentUpon>
     </Compile>
+    <Compile Include="Invoices\FRMmanageInvoices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoices\FRMmanageInvoices.Designer.cs">
+      <DependentUpon>FRMmanageInvoices.cs</DependentUpon>
+    </Compile>
     <Compile Include="Invoices\InvoiceDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -390,6 +396,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Invoices\frmAddEditInvoice.resx">
       <DependentUpon>frmAddEditInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoices\FRMmanageInvoices.resx">
+      <DependentUpon>FRMmanageInvoices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Invoices\InvoiceDetailsForm.resx">
       <DependentUpon>InvoiceDetailsForm.cs</DependentUpon>

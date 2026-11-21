@@ -144,9 +144,9 @@ namespace HMS_Business
             return false;
         }
 
-        public static bool DeleteInvoice(int invoiceID)
+        public bool DeleteInvoice()
         {
-            return ClsInvoiceData.DeleteInvoice(invoiceID);
+            return ClsInvoiceData.DeleteInvoice(InvoiceID);
         }
 
         public static bool IsInvoiceExist(int invoiceID)
