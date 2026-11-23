@@ -259,6 +259,12 @@
     <Compile Include="Service Usage\Controls\ctrlServiceUsageInfo.Designer.cs">
       <DependentUpon>ctrlServiceUsageInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Service Usage\frmServiceUsageDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Service Usage\frmServiceUsageDetails.Designer.cs">
+      <DependentUpon>frmServiceUsageDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Services\Controls\UcServiceInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -437,6 +443,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Service Usage\Controls\ctrlServiceUsageInfo.resx">
       <DependentUpon>ctrlServiceUsageInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Service Usage\frmServiceUsageDetails.resx">
+      <DependentUpon>frmServiceUsageDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Services\Controls\UcServiceInfo.resx">
       <DependentUpon>UcServiceInfo.cs</DependentUpon>
