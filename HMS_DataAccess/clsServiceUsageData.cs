@@ -16,7 +16,7 @@ namespace HMS_DataAccess
             ref decimal Price,
             ref int CreatedByUserID,
             ref string Notes,
-            ref int Status,
+            ref short Status,
             ref Exception ErrorOccurred)
         {
             string conn = ConfigurationManager.AppSettings["ConnectionString"];
@@ -27,7 +27,7 @@ namespace HMS_DataAccess
                 using (SqlCommand cmd = new SqlCommand("SP_GetServiceUsageInfoByID", cnn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@ServiceUsageID", ServiceUsageID);
+                    cmd.Parameters.AddWithValue("@ID", ServiceUsageID);
 
                     cnn.Open();
 
@@ -42,7 +42,7 @@ namespace HMS_DataAccess
                             Price = (decimal)dr["Price"];
                             CreatedByUserID = (int)dr["CreatedByUserID"];
                             Notes = dr["Notes"] != DBNull.Value ? dr["Notes"].ToString() : string.Empty;
-                            Status = (int)dr["Status"];
+                            Status = (short)dr["Status"];
 
                             return true;
                         }
@@ -65,7 +65,6 @@ namespace HMS_DataAccess
             decimal Price,
             int CreatedByUserID,
             string Notes,
-            short Status,
             ref Exception ErrorOccurred)
         {
             string conn = ConfigurationManager.AppSettings["ConnectionString"];
@@ -82,10 +81,8 @@ namespace HMS_DataAccess
                     cmd.Parameters.AddWithValue("@EmployeeID", EmployeeID);
                     cmd.Parameters.AddWithValue("@OrderID", OrderID);
                     cmd.Parameters.AddWithValue("@Price", Price);
-                    cmd.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
+                    cmd.Parameters.AddWithValue("@UserID", CreatedByUserID);
                     cmd.Parameters.AddWithValue("@Notes", string.IsNullOrEmpty(Notes) ? (object)DBNull.Value : Notes);
-                    cmd.Parameters.AddWithValue("@Status", Status);
-
                     SqlParameter NewID = cmd.Parameters.Add("@NewID", SqlDbType.Int);
                     NewID.Direction = ParameterDirection.Output;
 

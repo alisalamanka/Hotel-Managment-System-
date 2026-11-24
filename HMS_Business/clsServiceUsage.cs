@@ -95,7 +95,7 @@ namespace HMS_Business
             decimal price = 0;
             int createdByUserID = 0;
             string notes = string.Empty;
-            int status = 0;
+            short status = 0;
             Exception error = null;
 
             bool found = clsServiceUsageData.GetServiceUsageInfoByID(
@@ -110,7 +110,11 @@ namespace HMS_Business
                 ref status,
                 ref error
             );
+            if (error != null)
+            {
+                ClsUtil.ClsLogger.LogError($"Failed To Get Service Usage Info With ID = {serviceUsageID}", error);
 
+            }
             if (!found)
                 return null;
 
@@ -133,16 +137,18 @@ namespace HMS_Business
             int? newID = clsServiceUsageData.AddNewServiceUsage(
                 StayID.Value,
                 ServiceID.Value,
-                EmployeeID ?? -1,
-                ApplicationID ?? -1,
+                EmployeeID.Value,
+                ApplicationID.Value,
                 Price,
                 CreatedByUserID.Value,
                 Notes,
-                Status,
                 ref error
             );
-
-            if (newID.HasValue)
+            if (error != null || newID == null)
+            {
+                ClsUtil.ClsLogger.LogError("Failed to add service Usage", error ?? error);
+            }
+            else
             {
                 ServiceUsageID = newID.Value;
                 return true;
