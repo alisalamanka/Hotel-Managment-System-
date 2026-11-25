@@ -160,7 +160,7 @@
             this.CMSstays.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.CMSstays.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.CMSstays.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.CMSstays.Size = new System.Drawing.Size(314, 170);
+            this.CMSstays.Size = new System.Drawing.Size(314, 148);
             // 
             // TSMIaddStay
             // 
