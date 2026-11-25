@@ -265,6 +265,12 @@
     <Compile Include="Service Usage\frmAddEditServiceUsageInfo.Designer.cs">
       <DependentUpon>frmAddEditServiceUsageInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Service Usage\FrmManageServiceUsage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Service Usage\FrmManageServiceUsage.Designer.cs">
+      <DependentUpon>FrmManageServiceUsage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Service Usage\frmServiceUsageDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -452,6 +458,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Service Usage\frmAddEditServiceUsageInfo.resx">
       <DependentUpon>frmAddEditServiceUsageInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Service Usage\FrmManageServiceUsage.resx">
+      <DependentUpon>FrmManageServiceUsage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Service Usage\frmServiceUsageDetails.resx">
       <DependentUpon>frmServiceUsageDetails.cs</DependentUpon>

@@ -65,6 +65,7 @@ namespace HMS_Business
             StayID = stayID;
             StayInfo = ClsStay.Find(stayID);
             ServiceID = serviceID;
+            ServiceInfo = ClsService.Find(serviceID);
             EmployeeID = employeeID;
             ApplicationID = applicationID;
             Price = price;
