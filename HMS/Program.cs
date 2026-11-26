@@ -1,4 +1,4 @@
-﻿using HMS.Stays;
+﻿using HMS.Service_Usage;
 using System;
 using System.Windows.Forms;
 
@@ -14,7 +14,7 @@ namespace HMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmManageStays());
+            Application.Run(new FrmManageServiceUsages());
         }
     }
 }
